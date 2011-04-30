@@ -1,0 +1,46 @@
+はじめに
+
+「SyntaxHighlighter TinyMCE Button」は、「ビジュアルエディター（TinyMCE）」のメニューに「SyntaxHighlighter」のための<pre>タグの入力を手助けするボタンを追加します。
+
+ビジュアルエディター（TinyMCE）上でも、簡単にソースコードを<pre>タグでマークアップ出来るようになります。
+
+特徴
+・<pre>タグを「ビジュアルエディター」から簡単にソースコードに挿入する事が可能。
+・「ビジュアルエディター」上で、TABよるインデントを有効にします。
+
+このプラグインは、Alex Gorbatchev氏が開発した「SyntaxHighlighter」ライブラリーのバージョン2.0以上に対応しています。
+
+SyntaxHighlighter: http://alexgorbatchev.com/SyntaxHighlighter/
+
+「SyntaxHighlighter」ライブラリーを使用するプラグインであっても、<pre>タグをサポートしていない場合があります。
+このプラグインは、<pre>タグをサポートしないプラグインに対しては使用できません。
+
+１．動作環境
+
+・WordPress2.7以上
+・PHP 4
+
+２．インストール
+
+ダウンロードしたファイルを解凍し、「sh-tinymce-button」フォルダごと、WordPressのプラグインディレクトリ（wp-content/plugins/）にアップロードします。
+WordPressの管理画面の「プラグイン」で、このプラグインを有効化します。
+WordPressの管理画面の「設定」にある「SH TinyMCE Button」という項目で設定を行います。
+
+３．アップデート
+WordPressの管理画面で、「SyntaxHighlighter TinyMCE Button」を停止し、インストールの要領でファイルをサーバーにアップロード、上書きした後、再度、有効化する。
+
+４．アンインストール
+
+WordPressの管理画面で、まずプラグインを停止し、削除を実行する。
+
+５．ライセンス
+
+GPL v2
+
+６．履歴
+
+2011/5/1　Ver.0.1 リリース
+
+
+Redcocker
+http://www.near-mint.com/blog/
