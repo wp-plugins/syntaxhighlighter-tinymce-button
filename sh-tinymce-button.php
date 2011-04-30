@@ -13,7 +13,7 @@ Domain Path: /locale/
 Date of release: Ver. 0.1 2011/5/1
 License: GPL v2
 */
-load_plugin_textdomain('shtb_lang', false, 'sh-tinymce-button/locale');
+load_plugin_textdomain('shtb_lang', false, 'syntaxhighlighter-tinymce-button/locale');
 
 add_action('admin_menu', 'shtb_register_menu_item');
 add_filter( 'plugin_action_links', 'shtb_setting_link', 10, 2 );
@@ -56,7 +56,7 @@ function register_shtb_button($buttons) {
 
 // Load the TinyMCE plugin : editor_plugin.js (wp2.5)
 function add_shtb_tinymce_plugin($plugin_array) {
-	$plugin_array['shtb'] = get_option('siteurl').'/wp-content/plugins/sh-tinymce-button/editor_plugin.js';	
+	$plugin_array['shtb'] = get_option('siteurl').'/wp-content/plugins/syntaxhighlighter-tinymce-button/editor_plugin.js';	
 	return $plugin_array;
 }
 
