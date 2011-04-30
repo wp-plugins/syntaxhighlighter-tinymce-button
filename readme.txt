@@ -3,7 +3,7 @@ Contributors: redcocker, homolibere
 Tags: syntaxhighlighter, code, tinymce, button
 Requires at least: 3.0
 Tested up to: 3.1.2
-Stable tag: 0.1
+Stable tag: 0.1.1
 
 'SyntaxHighlighter TinyMCE Button' provides additional button for Visual Editor and will help to type &lt;pre&gt; tag for SyntaxHighlighter.
 
@@ -35,3 +35,13 @@ You can not use this plugin with some 'SyntaxHighlighter'-based plugins which do
 
 1. This is a new button on TinyMCE.
 1. This is pop up window at the click of a button.
+
+== Changelog ==
+
+= 0.1.1 =
+* fixed directory path.
+
+== Upgrade Notice ==
+
+= 0.1.1 =
+fixed directory path.
