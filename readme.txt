@@ -19,7 +19,7 @@ This plugin is based on "[CodeColorer TinyMCE Button](http://wordpress.org/exten
 * You can operate in Visual Editor, No need to use HTML Editor.
 * Easy wrap your code in `<pre>` tag by two ways.
 * Enable to change language and options of previously-markuped code.
-* Once your code is wrap in `<pre>` tag, You can type 'tabs' for indent.
+* Once your code is wrapped in `<pre>` tag, You can type 'tabs' for indent.
 * Translated into English(Default) and Japanese(UTF-8).
 
 = Compliant plugins =
