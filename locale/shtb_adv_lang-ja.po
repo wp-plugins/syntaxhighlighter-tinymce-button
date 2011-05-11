@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: SyntaxHighlighter TinyMCE Button Ver. 0.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-05-10 13:40+0900\n"
-"PO-Revision-Date: 2011-05-10 13:40+0900\n"
+"PO-Revision-Date: 2011-05-12 03:13+0900\n"
 "Last-Translator: Redcocker\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -237,5 +237,5 @@ msgstr "キャンセル"
 #: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:82
 #: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:77
 msgid "Insert"
-msgstr "タグを挿入"
+msgstr "挿入"
 

@@ -4,7 +4,7 @@ Donate link: http://www.near-mint.com/blog/donate/
 Tags: syntaxhighlighter, code, tinymce, button, syntax, highlight
 Requires at least: 3.0
 Tested up to: 3.1.2
-Stable tag: 0.2
+Stable tag: 0.2.1
 
 "SyntaxHighlighter TinyMCE Button" provides buttons for Visual Editor and will help to type &lt;pre&gt; tag for SyntaxHighlighter.
 
@@ -79,14 +79,23 @@ Usage: To indent by tabs
 
 == Changelog ==
 
+= 0.2.1 =
+* Simplified codes related to processing tabfocus.
+* Modified Japanese translation(modified "shtb_adv_lang-ja.mo" file).
+* Translation of button labels on TinyMCE popup window has been completed.
+* layout of buttons on TinyMCE popup window has been changed.
+
 = 0.2 =
 * Added "CODE" button which allows to paste sourcecode into post or page, keeping indent by tab.
 * Enable to change language and options of previously-markuped code.
 
 = 0.1.1 =
-* fixed directory path.
+* Fixed directory path.
 
 == Upgrade Notice ==
+
+= 0.2.1 =
+This version has some low-priority changes.
 
 = 0.2 =
 This version has some new features.

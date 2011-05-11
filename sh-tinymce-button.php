@@ -3,14 +3,14 @@
 Plugin Name: SyntaxHighlighter TinyMCE Button
 Plugin URI: http://www.near-mint.com/blog/software
 Description: 'SyntaxHighlighter TinyMCE Button' provides additional buttons for Visual Editor and these buttons will help to type or edit <code>&lt;pre&gt;</code> tag for Alex Gorbatchev's <a href='http://alexgorbatchev.com/SyntaxHighlighter/'>SyntaxHighlighter</a>. This plugin is based on '<a href='http://wordpress.org/extend/plugins/codecolorer-tinymce-button/'>CodeColorer TinyMCE Button</a>'.
-Version: 0.2
+Version: 0.2.1
 Author: Redcocker
 Author URI: http://www.near-mint.com/blog/
 Text Domain: shtb_adv_lang
 Domain Path: /locale/
 */
 /*
-Date of release: Ver. 0.2 2011/5/10
+Date of release: Ver. 0.2.1 2011/5/12
 License: GPL v2
 */
 load_plugin_textdomain('shtb_adv_lang', false, 'syntaxhighlighter-tinymce-button/locale');
@@ -43,10 +43,20 @@ function shtb_adv_setting_link( $links, $file ){
 
 //Load SyntaxHighlighter TinyMCE Button
 if (get_option('shtb_adv_insert') == 1) {
-	include('sh-tinymce-button-ins/sh-tinymce-button-ins.php');
+	include_once('sh-tinymce-button-ins/sh-tinymce-button-ins.php');
 }
 if (get_option('shtb_adv_codebox') == 1) {
-	include('sh-tinymce-button-box/sh-tinymce-button-box.php');
+	include_once('sh-tinymce-button-box/sh-tinymce-button-box.php');
+}
+
+// Allow tab to indent in tinyMCE.
+if (get_option('shtb_adv_insert') == 1 || get_option('shtb_adv_codebox') == 1) {
+	add_filter('tiny_mce_before_init', 'shtb_adv_insert_allow_tab');
+}
+
+function shtb_adv_insert_allow_tab($initArray) {
+    $initArray['plugins']=preg_replace("|[,]+tabfocus|i","",$initArray['plugins']);
+    return $initArray;
 }
 
 //Setting panel

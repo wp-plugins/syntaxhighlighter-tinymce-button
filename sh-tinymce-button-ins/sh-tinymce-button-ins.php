@@ -1,7 +1,7 @@
 <?php
 /*
 SyntaxHighlighter TinyMCE Button Insert
-Version: 0.2 2011/5/10 by Redcocker
+Version: 0.2.1 2011/5/12 by Redcocker
 License: GPL v2
 http://www.near-mint.com/blog/
 */
@@ -45,13 +45,4 @@ add_filter('tiny_mce_version', 'shtb_adv_insert_change_tinymce_version');
 // init process for button control
 add_action('init', 'shtb_adv_insert_addbuttons');
 
-// Allow tab to indent in tinyMCE.
-
-add_filter('tiny_mce_before_init', 'shtb_adv_insert_allow_tab');
-
-
-function shtb_adv_insert_allow_tab($initArray) {
-    $initArray['plugins']=preg_replace("|[,]+tabfocus|i","",$initArray['plugins']);
-    return $initArray;
-}
 ?>

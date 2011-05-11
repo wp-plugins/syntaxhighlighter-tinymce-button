@@ -14,7 +14,7 @@ var SHTBADVINSERTDialog = {
 			if(ed.dom.getAttrib(e, 'class').match(/false/)){
 				f.shtb_adv_insert_linenumbers.checked = false;
 			}
-			f.insert.value="Update";
+			f.insert.value=ed.getLang('update');
 		}
 	},
 };

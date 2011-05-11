@@ -37,11 +37,11 @@
 		},
 		getInfo : function() {
 			return {
-					longname  : 'shtb_adv_codebox',
+					longname  : 'SyntaxHighlighter TinyMCE Button CodeBox',
 					author 	  : 'redcocker',
 					authorurl : 'http://www.near-mint.com/blog',
 					infourl   : 'http://www.near-mint.com/blog',
-					version   : "0.2"
+					version   : "0.2.1"
 			};
 		}
 	});

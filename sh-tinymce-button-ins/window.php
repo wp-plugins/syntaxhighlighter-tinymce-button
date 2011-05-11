@@ -15,8 +15,8 @@ global $wpdb;
 <!-- 	<meta http-equiv="Content-Type" content="<?php// bloginfo('html_type'); ?>; charset=<?php //echo get_option('blog_charset'); ?>" /> -->
 	<script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-includes/js/tinymce/tiny_mce_popup.js"></script>
 	<script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-includes/js/tinymce/utils/form_utils.js"></script>
-	<script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/tinymce.js?ver=0.2"></script>
-	<script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/re_write.js?ver=0.2"></script>
+	<script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/tinymce.js?ver=0.2.1"></script>
+	<script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/re_write.js?ver=0.2.1"></script>
 	<base target="_self" />
 </head>
 		<body id="link" onload="tinyMCEPopup.executeOnLoad('init();');document.body.style.display='';" style="display: none">
@@ -70,11 +70,11 @@ global $wpdb;
         </table>
 	<div class="mceActionPanel">
 		<div style="float: left">
-			    <input type="button" id="cancel" name="cancel" value="<?php _e("Cancel", 'shtb_adv_lang'); ?>" onclick="tinyMCEPopup.close();" />
+				<input type="submit" id="insert" name="insert" value="<?php _e("Insert", 'shtb_adv_lang'); ?>" onclick="insertSHTBADVINSERTcode();" />
 		</div>
 
 		<div style="float: right">
-				<input type="submit" id="insert" name="insert" value="<?php _e("Insert", 'shtb_adv_lang'); ?>" onclick="insertSHTBADVINSERTcode();" />
+			    <input type="button" id="cancel" name="cancel" value="<?php _e("Cancel", 'shtb_adv_lang'); ?>" onclick="tinyMCEPopup.close();" />
 		</div>
 	</div>
 </form>
