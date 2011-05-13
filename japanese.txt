@@ -13,12 +13,13 @@
 
 = 対応プラグイン =
 
-このプラグインは、次のプラグインと一緒に使用できます。
+動作の確認がとれた「SyntaxHighlighter」ベースのプラグインの一部です。
 
-・WP SyntaxHighlighter http://wordpress.org/extend/plugins/wp-syntaxhighlighter/
+・WP SyntaxHighlighter http://wordpress.org/extend/plugins/wp-syntaxhighlighter
 ・Syntax Highlighter Compress http://wordpress.org/extend/plugins/syntax-highlighter-compress/
-
-以上は、動作を確認したもののみで、ごく一部です。
+・Auto SyntaxHighlighter http://wordpress.org/extend/plugins/auto-syntaxhighlighter/
+・Syntax Highlighter and Code Colorizer for WordPress http://wordpress.org/extend/plugins/syntax-highlighter-and-code-prettifier/
+・Syntax Highlighter MT http://wordpress.org/extend/plugins/syntax-highlighter-mt/
 
 = ご注意 =
 
@@ -87,6 +88,9 @@ GPL v2
 英語: http://design-y.near-mint.com/
 
 ８．履歴
+
+2011/5/14　バージョン0.2.2 リリース
+ ※「Auto SyntaxHighlighter」との競合を避けるためフックの優先度を変更。
 
 2011/5/12　バージョン0.2.1 リリース
  ※タブフォーカス関連のソースコードを整理。

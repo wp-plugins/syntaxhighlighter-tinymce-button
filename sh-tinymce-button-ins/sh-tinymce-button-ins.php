@@ -1,7 +1,7 @@
 <?php
 /*
 SyntaxHighlighter TinyMCE Button Insert
-Version: 0.2.1 2011/5/12 by Redcocker
+Version: 0.2.2 2011/5/13 by Redcocker
 License: GPL v2
 http://www.near-mint.com/blog/
 */
@@ -10,8 +10,8 @@ function shtb_adv_insert_addbuttons() {
 	// Add only in Rich Editor mode
 	if ( get_user_option('rich_editing') == 'true') {
 	// add the button for wp25 in a new way
-		add_filter("mce_external_plugins", "add_shtb_adv_insert_tinymce_plugin", 5);
-		add_filter('mce_buttons', 'register_shtb_adv_insert_button', 5);
+		add_filter("mce_external_plugins", "add_shtb_adv_insert_tinymce_plugin");
+		add_filter('mce_buttons', 'register_shtb_adv_insert_button');
 	}
 }
 

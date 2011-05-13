@@ -26,7 +26,7 @@ This plugin is based on "[CodeColorer TinyMCE Button](http://wordpress.org/exten
 
 You can use this plugin with following code syntax highlighter.
 
-[WP SyntaxHighlighter](http://wordpress.org/extend/plugins/wp-syntaxhighlighter/ "Compliant plugin"), [Syntax Highlighter Compress](http://wordpress.org/extend/plugins/syntax-highlighter-compress/ "Compliant plugin") etc.
+[WP SyntaxHighlighter](http://wordpress.org/extend/plugins/wp-syntaxhighlighter/ "WP SyntaxHighlighter"), [Syntax Highlighter Compress](http://wordpress.org/extend/plugins/syntax-highlighter-compress/ "Syntax Highlighter Compress"), [Auto SyntaxHighlighter](http://wordpress.org/extend/plugins/auto-syntaxhighlighter/ "Auto SyntaxHighlighter"), [Syntax Highlighter and Code Colorizer for WordPress](http://wordpress.org/extend/plugins/syntax-highlighter-and-code-prettifier/ "Syntax Highlighter and Code Colorizer for WordPress"), [Syntax Highlighter MT](http://wordpress.org/extend/plugins/syntax-highlighter-mt/ "Syntax Highlighter MT") etc.
 
 = Notes =
 
@@ -79,6 +79,9 @@ Usage: To indent by tabs
 
 == Changelog ==
 
+= 0.2.2 =
+* The priority of a function hooked has been changed for "[Auto SyntaxHighlighter](http://wordpress.org/extend/plugins/auto-syntaxhighlighter/ "Auto SyntaxHighlighter")".
+
 = 0.2.1 =
 * Simplified codes related to processing tabfocus.
 * Modified Japanese translation(modified "shtb_adv_lang-ja.mo" file).
@@ -93,6 +96,9 @@ Usage: To indent by tabs
 * Fixed directory path.
 
 == Upgrade Notice ==
+
+= 0.2.2 =
+This version has a low-priority change.
 
 = 0.2.1 =
 This version has some low-priority changes.

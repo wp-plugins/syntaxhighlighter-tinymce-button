@@ -41,7 +41,7 @@
 					author 	  : 'redcocker',
 					authorurl : 'http://www.near-mint.com/blog',
 					infourl   : 'http://www.near-mint.com/blog',
-					version   : "0.2.1"
+					version   : "0.2.2"
 			};
 		}
 	});

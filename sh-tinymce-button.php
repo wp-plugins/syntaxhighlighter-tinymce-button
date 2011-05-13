@@ -3,14 +3,14 @@
 Plugin Name: SyntaxHighlighter TinyMCE Button
 Plugin URI: http://www.near-mint.com/blog/software
 Description: 'SyntaxHighlighter TinyMCE Button' provides additional buttons for Visual Editor and these buttons will help to type or edit <code>&lt;pre&gt;</code> tag for Alex Gorbatchev's <a href='http://alexgorbatchev.com/SyntaxHighlighter/'>SyntaxHighlighter</a>. This plugin is based on '<a href='http://wordpress.org/extend/plugins/codecolorer-tinymce-button/'>CodeColorer TinyMCE Button</a>'.
-Version: 0.2.1
+Version: 0.2.2
 Author: Redcocker
 Author URI: http://www.near-mint.com/blog/
 Text Domain: shtb_adv_lang
 Domain Path: /locale/
 */
 /*
-Date of release: Ver. 0.2.1 2011/5/12
+Date of release: Ver. 0.2.2 2011/5/13
 License: GPL v2
 */
 load_plugin_textdomain('shtb_adv_lang', false, 'syntaxhighlighter-tinymce-button/locale');
