@@ -93,7 +93,7 @@ Usage: To indent by tabs
 * Enable to change language and options of previously-markuped code.
 
 = 0.1.1 =
-* Fixed directory path.
+* This is the first version.
 
 == Upgrade Notice ==
 
@@ -107,4 +107,4 @@ This version has some low-priority changes.
 This version has some new features.
 
 = 0.1.1 =
-fixed directory path.
+This version is the first version.
