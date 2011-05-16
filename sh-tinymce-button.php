@@ -49,7 +49,7 @@ if (get_option('shtb_adv_codebox') == 1) {
 	include_once('sh-tinymce-button-box/sh-tinymce-button-box.php');
 }
 
-// Allow tab to indent in tinyMCE.
+// Allow tabs to indent in tinyMCE.
 if (get_option('shtb_adv_insert') == 1 || get_option('shtb_adv_codebox') == 1) {
 	add_filter('tiny_mce_before_init', 'shtb_adv_insert_allow_tab');
 }
