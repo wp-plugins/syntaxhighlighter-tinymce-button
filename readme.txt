@@ -10,6 +10,8 @@ Stable tag: 0.3
 
 == Description ==
 
+Last Updated: 2011-5-16
+
 "SyntaxHighlighter TinyMCE Button" provides additional buttons for "Visual Editor(TinyMCE)" and these buttons will help to type or edit `<pre>` tag for Alex Gorbatchev's SyntaxHighlighter.
 
 This plugin is based on "[CodeColorer TinyMCE Button](http://wordpress.org/extend/plugins/codecolorer-tinymce-button/ "homolibere developed")"
