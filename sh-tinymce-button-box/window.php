@@ -15,7 +15,7 @@ global $wpdb;
 <!-- 	<meta http-equiv="Content-Type" content="<?php// bloginfo('html_type'); ?>; charset=<?php //echo get_option('blog_charset'); ?>" /> -->
 	<script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-includes/js/tinymce/tiny_mce_popup.js"></script>
 	<script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-includes/js/tinymce/utils/form_utils.js"></script>
-	<script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/tinymce.js?ver=0.2.1"></script>
+	<script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/tinymce.js?ver=0.3"></script>
 	<base target="_self" />
 </head>
 		<body id="link" onload="tinyMCEPopup.executeOnLoad('init();');document.body.style.display='';document.getElementById('shtb_adv_codebox_code').focus();" style="display: none">
@@ -65,6 +65,14 @@ global $wpdb;
           <tr>
 			<td nowrap="nowrap" valign="top"><label for="shtb_adv_codebox_linenumbers"><?php _e("Show Line Number", 'shtb_adv_lang'); ?></label></td>
             <td><label><input name="shtb_adv_codebox_linenumbers" id='shtb_adv_codebox_linenumbers' type="checkbox" checked="checked" /></label></td>
+          </tr>
+          <tr>
+			<td nowrap="nowrap" valign="top"><label for="shtb_adv_codebox_starting_linenumber"><?php _e("Starting Line Number", 'shtb_adv_lang'); ?></label></td>
+            <td><label><input name="shtb_adv_codebox_starting_linenumber" id='shtb_adv_codebox_starting_linenumber' type="text" value="1" /></label></td>
+          </tr>
+          <tr>
+			<td nowrap="nowrap" valign="top"><label for="shtb_adv_codebox_html_script"><?php _e("html-script", 'shtb_adv_lang'); ?></label></td>
+            <td><label><input name="shtb_adv_codebox_html_script" id='shtb_adv_codebox_html_script' type="checkbox" /></label></td>
           </tr>
           <tr>
 			<td nowrap="nowrap" valign="top" colspan="2">

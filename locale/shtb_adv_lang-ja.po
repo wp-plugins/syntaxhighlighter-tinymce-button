@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SyntaxHighlighter TinyMCE Button Ver. 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-10 13:40+0900\n"
-"PO-Revision-Date: 2011-05-12 03:13+0900\n"
+"POT-Creation-Date: 2011-05-15 14:25+0900\n"
+"PO-Revision-Date: 2011-05-15 14:26+0900\n"
 "Last-Translator: Redcocker\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,19 +24,19 @@ msgstr "「SyntaxHighlighter TinyMCE Button」は、ビジュアルエディタ�
 msgid "Settings"
 msgstr "設定"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:55
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:65
 msgid "Cheatin&#8217; uh?"
 msgstr "間違いましたか？"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:65
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:75
 msgid "Buttons"
 msgstr "ボタン"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:70
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:80
 msgid "Enable/Disable buttons.<br />'Select &amp; Insert' will help you to wrap your code on the post or page in <code>&lt;pre&gt;</code> tag or to update values of previously-markuped code.<br />'CodeBox' will allow you to paste your code into the post or page, keeping indent by tabs. Your pasted code will be warpped in <code>&lt;pre&gt;</code> tag automatically.<br/ >In 'Visual Editor', 'Select &amp; Insert' will appear as 'pre' icon and 'CodeBox' will appear as 'CODE' icon."
 msgstr "２つのボタンの有効化と無効化。<br />「Select &amp; Insert」ボタンを使えば、既に投稿やページ上に記述されたソースコードを「<code>&lt;pre&gt;</code>」タグでマークアップ出来ます。<br />また、マークアップ済みのソースコードの言語やオプションの変更も出来ます。<br />「CodeBox」ボタンを使えば、タブによるインデントを維持したまま、ソースコードを投稿やページにペーストし、同時に「<code>&lt;pre&gt;</code>」タグでマークアップすることが出来ます。<br />ビジュアルエディターでは、「Select &amp; Insert」ボタンは、「pre」アイコン、「CodeBox」ボタンは、「CODE」アイコンとして表示されます。"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:75
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:85
 msgid "Save Changes"
 msgstr "設定を保存"
 
@@ -229,13 +229,23 @@ msgstr "行番号を表示"
 msgid "Your Code:"
 msgstr "ソースコード:"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:78
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:73
-msgid "Cancel"
-msgstr "キャンセル"
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:76
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:71
+msgid "Starting Line Number"
+msgstr "行番号の開始番号"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:82
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:77
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:80
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:75
+msgid "html-script"
+msgstr "html-script"
+
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:86
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:81
 msgid "Insert"
 msgstr "挿入"
+
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:90
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:85
+msgid "Cancel"
+msgstr "キャンセル"
 

@@ -4,7 +4,7 @@ Donate link: http://www.near-mint.com/blog/donate/
 Tags: syntaxhighlighter, code, tinymce, button, syntax, highlight
 Requires at least: 3.0
 Tested up to: 3.1.2
-Stable tag: 0.2.2
+Stable tag: 0.3
 
 "SyntaxHighlighter TinyMCE Button" provides buttons for Visual Editor and will help to type &lt;pre&gt; tag for SyntaxHighlighter.
 
@@ -70,6 +70,12 @@ Usage: To indent by tabs
 
 1. Just type tab in your code. But till your code is wrapped in `<pre>` tag, you can not type any tabs.
 
+== Frequently Asked Questions ==
+
+= A. I want to change language and options of previously-markuped code with "pre" button. But I can't select whole my code. =
+
+Q. You need not to select your code. It's enough to select first line of your code.
+
 == Screenshots ==
 
 1. This is added buttons on TinyMCE.
@@ -78,6 +84,9 @@ Usage: To indent by tabs
 4. This is setting panel.
 
 == Changelog ==
+
+= 0.3 =
+* Added new options to popup window at the click of "pre" and "CODE" button.
 
 = 0.2.2 =
 * The priority of a function hooked has been changed for "[Auto SyntaxHighlighter](http://wordpress.org/extend/plugins/auto-syntaxhighlighter/ "Auto SyntaxHighlighter")".
@@ -96,6 +105,9 @@ Usage: To indent by tabs
 * This is the first version.
 
 == Upgrade Notice ==
+
+= 0.3 =
+This version has some new features.
 
 = 0.2.2 =
 This version has a low-priority change.
