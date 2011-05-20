@@ -25,6 +25,7 @@ function insertSHTBADVCODEBOXcode() {
 	var langname = langname_ddb.value;
 	var linenumbers = document.getElementById('shtb_adv_codebox_linenumbers').checked;
 	var starting_linenumber = document.getElementById('shtb_adv_codebox_starting_linenumber').value;
+	var highlight_lines = document.getElementById('shtb_adv_codebox_highlighted_lines').value;
 	var html_script = document.getElementById('shtb_adv_codebox_html_script').checked;
 	var code = document.getElementById('shtb_adv_codebox_code').value.replace(/</g,'&lt;').replace(/\n/g,'<br>');
 
@@ -41,6 +42,11 @@ function insertSHTBADVCODEBOXcode() {
 	else
 		classAttribs = classAttribs;
 
+	if (highlight_lines)
+		classAttribs = classAttribs + '; highlight: [' + highlight_lines + ']';
+	else
+		classAttribs = classAttribs;
+
 	if (html_script)
 		classAttribs = classAttribs + '; html-script: true';
 	else
@@ -49,11 +55,13 @@ function insertSHTBADVCODEBOXcode() {
 	if(starting_linenumber.match(/[^0-9]+/)){
 			alert("Please input number to the 'Starting Line Number' column");
 			return;
+	} else if(highlight_lines != "" && highlight_lines.match(/[^,0-9]/)){
+			alert("Please input a linenumber or comma-separated linenumbers to the 'Highlighted Lines' column");
+			return;
 	} else if (code == '') {
 		alert("Your code is empty");
 	} else {
-	window.tinyMCE.execInstanceCommand('content', 'mceInsertContent', false, tagtext+classAttribs+'">'+code+'</pre>');
-	tinyMCEPopup.editor.execCommand('mceRepaint');
+	tinyMCEPopup.editor.execCommand('mceInsertContent', false, tagtext+classAttribs+'">'+code+'</pre>');
 	}
 	tinyMCEPopup.close();
 	return;

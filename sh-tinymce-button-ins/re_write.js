@@ -17,6 +17,9 @@ var SHTBADVINSERTDialog = {
 			if(ed.dom.getAttrib(e, 'class').match(/first-line:/)){
 				f.shtb_adv_insert_starting_linenumber.value = str[2].replace(" first-line: ", "");
 			}
+			if(ed.dom.getAttrib(e, 'class').match(/highlight:/)){
+				f.shtb_adv_insert_highlighted_lines.value = str[3].replace(" highlight: [", "").replace("]", "");
+			}
 			if(ed.dom.getAttrib(e, 'class').match(/html-script: true/)){
 				f.shtb_adv_insert_html_script.checked = true;
 			}

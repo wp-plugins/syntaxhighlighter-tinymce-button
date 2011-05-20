@@ -13,7 +13,7 @@
 				ed.windowManager.open({
 					file : url + '/window.php',
 					width : 360,
-					height : 145,
+					height : 190,
 					inline : 1
 				}, {
 					plugin_url : url // Plugin absolute URL
@@ -41,7 +41,7 @@
 					author 	  : 'redcocker',
 					authorurl : 'http://www.near-mint.com/blog',
 					infourl   : 'http://www.near-mint.com/blog',
-					version   : "0.3"
+					version   : "0.4"
 			};
 		}
 	});

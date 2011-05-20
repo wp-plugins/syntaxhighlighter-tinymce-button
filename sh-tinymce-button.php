@@ -3,14 +3,14 @@
 Plugin Name: SyntaxHighlighter TinyMCE Button
 Plugin URI: http://www.near-mint.com/blog/software
 Description: 'SyntaxHighlighter TinyMCE Button' provides additional buttons for Visual Editor and these buttons will help to type or edit <code>&lt;pre&gt;</code> tag for Alex Gorbatchev's <a href='http://alexgorbatchev.com/SyntaxHighlighter/'>SyntaxHighlighter</a>. This plugin is based on '<a href='http://wordpress.org/extend/plugins/codecolorer-tinymce-button/'>CodeColorer TinyMCE Button</a>'.
-Version: 0.3
+Version: 0.4
 Author: Redcocker
 Author URI: http://www.near-mint.com/blog/
 Text Domain: shtb_adv_lang
 Domain Path: /locale/
 */
 /*
-Date of release: Ver. 0.3 2011/5/16
+Date of release: Ver. 0.4 2011/5/21
 License: GPL v2
 */
 load_plugin_textdomain('shtb_adv_lang', false, 'syntaxhighlighter-tinymce-button/locale');
@@ -26,8 +26,10 @@ function shtb_adv_add_admin_footer(){ //show plugin info in the footer
 function shtb_adv_register_menu_item() {
 	register_setting( 'shtb_adv-settings-group', 'shtb_adv_insert'); 
 	register_setting( 'shtb_adv-settings-group', 'shtb_adv_codebox'); 
+	register_setting( 'shtb_adv-settings-group', 'shtb_adv_using_syntaxhighlighter'); 
 	add_option('shtb_adv_insert', 1);
 	add_option('shtb_adv_codebox', 1);
+	add_option('shtb_adv_using_syntaxhighlighter', 'other');
 	add_options_page('SyntaxHighlighter TinyMCE Button Options', 'SH TinyMCE Button', 10, 'syntaxhighlighter-tinymce-button-options', 'shtb_adv_options_panel');
 }
 
@@ -71,6 +73,22 @@ function shtb_adv_options_panel(){
 	<form method="post" action="options.php">
 		<table style="margin-top:20px">
 		<?php settings_fields('shtb_adv-settings-group'); ?>
+			<tr valign="top">
+				<th scope="row" align="right"><?php _e('Using with', 'shtb_adv_lang') ?></th> 
+				<td style="padding-left:10px">
+					<?php if (get_option('shtb_adv_using_syntaxhighlighter') == "wp_syntaxhighlighter") {
+						$shtb_adv_wp_syntaxhighlighter_check = 'checked=\"checked\"';
+					} elseif (get_option('shtb_adv_using_syntaxhighlighter') == "syntax_highlighter_compress") {
+						$shtb_adv_syntax_highlighter_compress_check = 'checked=\"checked\"';
+					} elseif (get_option('shtb_adv_using_syntaxhighlighter') == "other") {
+						$shtb_adv_other_syntaxhighlighter_check = 'checked=\"checked\"';
+					} else {
+						update_option('shtb_adv_using_syntaxhighlighter', 'other');
+					} ?>
+					<input type="radio" name="shtb_adv_using_syntaxhighlighter" value="wp_syntaxhighlighter" <?php echo $shtb_adv_wp_syntaxhighlighter_check; ?>/><?php _e('<a href="http://wordpress.org/extend/plugins/wp-syntaxhighlighter/" style="text-decoration: none">WP SyntaxHighlighter</a>', 'shtb_adv_lang') ?> <input type="radio" name="shtb_adv_using_syntaxhighlighter" value="syntax_highlighter_compress" <?php echo $shtb_adv_syntax_highlighter_compress_check; ?>/><?php _e('<a href="http://wordpress.org/extend/plugins/syntax-highlighter-compress/" style="text-decoration: none">Syntax Highlighter Compress</a>', 'shtb_adv_lang') ?> <input type="radio" name="shtb_adv_using_syntaxhighlighter" value="other" <?php echo $shtb_adv_other_syntaxhighlighter_check; ?>/><?php _e('Other', 'shtb_adv_lang') ?>
+					<p><small><?php _e("Select your using plugin based on Alex Gorbatchev's <a href='http://alexgorbatchev.com/SyntaxHighlighter/' style='text-decoration: none'>SyntaxHighlighter</a>.<br />If your plugin is not in the options, Select 'Other'.<br />It is the same if you use <a href='http://wordpress.org/extend/plugins/auto-syntaxhighlighter/' style='text-decoration: none'>Auto SyntaxHighlighter</a>, <a href='http://wordpress.org/extend/plugins/syntax-highlighter-and-code-prettifier/' style='text-decoration: none'>Syntax Highlighter and Code Colorizer for WordPress</a> or <a href='http://wordpress.org/extend/plugins/syntax-highlighter-mt/' style='text-decoration: none'>Syntax Highlighter MT</a>.<br />If you don't know about your using plugin, Select 'Other'. When you select 'Other', this plugin will act innocuously.", "shtb_adv_lang") ?></small></p>
+				</td>
+			</tr>
 			<tr valign="top">
 				<th scope="row" align="right"><?php _e('Buttons', 'shtb_adv_lang') ?></th>
 				<td style="padding-left:10px">

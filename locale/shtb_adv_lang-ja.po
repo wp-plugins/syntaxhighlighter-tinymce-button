@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SyntaxHighlighter TinyMCE Button Ver. 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-15 14:25+0900\n"
-"PO-Revision-Date: 2011-05-15 14:26+0900\n"
+"POT-Creation-Date: 2011-05-19 22:02+0900\n"
+"PO-Revision-Date: 2011-05-19 22:22+0900\n"
 "Last-Translator: Redcocker\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,23 +20,43 @@ msgstr ""
 msgid "'SyntaxHighlighter TinyMCE Button' provides additional buttons for Visual Editor and these buttons will help to type or edit <code>&lt;pre&gt;</code> tag for Alex Gorbatchev's <a href='http://alexgorbatchev.com/SyntaxHighlighter/'>SyntaxHighlighter</a>. This plugin is based on '<a href='http://wordpress.org/extend/plugins/codecolorer-tinymce-button/'>CodeColorer TinyMCE Button</a>'."
 msgstr "「SyntaxHighlighter TinyMCE Button」は、ビジュアルエディターに「<a href='http://alexgorbatchev.com/SyntaxHighlighter/'>SyntaxHighlighter</a>」のための<code>&lt;pre&gt;</code>タグが入力出来るボタンを追加します。このプラグインは、「<a href=\"http://wordpress.org/extend/plugins/codecolorer-tinymce-button/\">CodeColorer TinyMCE Button</a>」をベースに作成されています。"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:38
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:40
 msgid "Settings"
 msgstr "設定"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:65
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:67
 msgid "Cheatin&#8217; uh?"
 msgstr "間違いましたか？"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:75
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:77
+msgid "Using with"
+msgstr "使用中のプラグイン"
+
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:88
+msgid "<a href=\"http://wordpress.org/extend/plugins/wp-syntaxhighlighter/\" style=\"text-decoration: none\">WP SyntaxHighlighter</a>"
+msgstr "<a href=\"http://wordpress.org/extend/plugins/wp-syntaxhighlighter/\" style=\"text-decoration: none\">WP SyntaxHighlighter</a>"
+
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:88
+msgid "<a href=\"http://wordpress.org/extend/plugins/syntax-highlighter-compress/\" style=\"text-decoration: none\">Syntax Highlighter Compress</a>"
+msgstr "<a href=\"http://wordpress.org/extend/plugins/syntax-highlighter-compress/\" style=\"text-decoration: none\">Syntax Highlighter Compress</a>"
+
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:88
+msgid "Other"
+msgstr "その他"
+
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:89
+msgid "Select your using plugin based on Alex Gorbatchev's <a href='http://alexgorbatchev.com/SyntaxHighlighter/' style='text-decoration: none'>SyntaxHighlighter</a>.<br />If your plugin is not in the options, Select 'Other'.<br />It is the same if you use <a href='http://wordpress.org/extend/plugins/auto-syntaxhighlighter/' style='text-decoration: none'>Auto SyntaxHighlighter</a>, <a href='http://wordpress.org/extend/plugins/syntax-highlighter-and-code-prettifier/' style='text-decoration: none'>Syntax Highlighter and Code Colorizer for WordPress</a> or <a href='http://wordpress.org/extend/plugins/syntax-highlighter-mt/' style='text-decoration: none'>Syntax Highlighter MT</a>.<br />If you don't know about your using plugin, Select 'Other'. When you select 'Other', this plugin will act innocuously."
+msgstr "使用しているハイライト表示用プラグインを選択して下さい。（Alex Gorbatchev氏の<a href='http://alexgorbatchev.com/SyntaxHighlighter/' style='text-decoration: none'>SyntaxHighlighter</a>ベースのプラグイン。）<br />使用中のプラグインが、リストにない場合は、「その他」を選択して下さい。<br /><a href='http://wordpress.org/extend/plugins/auto-syntaxhighlighter/' style='text-decoration: none'>Auto SyntaxHighlighter</a>、<a href='http://wordpress.org/extend/plugins/syntax-highlighter-and-code-prettifier/' style='text-decoration: none'>Syntax Highlighter and Code Colorizer for WordPress</a> または <a href='http://wordpress.org/extend/plugins/syntax-highlighter-mt/' style='text-decoration: none'>Syntax Highlighter MT</a>を使用している場合も同様です。<br />使用しているプラグインの種類が分からない場合は、「その他」を選択します。<br />「その他」を選択した場合、このプラグインは、特定のプラグインに特化せず、無難な振る舞いをします。"
+
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:93
 msgid "Buttons"
 msgstr "ボタン"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:80
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:98
 msgid "Enable/Disable buttons.<br />'Select &amp; Insert' will help you to wrap your code on the post or page in <code>&lt;pre&gt;</code> tag or to update values of previously-markuped code.<br />'CodeBox' will allow you to paste your code into the post or page, keeping indent by tabs. Your pasted code will be warpped in <code>&lt;pre&gt;</code> tag automatically.<br/ >In 'Visual Editor', 'Select &amp; Insert' will appear as 'pre' icon and 'CodeBox' will appear as 'CODE' icon."
-msgstr "２つのボタンの有効化と無効化。<br />「Select &amp; Insert」ボタンを使えば、既に投稿やページ上に記述されたソースコードを「<code>&lt;pre&gt;</code>」タグでマークアップ出来ます。<br />また、マークアップ済みのソースコードの言語やオプションの変更も出来ます。<br />「CodeBox」ボタンを使えば、タブによるインデントを維持したまま、ソースコードを投稿やページにペーストし、同時に「<code>&lt;pre&gt;</code>」タグでマークアップすることが出来ます。<br />ビジュアルエディターでは、「Select &amp; Insert」ボタンは、「pre」アイコン、「CodeBox」ボタンは、「CODE」アイコンとして表示されます。"
+msgstr "ボタンの有効化と無効化。<br />「Select &amp; Insert」ボタンを使えば、既に投稿やページ上に記述されたソースコードを「<code>&lt;pre&gt;</code>」タグでマークアップ出来ます。<br />また、「pre」ボタンを使って、マークアップ済みのソースコードの言語やオプションの変更する事も可能です。<br />「CodeBox」ボタンを使えば、タブによるインデントを維持したまま、ソースコードを投稿やページにペーストし、同時に「<code>&lt;pre&gt;</code>」タグでマークアップすることが出来ます。<br />ビジュアルエディターでは、「Select &amp; Insert」ボタンは、「pre」アイコン、「CodeBox」ボタンは、「CODE」アイコンとして表示されます。"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:85
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:103
 msgid "Save Changes"
 msgstr "設定を保存"
 
@@ -225,27 +245,37 @@ msgstr "XSLT"
 msgid "Show Line Number"
 msgstr "行番号を表示"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:71
-msgid "Your Code:"
-msgstr "ソースコード:"
-
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:76
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:70
 #: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:71
 msgid "Starting Line Number"
 msgstr "行番号の開始番号"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:80
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:74
 #: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:75
+msgid "Highlighted Lines"
+msgstr "強調表示する行"
+
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:75
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:76
+msgid "Enter comma-separated linenumbers"
+msgstr "行番号をカンマ区切りで入力"
+
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:79
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:80
 msgid "html-script"
 msgstr "html-script"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:86
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:81
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:84
+msgid "Your Code:"
+msgstr "ソースコード:"
+
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:91
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:86
 msgid "Insert"
 msgstr "挿入"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:90
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:85
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:95
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:90
 msgid "Cancel"
 msgstr "キャンセル"
 

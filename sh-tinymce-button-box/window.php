@@ -15,7 +15,7 @@ global $wpdb;
 <!-- 	<meta http-equiv="Content-Type" content="<?php// bloginfo('html_type'); ?>; charset=<?php //echo get_option('blog_charset'); ?>" /> -->
 	<script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-includes/js/tinymce/tiny_mce_popup.js"></script>
 	<script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-includes/js/tinymce/utils/form_utils.js"></script>
-	<script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/tinymce.js?ver=0.3"></script>
+	<script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/tinymce.js?ver=0.4"></script>
 	<base target="_self" />
 </head>
 		<body id="link" onload="tinyMCEPopup.executeOnLoad('init();');document.body.style.display='';document.getElementById('shtb_adv_codebox_code').focus();" style="display: none">
@@ -64,11 +64,16 @@ global $wpdb;
           </tr>
           <tr>
 			<td nowrap="nowrap" valign="top"><label for="shtb_adv_codebox_linenumbers"><?php _e("Show Line Number", 'shtb_adv_lang'); ?></label></td>
-            <td><label><input name="shtb_adv_codebox_linenumbers" id='shtb_adv_codebox_linenumbers' type="checkbox" checked="checked" /></label></td>
+            <td><?php $shc_opt = get_option('shc_opt'); if ((get_option('shtb_adv_using_syntaxhighlighter') == 'wp_syntaxhighlighter' && get_option('wp_sh_gutter') == 0) || (get_option('shtb_adv_using_syntaxhighlighter') == 'syntax_highlighter_compress' && $shc_opt[shc_gutter] == 0)) {$shtb_adv_codebox_linenumbers_check = '';} else {$shtb_adv_codebox_linenumbers_check = 'checked="checked" ';}?><label><input name="shtb_adv_codebox_linenumbers" id='shtb_adv_codebox_linenumbers' type="checkbox" <?php echo $shtb_adv_codebox_linenumbers_check; ?>/></label></td>
           </tr>
           <tr>
 			<td nowrap="nowrap" valign="top"><label for="shtb_adv_codebox_starting_linenumber"><?php _e("Starting Line Number", 'shtb_adv_lang'); ?></label></td>
-            <td><label><input name="shtb_adv_codebox_starting_linenumber" id='shtb_adv_codebox_starting_linenumber' type="text" value="1" /></label></td>
+            <td><?php if (get_option('shtb_adv_using_syntaxhighlighter') == 'wp_syntaxhighlighter') {$shtb_adv_codebox_starting_linenumber_value = get_option('wp_sh_first_line');} else {$shtb_adv_codebox_starting_linenumber_value = '1';}?><label><input name="shtb_adv_codebox_starting_linenumber" id='shtb_adv_codebox_starting_linenumber' type="text" value="<?php echo $shtb_adv_codebox_starting_linenumber_value; ?>" /></label></td>
+          </tr>
+          <tr>
+			<td nowrap="nowrap" valign="top"><label for="shtb_adv_codebox_highlighted_lines"><?php _e("Highlighted Lines", 'shtb_adv_lang'); ?></label></td>
+            <td><label><input name="shtb_adv_codebox_highlighted_lines" id='shtb_adv_codebox_highlighted_lines' type="text" /></label><br /><?php _e("Enter comma-separated linenumbers", 'shtb_adv_lang'); ?></td>
+
           </tr>
           <tr>
 			<td nowrap="nowrap" valign="top"><label for="shtb_adv_codebox_html_script"><?php _e("html-script", 'shtb_adv_lang'); ?></label></td>

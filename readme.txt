@@ -4,7 +4,7 @@ Donate link: http://www.near-mint.com/blog/donate/
 Tags: syntaxhighlighter, code, tinymce, button, syntax, highlight
 Requires at least: 3.0
 Tested up to: 3.1.2
-Stable tag: 0.3
+Stable tag: 0.4
 
 "SyntaxHighlighter TinyMCE Button" provides buttons for Visual Editor and will help to type &lt;pre&gt; tag for SyntaxHighlighter.
 
@@ -12,7 +12,7 @@ Stable tag: 0.3
 
 "SyntaxHighlighter TinyMCE Button" provides additional buttons for "Visual Editor(TinyMCE)" and these buttons will help to type or edit `<pre>` tag for Alex Gorbatchev's SyntaxHighlighter.
 
-This plugin is based on "[CodeColorer TinyMCE Button](http://wordpress.org/extend/plugins/codecolorer-tinymce-button/ "homolibere developed")"
+This plugin is based on "[CodeColorer TinyMCE Button](http://wordpress.org/extend/plugins/codecolorer-tinymce-button/ "homolibere developed")".
 
 = Feature =
 
@@ -28,6 +28,8 @@ You can use this plugin with following code syntax highlighter.
 
 [WP SyntaxHighlighter](http://wordpress.org/extend/plugins/wp-syntaxhighlighter/ "WP SyntaxHighlighter"), [Syntax Highlighter Compress](http://wordpress.org/extend/plugins/syntax-highlighter-compress/ "Syntax Highlighter Compress"), [Auto SyntaxHighlighter](http://wordpress.org/extend/plugins/auto-syntaxhighlighter/ "Auto SyntaxHighlighter"), [Syntax Highlighter and Code Colorizer for WordPress](http://wordpress.org/extend/plugins/syntax-highlighter-and-code-prettifier/ "Syntax Highlighter and Code Colorizer for WordPress"), [Syntax Highlighter MT](http://wordpress.org/extend/plugins/syntax-highlighter-mt/ "Syntax Highlighter MT") etc.
 
+This plugin has operating modes optimized for "WP SyntaxHighlighter" and "Syntax Highlighter Compress".
+
 = Notes =
 
 This plugin is designed to work with a plugin based on Alex Gorbatchev's SyntaxHighlighter Ver, 2.0 or higher.
@@ -39,6 +41,8 @@ You can not use this plugin with some 'SyntaxHighlighter'-based plugins which do
 1. Upload plugin folder to the `/wp-content/plugins/` directory.
 1. Activate the plugin through the "Plugins" menu in WordPress.
 1. If you need, go to "Settings" -> "SH TinyMCE Button" to configure.
+
+If you use "[WP SyntaxHighlighter](http://wordpress.org/extend/plugins/wp-syntaxhighlighter/ "WP SyntaxHighlighter")" or "[Syntax Highlighter Compress](http://wordpress.org/extend/plugins/syntax-highlighter-compress/ "Syntax Highlighter Compress")", you should configure this plugin.
 
 = Usage =
 
@@ -72,9 +76,21 @@ Usage: To indent by tabs
 
 == Frequently Asked Questions ==
 
-= A. I want to change language and options of previously-markuped code with "pre" button. But I can't select whole my code. =
+= Q. I want to change language and options of previously-markuped code with "pre" button. But I can't select whole my code. =
 
-Q. You need not to select your code. It's enough to select first line of your code.
+A. You need not to select whole your code. It's enough to select first line of your code.
+
+= Q. After the update to new version, Buttons do not work correctly. =
+
+A. Old javascript files may be cached. Please clear your browser's cache or delete cached javascript files.
+
+= Q. I get errors trying to check "html-scripts box". =
+
+A. "html-scripts" option requires "XML" brush. However, some 'SyntaxHighlighter'-based plugins do not load "XML" brush by default. If you want this optiin, you should consider the use of "[WP SyntaxHighlighter](http://wordpress.org/extend/plugins/wp-syntaxhighlighter/ "WP SyntaxHighlighter")".
+
+= Q. "pre" button does not work in fullscreen mode. =
+
+A. In fullscreen mode, You can use "pre" button only for updating language and options.
 
 == Screenshots ==
 
@@ -84,6 +100,11 @@ Q. You need not to select your code. It's enough to select first line of your co
 4. This is setting panel.
 
 == Changelog ==
+
+= 0.4 =
+* Added operating modes optimized for "[WP SyntaxHighlighter](http://wordpress.org/extend/plugins/wp-syntaxhighlighter/ "WP SyntaxHighlighter")" and "[Syntax Highlighter Compress](http://wordpress.org/extend/plugins/syntax-highlighter-compress/ "Syntax Highlighter Compress")".
+* Added new options to popup window at the click of "pre" and "CODE" button.
+* Fix a bug: "CODE" button does not work in fullscreen mode.
 
 = 0.3 =
 * Added new options to popup window at the click of "pre" and "CODE" button.
@@ -105,6 +126,9 @@ Q. You need not to select your code. It's enough to select first line of your co
 * This is the first version.
 
 == Upgrade Notice ==
+
+= 0.4 =
+This version has some new features and bug fix.
 
 = 0.3 =
 This version has some new features.

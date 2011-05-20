@@ -21,6 +21,8 @@
 ・Syntax Highlighter and Code Colorizer for WordPress http://wordpress.org/extend/plugins/syntax-highlighter-and-code-prettifier/
 ・Syntax Highlighter MT http://wordpress.org/extend/plugins/syntax-highlighter-mt/
 
+※"WP SyntaxHighlighter"と"Syntax Highlighter Compress"に最適化された動作モードを設定画面で選択できます。
+
 = ご注意 =
 
 このプラグインは、Alex Gorbatchev氏が開発した「SyntaxHighlighter」ライブラリーのバージョン2.0以上に対応しています。
@@ -39,6 +41,7 @@ SyntaxHighlighter: http://alexgorbatchev.com/SyntaxHighlighter/
 ・ダウンロードしたファイルを解凍し、「sh-tinymce-button」フォルダごと、WordPressのプラグインディレクトリ（wp-content/plugins/）にアップロードします。
 ・WordPressの管理画面の「プラグイン」で、このプラグインを有効化します。
 ・WordPressの管理画面の「設定」にある「SH TinyMCE Button」という項目で設定を行います。
+※「WP SyntaxHighlighter」または「Syntax Highlighter Compress」を使用している場合は、設定画面で設定を行ってください。
 
 ３．アップデート
 ・WordPressの管理画面で、「SyntaxHighlighter TinyMCE Button」を停止する。
@@ -80,7 +83,20 @@ SyntaxHighlighter: http://alexgorbatchev.com/SyntaxHighlighter/
 
 Q.「pre」ボタンを使って言語とオプションを変更するため、コードを選択、反転表示しようとしましたが、コード全体が選択出来ません。
 
-A. 全体を選択する必要はありません。コードの最初の１行が選択出来れば十分です。
+A.全体を選択する必要はありません。コードの最初の１行が選択出来れば十分です。
+
+Q.バージョンアップしたところ、ボタンが正常に動作しなくなりました。
+
+A.古いバージョンのJavaスクリプトファイルがキャッシュされている可能性があります。ブラウザのキャッシュを消去するか、キャッシュが保存されているフォルダから、古いJavaスクリプを削除して下さい。
+
+Q.「html-scripts」オプションを使用したところ、エラーになりました。
+
+A.「html-scripts」オプションは、「XML」ブラシに依存していますが、Alex Gorbatchev氏の「SyntaxHighlighter」をベースにしたプラグインの中には、デフォルトで「XML」ブラシを読み込んでいないものも存在します。このオプションを使用する必要がある場合は、「html-scripts」対応した「WP SyntaxHighlighter」の使用も検討して下さい。
+WP SyntaxHighlighter http://wordpress.org/extend/plugins/wp-syntaxhighlighter/
+
+Q.フルスクリーンモードで「pre」が動作しません。
+
+A.フルスクリーンモードでは、「pre」ボタンは、言語とオプションの更新のためだけに使用出来ます。ソースコードの挿入は「CODE」ボタンで行って下さい。
 
 ７．ライセンス
 
@@ -94,6 +110,11 @@ GPL v2
 英語: http://design-y.near-mint.com/
 
 ９．履歴
+
+2011/5/21　バージョン0.4 リリース
+ ※「WP SyntaxHighlighter」と「Syntax Highlighter Compress」に最適化された動作モードを追加。
+ ※ポップアップウィンドウに新しいオプションを追加。
+ ※フルスクリーンモードで「CODE」ボタンが動作しない問題を修正。
 
 2011/5/16　バージョン0.3 リリース
  ※ポップアップウィンドウに新しいオプションを追加。
