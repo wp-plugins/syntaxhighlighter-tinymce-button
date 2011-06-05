@@ -20,8 +20,11 @@
 ・Auto SyntaxHighlighter http://wordpress.org/extend/plugins/auto-syntaxhighlighter/
 ・Syntax Highlighter and Code Colorizer for WordPress http://wordpress.org/extend/plugins/syntax-highlighter-and-code-prettifier/
 ・Syntax Highlighter MT http://wordpress.org/extend/plugins/syntax-highlighter-mt/
+・SyntaxHighlighterPro http://wordpress.org/extend/plugins/syntaxhighlighterpro/
+・SyntaxHighlighter Evolved http://wordpress.org/extend/plugins/syntaxhighlighter/
 
-※"WP SyntaxHighlighter"と"Syntax Highlighter Compress"に最適化された動作モードを設定画面で選択できます。
+※ "SyntaxHighlighter Evolved"を使用する場合は、"SyntaxHighlighter Evolved"の設定画面で「すべてのブラシを読み込む」を有効にする必要があります。
+※ "WP SyntaxHighlighter"と"Syntax Highlighter Compress"に最適化された動作モードを設定画面で選択できます。
 
 = ご注意 =
 
@@ -111,26 +114,29 @@ GPL v2
 
 ９．履歴
 
+2011/6/5　バージョン0.4.1 リリース
+ ※ 「WP SyntaxHighlighter バージョン1.2.3以上」に最適化。
+
 2011/5/21　バージョン0.4 リリース
- ※「WP SyntaxHighlighter」と「Syntax Highlighter Compress」に最適化された動作モードを追加。
- ※ポップアップウィンドウに新しいオプションを追加。
- ※フルスクリーンモードで「CODE」ボタンが動作しない問題を修正。
+ ※ 「WP SyntaxHighlighter」と「Syntax Highlighter Compress」に最適化された動作モードを追加。
+ ※ ポップアップウィンドウに新しいオプションを追加。
+ ※ フルスクリーンモードで「CODE」ボタンが動作しない問題を修正。
 
 2011/5/16　バージョン0.3 リリース
- ※ポップアップウィンドウに新しいオプションを追加。
+ ※ ポップアップウィンドウに新しいオプションを追加。
 
 2011/5/13　バージョン0.2.2 リリース
- ※「Auto SyntaxHighlighter」との競合を避けるためフックの優先度を変更。
+ ※ 「Auto SyntaxHighlighter」との競合を避けるためフックの優先度を変更。
 
 2011/5/12　バージョン0.2.1 リリース
- ※タブフォーカス関連のソースコードを整理。
- ※日本語の訳文を変更。（shtb_adv_lang-ja.moを修正。）
- ※ポップアップウィンドウ内に表示されるボタンラベルの翻訳を完成。
- ※ポップアップウィンドウ内に表示されるボタンの配置を変更。
+ ※ タブフォーカス関連のソースコードを整理。
+ ※ 日本語の訳文を変更。（shtb_adv_lang-ja.moを修正。）
+ ※ ポップアップウィンドウ内に表示されるボタンラベルの翻訳を完成。
+ ※ ポップアップウィンドウ内に表示されるボタンの配置を変更。
 
 2011/5/10　バージョン0.2 リリース
- ※タブを維持したままソースコードをペースト出来る「CODE」ボタンを追加。
- ※マークアップ済みソースコードの言語やオプションの変更が可能になった。
+ ※ タブを維持したままソースコードをペースト出来る「CODE」ボタンを追加。
+ ※ マークアップ済みソースコードの言語やオプションの変更が可能になった。
 
 2011/5/1　バージョン0.1.1 リリース
 

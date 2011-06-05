@@ -3,8 +3,8 @@ Contributors: redcocker, homolibere
 Donate link: http://www.near-mint.com/blog/donate/
 Tags: syntaxhighlighter, code, tinymce, button, syntax, highlight
 Requires at least: 3.0
-Tested up to: 3.1.2
-Stable tag: 0.4
+Tested up to: 3.1.3
+Stable tag: 0.4.1
 
 "SyntaxHighlighter TinyMCE Button" provides buttons for Visual Editor and will help to type &lt;pre&gt; tag for SyntaxHighlighter.
 
@@ -12,7 +12,7 @@ Stable tag: 0.4
 
 "SyntaxHighlighter TinyMCE Button" provides additional buttons for "Visual Editor(TinyMCE)" and these buttons will help to type or edit `<pre>` tag for Alex Gorbatchev's SyntaxHighlighter.
 
-This plugin is based on "[CodeColorer TinyMCE Button](http://wordpress.org/extend/plugins/codecolorer-tinymce-button/ "homolibere developed")".
+This plugin is based on "[CodeColorer TinyMCE Button](http://wordpress.org/extend/plugins/codecolorer-tinymce-button/ "homolibere developed")" and becomes more feature-rich.
 
 = Feature =
 
@@ -26,7 +26,15 @@ This plugin is based on "[CodeColorer TinyMCE Button](http://wordpress.org/exten
 
 You can use this plugin with following code syntax highlighter.
 
-[WP SyntaxHighlighter](http://wordpress.org/extend/plugins/wp-syntaxhighlighter/ "WP SyntaxHighlighter"), [Syntax Highlighter Compress](http://wordpress.org/extend/plugins/syntax-highlighter-compress/ "Syntax Highlighter Compress"), [Auto SyntaxHighlighter](http://wordpress.org/extend/plugins/auto-syntaxhighlighter/ "Auto SyntaxHighlighter"), [Syntax Highlighter and Code Colorizer for WordPress](http://wordpress.org/extend/plugins/syntax-highlighter-and-code-prettifier/ "Syntax Highlighter and Code Colorizer for WordPress"), [Syntax Highlighter MT](http://wordpress.org/extend/plugins/syntax-highlighter-mt/ "Syntax Highlighter MT") etc.
+* [WP SyntaxHighlighter](http://wordpress.org/extend/plugins/wp-syntaxhighlighter/ "WP SyntaxHighlighter")
+* [Syntax Highlighter Compress](http://wordpress.org/extend/plugins/syntax-highlighter-compress/ "Syntax Highlighter Compress")
+* [Auto SyntaxHighlighter](http://wordpress.org/extend/plugins/auto-syntaxhighlighter/ "Auto SyntaxHighlighter")
+* [Syntax Highlighter and Code Colorizer for WordPress](http://wordpress.org/extend/plugins/syntax-highlighter-and-code-prettifier/ "Syntax Highlighter and Code Colorizer for WordPress")
+* [Syntax Highlighter MT](http://wordpress.org/extend/plugins/syntax-highlighter-mt/ "Syntax Highlighter MT")
+* [SyntaxHighlighterPro](http://wordpress.org/extend/plugins/syntaxhighlighterpro/ "SyntaxHighlighterPro")
+* [SyntaxHighlighter Evolved](http://wordpress.org/extend/plugins/syntaxhighlighter/ "SyntaxHighlighter Evolved") etc.
+
+When using with "SyntaxHighlighter Evolved", "Load All Brushes" must be enabled on the "SyntaxHighlighter Evolved"'s setting panel.
 
 This plugin has operating modes optimized for "WP SyntaxHighlighter" and "Syntax Highlighter Compress".
 
@@ -101,6 +109,9 @@ A. In fullscreen mode, You can use "pre" button only for updating language and o
 
 == Changelog ==
 
+= 0.4.1 =
+* Optimized for "[WP SyntaxHighlighter ver. 1.2.3 or higher](http://wordpress.org/extend/plugins/wp-syntaxhighlighter/ "WP SyntaxHighlighter ver. 1.2.3 or higher")"
+
 = 0.4 =
 * Added operating modes optimized for "[WP SyntaxHighlighter](http://wordpress.org/extend/plugins/wp-syntaxhighlighter/ "WP SyntaxHighlighter")" and "[Syntax Highlighter Compress](http://wordpress.org/extend/plugins/syntax-highlighter-compress/ "Syntax Highlighter Compress")".
 * Added new options to popup window at the click of "pre" and "CODE" button.
@@ -126,6 +137,9 @@ A. In fullscreen mode, You can use "pre" button only for updating language and o
 * This is the first version.
 
 == Upgrade Notice ==
+
+= 0.4.1 =
+This version has a low-priority change.
 
 = 0.4 =
 This version has some new features and bug fix.
