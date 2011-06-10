@@ -32,6 +32,7 @@ You can use this plugin with following code syntax highlighter.
 * [Syntax Highlighter and Code Colorizer for WordPress](http://wordpress.org/extend/plugins/syntax-highlighter-and-code-prettifier/ "Syntax Highlighter and Code Colorizer for WordPress")
 * [Syntax Highlighter MT](http://wordpress.org/extend/plugins/syntax-highlighter-mt/ "Syntax Highlighter MT")
 * [SyntaxHighlighterPro](http://wordpress.org/extend/plugins/syntaxhighlighterpro/ "SyntaxHighlighterPro")
+* [Easy Google Syntax Highlighter](http://wordpress.org/extend/plugins/easy-google-syntax-highlighter/ "Easy Google Syntax Highlighter")
 * [SyntaxHighlighter Evolved](http://wordpress.org/extend/plugins/syntaxhighlighter/ "SyntaxHighlighter Evolved") etc.
 
 When using with "SyntaxHighlighter Evolved", "Load All Brushes" option must be enabled on the "SyntaxHighlighter" setting panel.
