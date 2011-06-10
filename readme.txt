@@ -4,7 +4,7 @@ Donate link: http://www.near-mint.com/blog/donate/
 Tags: syntaxhighlighter, code, tinymce, button, syntax, highlight
 Requires at least: 3.0
 Tested up to: 3.1.3
-Stable tag: 0.5
+Stable tag: trunk
 
 "SyntaxHighlighter TinyMCE Button" provides buttons for Visual Editor and will help to type &lt;pre&gt; tag for SyntaxHighlighter.
 
