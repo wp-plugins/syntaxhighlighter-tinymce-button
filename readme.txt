@@ -46,6 +46,8 @@ You can not use this plugin with some 'SyntaxHighlighter'-based plugins which do
 
 == Installation ==
 
+= Installation =
+
 1. Upload plugin folder to the `/wp-content/plugins/` directory.
 1. Activate the plugin through the "Plugins" menu in WordPress.
 1. If you need, go to "Settings" -> "SH TinyMCE Button" to configure.
