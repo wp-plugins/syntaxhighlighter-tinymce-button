@@ -21,6 +21,7 @@
 ・Syntax Highlighter and Code Colorizer for WordPress http://wordpress.org/extend/plugins/syntax-highlighter-and-code-prettifier/
 ・Syntax Highlighter MT http://wordpress.org/extend/plugins/syntax-highlighter-mt/
 ・SyntaxHighlighterPro http://wordpress.org/extend/plugins/syntaxhighlighterpro/
+・Easy Google Syntax Highlighter http://wordpress.org/extend/plugins/easy-google-syntax-highlighter/
 ・SyntaxHighlighter Evolved http://wordpress.org/extend/plugins/syntaxhighlighter/
 
 ※ "SyntaxHighlighter Evolved"を使用する場合は、"SyntaxHighlighter Evolved"の設定画面で「すべてのブラシを読み込む」を有効にする必要があります。
