@@ -1,12 +1,12 @@
 <?php
-$wpconfig = realpath("../../../../wp-config.php");
-if (!file_exists($wpconfig))  {
-	echo "Could not found wp-config.php. Error in path :\n\n".$wpconfig ;	
-	die;	
-}
-require_once($wpconfig);
-require_once(ABSPATH.'/wp-admin/admin.php');
+//Load bootstrap file
+require_once( dirname( dirname(__FILE__) ) .'/sh-tinymce-button-bootstrap.php');
+
 global $wpdb;
+
+//Check for rights
+if ( !is_user_logged_in() || !current_user_can('edit_posts') ) 
+	wp_die(__("You are not allowed to access this file."));
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -15,10 +15,18 @@ global $wpdb;
 <!-- 	<meta http-equiv="Content-Type" content="<?php// bloginfo('html_type'); ?>; charset=<?php //echo get_option('blog_charset'); ?>" /> -->
 <script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-includes/js/tinymce/tiny_mce_popup.js"></script>
 <script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-includes/js/tinymce/utils/form_utils.js"></script>
-<script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/tinymce.js?ver=0.4.1"></script>
+<script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/tinymce.js?ver=0.5"></script>
 <base target="_self" />
 </head>
 <body id="link" onload="tinyMCEPopup.executeOnLoad('init();');document.body.style.display='';document.getElementById('shtb_adv_codebox_code').focus();" style="display: none">
+
+<?php
+$syntaxhighlighter_settings = get_option('syntaxhighlighter_settings');
+if (get_option('shtb_adv_using_syntaxhighlighter') == 'syntaxhighlighter_evolved' && function_exists('SyntaxHighlighter') && $syntaxhighlighter_settings['loadallbrushes'] == 0) {
+	_e('<div style="margin-bottom:5px">WARNING!: "Load All Brushes" option must be enabled on the "SyntaxHighlighter" setting panel.</div>', 'shtb_adv_lang');
+}
+?>
+
 <!-- <form onsubmit="insertLink();return false;" action="#"> -->
 	<form name="shtb_adv_codebox" action="#">
 		<table border="0" cellpadding="4" cellspacing="0">
@@ -86,11 +94,11 @@ global $wpdb;
 			</tr>
 			<tr>
 				<td nowrap="nowrap" valign="top"><label for="shtb_adv_codebox_linenumbers"><?php _e("Show Line Number", 'shtb_adv_lang'); ?></label></td>
-				<td><?php $shc_opt = get_option('shc_opt'); if ((get_option('shtb_adv_using_syntaxhighlighter') == 'wp_syntaxhighlighter' && function_exists('wp_sh_register_menu_item') && get_option('wp_sh_gutter') == 0) || (get_option('shtb_adv_using_syntaxhighlighter') == 'syntax_highlighter_compress' && function_exists('shc_install') && $shc_opt[shc_gutter] == 0)) {$shtb_adv_codebox_linenumbers_check = '';} else {$shtb_adv_codebox_linenumbers_check = 'checked="checked" ';}?><label><input name="shtb_adv_codebox_linenumbers" id='shtb_adv_codebox_linenumbers' type="checkbox" <?php echo $shtb_adv_codebox_linenumbers_check; ?>/></label></td>
+				<td><?php $shc_opt = get_option('shc_opt'); $syntaxhighlighter_settings = get_option('syntaxhighlighter_settings'); if ((get_option('shtb_adv_using_syntaxhighlighter') == 'wp_syntaxhighlighter' && function_exists('wp_sh_register_menu_item') && get_option('wp_sh_gutter') == 0) || (get_option('shtb_adv_using_syntaxhighlighter') == 'syntax_highlighter_compress' && function_exists('shc_install') && $shc_opt[shc_gutter] == 0) || (get_option('shtb_adv_using_syntaxhighlighter') == 'syntaxhighlighter_evolved' && function_exists('SyntaxHighlighter') && $syntaxhighlighter_settings['gutter'] == 0)) {$shtb_adv_codebox_linenumbers_check = '';} else {$shtb_adv_codebox_linenumbers_check = 'checked="checked" ';}?><label><input name="shtb_adv_codebox_linenumbers" id='shtb_adv_codebox_linenumbers' type="checkbox" <?php echo $shtb_adv_codebox_linenumbers_check; ?>/></label></td>
 			</tr>
 			<tr>
 				<td nowrap="nowrap" valign="top"><label for="shtb_adv_codebox_starting_linenumber"><?php _e("Starting Line Number", 'shtb_adv_lang'); ?></label></td>
-				<td><?php if (get_option('shtb_adv_using_syntaxhighlighter') == 'wp_syntaxhighlighter' && function_exists('wp_sh_register_menu_item') && get_option('wp_sh_gutter') == 1) {$shtb_adv_codebox_starting_linenumber_value = get_option('wp_sh_first_line');} else {$shtb_adv_codebox_starting_linenumber_value = '1';}?><label><input name="shtb_adv_codebox_starting_linenumber" id='shtb_adv_codebox_starting_linenumber' type="text" value="<?php echo $shtb_adv_codebox_starting_linenumber_value; ?>" /></label></td>
+				<td><?php $syntaxhighlighter_settings = get_option('syntaxhighlighter_settings'); if (get_option('shtb_adv_using_syntaxhighlighter') == 'wp_syntaxhighlighter' && function_exists('wp_sh_register_menu_item') && get_option('wp_sh_gutter') == 1) {$shtb_adv_codebox_starting_linenumber_value = get_option('wp_sh_first_line');} else if (get_option('shtb_adv_using_syntaxhighlighter') == 'syntaxhighlighter_evolved' && function_exists('SyntaxHighlighter') && $syntaxhighlighter_settings['gutter'] == 1) {$shtb_adv_codebox_starting_linenumber_value = $syntaxhighlighter_settings['firstline'];} else {$shtb_adv_codebox_starting_linenumber_value = '1';}?><label><input name="shtb_adv_codebox_starting_linenumber" id='shtb_adv_codebox_starting_linenumber' type="text" value="<?php echo $shtb_adv_codebox_starting_linenumber_value; ?>" /></label></td>
 			</tr>
 			<tr>
 				<td nowrap="nowrap" valign="top"><label for="shtb_adv_codebox_highlighted_lines"><?php _e("Highlighted Lines", 'shtb_adv_lang'); ?></label></td>
@@ -103,7 +111,7 @@ global $wpdb;
 			<tr>
 				<td nowrap="nowrap" valign="top" colspan="2">
 				<label for="shtb_adv_codebox_code"><?php _e("Your Code:", 'shtb_adv_lang'); ?></label><br />
-				<textarea id="shtb_adv_codebox_code" rows="18" name="shtb_adv_codebox_code" style="width: 340px; height: 225px" /></textarea>
+				<textarea id="shtb_adv_codebox_code" name="shtb_adv_codebox_code" style="width: 340px; height: 225px" /></textarea>
 				</td>
 			</tr>
 		</table>

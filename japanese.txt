@@ -24,7 +24,7 @@
 ・SyntaxHighlighter Evolved http://wordpress.org/extend/plugins/syntaxhighlighter/
 
 ※ "SyntaxHighlighter Evolved"を使用する場合は、"SyntaxHighlighter Evolved"の設定画面で「すべてのブラシを読み込む」を有効にする必要があります。
-※ "WP SyntaxHighlighter"と"Syntax Highlighter Compress"に最適化された動作モードを設定画面で選択できます。
+※ "WP SyntaxHighlighter"と"Syntax Highlighter Compress"、"SyntaxHighlighter Evolved"に最適化された動作モードを設定画面で選択できます。
 
 = ご注意 =
 
@@ -44,7 +44,8 @@ SyntaxHighlighter: http://alexgorbatchev.com/SyntaxHighlighter/
 ・ダウンロードしたファイルを解凍し、「sh-tinymce-button」フォルダごと、WordPressのプラグインディレクトリ（wp-content/plugins/）にアップロードします。
 ・WordPressの管理画面の「プラグイン」で、このプラグインを有効化します。
 ・WordPressの管理画面の「設定」にある「SH TinyMCE Button」という項目で設定を行います。
-※「WP SyntaxHighlighter」または「Syntax Highlighter Compress」を使用している場合は、設定画面で設定を行ってください。
+※ボタンが表示されない場合は、設定画面で「セーフモード」を有効にして下さい。
+※「WP SyntaxHighlighter」または「Syntax Highlighter Compress」、「SyntaxHighlighter Evolved」を使用している場合は、設定画面で設定を行ってください。
 
 ３．アップデート
 ・WordPressの管理画面で、「SyntaxHighlighter TinyMCE Button」を停止する。
@@ -113,6 +114,12 @@ GPL v2
 英語: http://design-y.near-mint.com/
 
 ９．履歴
+
+2011/6/10　バージョン0.5 リリース
+ ※ ボタンを表示する行を選択するオプションを追加。
+ ※ 「SyntaxHighlighter Evolved」に最適化された動作モードを追加。
+ ※ 「セーフモード」を搭載。
+ ※ ボタンの表示に関する処理を変更。
 
 2011/6/5　バージョン0.4.1 リリース
  ※ 「WP SyntaxHighlighter バージョン1.2.3以上」に最適化。

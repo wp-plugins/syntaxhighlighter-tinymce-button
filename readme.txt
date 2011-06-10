@@ -4,7 +4,7 @@ Donate link: http://www.near-mint.com/blog/donate/
 Tags: syntaxhighlighter, code, tinymce, button, syntax, highlight
 Requires at least: 3.0
 Tested up to: 3.1.3
-Stable tag: 0.4.1
+Stable tag: 0.5
 
 "SyntaxHighlighter TinyMCE Button" provides buttons for Visual Editor and will help to type &lt;pre&gt; tag for SyntaxHighlighter.
 
@@ -34,7 +34,7 @@ You can use this plugin with following code syntax highlighter.
 * [SyntaxHighlighterPro](http://wordpress.org/extend/plugins/syntaxhighlighterpro/ "SyntaxHighlighterPro")
 * [SyntaxHighlighter Evolved](http://wordpress.org/extend/plugins/syntaxhighlighter/ "SyntaxHighlighter Evolved") etc.
 
-When using with "SyntaxHighlighter Evolved", "Load All Brushes" must be enabled on the "SyntaxHighlighter Evolved"'s setting panel.
+When using with "SyntaxHighlighter Evolved", "Load All Brushes" option must be enabled on the "SyntaxHighlighter" setting panel.
 
 This plugin has operating modes optimized for "WP SyntaxHighlighter" and "Syntax Highlighter Compress".
 
@@ -50,7 +50,9 @@ You can not use this plugin with some 'SyntaxHighlighter'-based plugins which do
 1. Activate the plugin through the "Plugins" menu in WordPress.
 1. If you need, go to "Settings" -> "SH TinyMCE Button" to configure.
 
-If you use "[WP SyntaxHighlighter](http://wordpress.org/extend/plugins/wp-syntaxhighlighter/ "WP SyntaxHighlighter")" or "[Syntax Highlighter Compress](http://wordpress.org/extend/plugins/syntax-highlighter-compress/ "Syntax Highlighter Compress")", you should configure this plugin.
+When the buttons are unshown, try to activate "Secondary mode" on the setting panel.
+
+If you use "[WP SyntaxHighlighter](http://wordpress.org/extend/plugins/wp-syntaxhighlighter/ "WP SyntaxHighlighter")", "[Syntax Highlighter Compress](http://wordpress.org/extend/plugins/syntax-highlighter-compress/ "Syntax Highlighter Compress")" or "[SyntaxHighlighter Evolved](http://wordpress.org/extend/plugins/syntaxhighlighter/ "SyntaxHighlighter Evolved")", you should configure "Using with" option on the setting panel.
 
 = Usage =
 
@@ -109,8 +111,14 @@ A. In fullscreen mode, You can use "pre" button only for updating language and o
 
 == Changelog ==
 
+= 0.5 =
+* Can choose TinyMCE toolbar row which buttons will be placed in.
+* New operating modes optimized for "[SyntaxHighlighter Evolved](http://wordpress.org/extend/plugins/syntaxhighlighter/ "SyntaxHighlighter Evolved")".
+* Added "Secondary mode" for troubleshoot.
+* Changed processing code for creating buttons.
+
 = 0.4.1 =
-* Optimized for "[WP SyntaxHighlighter ver. 1.2.3 or higher](http://wordpress.org/extend/plugins/wp-syntaxhighlighter/ "WP SyntaxHighlighter ver. 1.2.3 or higher")"
+* Optimized for "[WP SyntaxHighlighter ver. 1.2.3 or higher](http://wordpress.org/extend/plugins/wp-syntaxhighlighter/ "WP SyntaxHighlighter ver. 1.2.3 or higher")".
 
 = 0.4 =
 * Added operating modes optimized for "[WP SyntaxHighlighter](http://wordpress.org/extend/plugins/wp-syntaxhighlighter/ "WP SyntaxHighlighter")" and "[Syntax Highlighter Compress](http://wordpress.org/extend/plugins/syntax-highlighter-compress/ "Syntax Highlighter Compress")".
@@ -137,6 +145,9 @@ A. In fullscreen mode, You can use "pre" button only for updating language and o
 * This is the first version.
 
 == Upgrade Notice ==
+
+= 0.5 =
+This version has some new features and changes.
 
 = 0.4.1 =
 This version has a low-priority change.

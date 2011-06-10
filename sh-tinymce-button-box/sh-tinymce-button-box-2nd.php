@@ -1,17 +1,19 @@
 <?php
 /*
-SyntaxHighlighter TinyMCE Button Codebox
-Version: 0.5 2011/6/10 by Redcocker
-License: GPL v2
-http://www.near-mint.com/blog/
+For secondary mode
 */
 
 class shtb_adv_add_codebox_button {
 
 	function shtb_adv_add_codebox_button() {
-		// Modify the version when tinyMCE plugins are changed.
-		add_filter('tiny_mce_version', array(&$this, 'shtb_adv_codebox_change_tinymce_version'));
-		// init process for button control
+		add_action('plugins_loaded', array(&$this, 'shtb_adv_add_codebox_initalization'));
+	}
+
+	function shtb_adv_add_codebox_sink_hooks(){
+		add_filter('mce_plugins', array(&$this, 'mce_plugins'));
+	}
+
+	function shtb_adv_add_codebox_initalization() {
 		add_action('init', array(&$this, 'shtb_adv_codebox_addbuttons'));
 	}
 
@@ -44,12 +46,9 @@ class shtb_adv_add_codebox_button {
 		return $plugin_array;
 	}
 
-	function shtb_adv_codebox_change_tinymce_version($version) {
-		return ++$version;
-	}
-
 }
 
-$tinymce_button = new shtb_adv_add_codebox_button();
+$shtb_adv_codebox = new shtb_adv_add_codebox_button();
+add_action('init',array(&$shtb_adv_codebox, 'shtb_adv_add_codebox_button'));
 
 ?>

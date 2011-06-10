@@ -1,18 +1,21 @@
 <?php
 /*
-SyntaxHighlighter TinyMCE Button Insert
-Version: 0.5 2011/6/10 by Redcocker
-License: GPL v2
-http://www.near-mint.com/blog/
+For secondary mode
 */
 
 class shtb_adv_add_insert_button {
 
 	function shtb_adv_add_insert_button() {
-		// Modify the version when tinyMCE plugins are changed.
-		add_filter('tiny_mce_version', array(&$this, 'shtb_adv_insert_change_tinymce_version'));
-		// init process for button control
-		add_action('init', array(&$this, 'shtb_adv_insert_addbuttons'));	}
+		add_action('plugins_loaded', array(&$this, 'shtb_adv_add_insert_initalization'));
+	}
+
+	function shtb_adv_add_insert_sink_hooks(){
+		add_filter('mce_plugins', array(&$this, 'mce_plugins'));
+	}
+
+	function shtb_adv_add_insert_initalization() {
+		add_action('init', array(&$this, 'shtb_adv_insert_addbuttons'));
+	}
 
 	function shtb_adv_insert_addbuttons() {
 		// Don't bother doing this stuff if the current user lacks permissions
@@ -44,12 +47,9 @@ class shtb_adv_add_insert_button {
 		return $plugin_array;
 	}
 
-	function shtb_adv_insert_change_tinymce_version($version) {
-		return ++$version;
-	}
-
 }
 
-$tinymce_button = new shtb_adv_add_insert_button();
+$shtb_adv_insert = new shtb_adv_add_insert_button();
+add_action('init',array(&$shtb_adv_insert, 'shtb_adv_add_insert_button'));
 
 ?>
