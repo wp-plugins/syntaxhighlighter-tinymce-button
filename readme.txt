@@ -4,7 +4,7 @@ Donate link: http://www.near-mint.com/blog/donate/
 Tags: syntaxhighlighter, code, tinymce, button, syntax, highlight
 Requires at least: 3.0
 Tested up to: 3.1.3
-Stable tag: 0.5
+Stable tag: 0.5.5
 
 "SyntaxHighlighter TinyMCE Button" provides buttons for Visual Editor and will help to type &lt;pre&gt; tag for SyntaxHighlighter.
 
@@ -26,7 +26,7 @@ This plugin is based on "[CodeColorer TinyMCE Button](http://wordpress.org/exten
 
 You can use this plugin with following code syntax highlighter.
 
-* [WP SyntaxHighlighter](http://wordpress.org/extend/plugins/wp-syntaxhighlighter/ "WP SyntaxHighlighter")
+* [WP SyntaxHighlighter](http://wordpress.org/extend/plugins/wp-syntaxhighlighter/ "WP SyntaxHighlighter") (recommend)
 * [Syntax Highlighter Compress](http://wordpress.org/extend/plugins/syntax-highlighter-compress/ "Syntax Highlighter Compress")
 * [Auto SyntaxHighlighter](http://wordpress.org/extend/plugins/auto-syntaxhighlighter/ "Auto SyntaxHighlighter")
 * [Syntax Highlighter and Code Colorizer for WordPress](http://wordpress.org/extend/plugins/syntax-highlighter-and-code-prettifier/ "Syntax Highlighter and Code Colorizer for WordPress")
@@ -114,6 +114,11 @@ A. In fullscreen mode, You can use "pre" button only for updating language and o
 
 == Changelog ==
 
+= 0.5.5 =
+* Fix "Notice: has_cap was called with an argument that is deprecated since version 2.0! Usage of user levels by plugins and themes is deprecated. Use roles and capabilities instead." when "WP_DEBUG" is turned on.
+* Added "System Info" in setting panel.
+* Changed processing code for "Secondary mode".
+
 = 0.5 =
 * Can choose TinyMCE toolbar row which buttons will be placed in.
 * New operating modes optimized for "[SyntaxHighlighter Evolved](http://wordpress.org/extend/plugins/syntaxhighlighter/ "SyntaxHighlighter Evolved")".
@@ -148,6 +153,9 @@ A. In fullscreen mode, You can use "pre" button only for updating language and o
 * This is the first version.
 
 == Upgrade Notice ==
+
+= 0.5.5 =
+This version has some changes and bug fix.
 
 = 0.5 =
 This version has some new features and changes.

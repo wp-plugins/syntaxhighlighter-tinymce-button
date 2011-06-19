@@ -15,7 +15,7 @@
 
 動作の確認がとれた「SyntaxHighlighter」ベースのプラグインの一部です。
 
-・WP SyntaxHighlighter http://wordpress.org/extend/plugins/wp-syntaxhighlighter
+・WP SyntaxHighlighter(オススメ) http://wordpress.org/extend/plugins/wp-syntaxhighlighter
 ・Syntax Highlighter Compress http://wordpress.org/extend/plugins/syntax-highlighter-compress/
 ・Auto SyntaxHighlighter http://wordpress.org/extend/plugins/auto-syntaxhighlighter/
 ・Syntax Highlighter and Code Colorizer for WordPress http://wordpress.org/extend/plugins/syntax-highlighter-and-code-prettifier/
@@ -115,6 +115,11 @@ GPL v2
 英語: http://design-y.near-mint.com/
 
 ９．履歴
+
+2011/6/19　バージョン0.5.5 リリース
+ ※WP_DEBUGが有効の時に管理画面で「Notice: has_cap の使用はバージョン 2.0 から非推奨になりました! プラグインやテーマでのユーザーレベルの使用は推奨されていません。代わりに権限グループと権限を使ってください。」と言う警告が表示される問題を修正。
+ ※設定画面にシステム情報を表示。
+ ※「セーフモード」の処理を変更。
 
 2011/6/10　バージョン0.5 リリース
  ※ ボタンを表示する行を選択するオプションを追加。

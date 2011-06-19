@@ -3,17 +3,18 @@
 Plugin Name: SyntaxHighlighter TinyMCE Button
 Plugin URI: http://www.near-mint.com/blog/software
 Description: 'SyntaxHighlighter TinyMCE Button' provides additional buttons for Visual Editor and these buttons will help to type or edit <code>&lt;pre&gt;</code> tag for Alex Gorbatchev's <a href='http://alexgorbatchev.com/SyntaxHighlighter/'>SyntaxHighlighter</a>. This plugin is based on '<a href='http://wordpress.org/extend/plugins/codecolorer-tinymce-button/'>CodeColorer TinyMCE Button</a>'.
-Version: 0.5
-Author: Redcocker
+Version: 0.5.5
+Author: redcocker
 Author URI: http://www.near-mint.com/blog/
 Text Domain: shtb_adv_lang
 Domain Path: /locale/
 */
 /*
-Date of release: Ver. 0.5 2011/6/10
+Date of release: Ver. 0.5.5 2011/6/19
 License: GPL v2
 */
 load_plugin_textdomain('shtb_adv_lang', false, 'syntaxhighlighter-tinymce-button/locale');
+$plugin_url = get_option('siteurl').'/wp-content/plugins/'.basename(dirname(__FILE__)).'/';
 
 add_action('admin_menu', 'shtb_adv_register_menu_item');
 add_filter( 'plugin_action_links', 'shtb_adv_setting_link', 10, 2 );
@@ -34,7 +35,7 @@ function shtb_adv_register_menu_item() {
 	add_option('shtb_adv_codebox', 1);
 	add_option('shtb_adv_button_row', '1');
 	add_option('shtb_adv_safe_mode', 0);
-	add_options_page('SyntaxHighlighter TinyMCE Button Options', 'SH TinyMCE Button', 10, 'syntaxhighlighter-tinymce-button-options', 'shtb_adv_options_panel');
+	add_options_page('SyntaxHighlighter TinyMCE Button Options', 'SH TinyMCE Button', 'manage_options', 'syntaxhighlighter-tinymce-button-options', 'shtb_adv_options_panel');
 }
 
 function shtb_adv_setting_link( $links, $file ){
@@ -85,8 +86,17 @@ function shtb_adv_mce_valid_elements($init) {
 	return $init;
 }
 
+//Load javascript in admin menu
+add_action('admin_print_scripts', 'shtb_adv_load_jscript_for_admin');
+
+function shtb_adv_load_jscript_for_admin(){
+	global $plugin_url;
+	wp_enqueue_script('rc_admin_js', $plugin_url.'rc-admin-js.js', false, '1.1');
+}
+
 //Setting panel
 function shtb_adv_options_panel(){
+	global $plugin_url;
 	if(!function_exists('current_user_can') || !current_user_can('manage_options')){
 			die(__('Cheatin&#8217; uh?'));
 	} 
@@ -138,5 +148,25 @@ function shtb_adv_options_panel(){
 		  <input type="submit" name="Submit" value="<?php _e('Save Changes', 'shtb_adv_lang') ?>" />
 		</p>
 	</form>
+	<h3><a href="javascript:showhide('id1');" name="system_info"><?php _e("Show Your System Info", 'shtb_adv_lang') ?></a></h3>
+	<div id="id1" style="display:none; margin-left:20px">
+	<p>
+	<?php _e('Server OS:', 'shtb_adv_lang') ?> <?php echo php_uname('s').' '.php_uname('r'); ?><br />
+	<?php _e('PHP version:', 'shtb_adv_lang') ?> <?php echo phpversion(); ?><br />
+	<?php _e('MySQL version:', 'shtb_adv_lang') ?> <?php echo mysql_get_server_info(); ?><br />
+	<?php _e('WordPress version:', 'shtb_adv_lang') ?> <?php bloginfo("version"); ?><br />
+	<?php _e('Site URL:', 'shtb_adv_lang') ?> <?php bloginfo("url"); ?><br />
+	<?php _e('WordPress URL:', 'shtb_adv_lang') ?> <?php bloginfo("wpurl"); ?><br />
+	<?php _e('WordPress language:', 'shtb_adv_lang') ?> <?php bloginfo("language"); ?><br />
+	<?php _e('WordPress character set:', 'shtb_adv_lang') ?> <?php bloginfo("charset"); ?><br />
+	<?php _e('WordPress template URL:', 'shtb_adv_lang') ?> <?php bloginfo("template_url"); ?><br />
+	<?php _e('SyntaxHighlighter TinyMCE Button version:', 'shtb_adv_lang') ?> <?php $plugin_data = get_plugin_data(__FILE__); echo $plugin_data['Version']; ?><br />
+	<?php _e('SyntaxHighlighter TinyMCE Button URL:', 'shtb_adv_lang') ?> <?php echo $plugin_url; ?><br />
+	<?php _e('Your browser:', 'shtb_adv_lang') ?> <?php echo $_SERVER['HTTP_USER_AGENT']; ?>
+	</p>
+	</div>
+	<p>
+	<?php _e("To report a bug ,submit requests and feedback, ", 'shtb_adv_lang') ?><?php _e('Use <a href="http://wordpress.org/tags/syntaxhighlighter-tinymce-button?forum_id=10">Forum</a> or <a href="http://www.near-mint.com/blog/contact">Mail From</a>', 'shtb_adv_lang') ?>
+	</p>
 <?php } 
 ?>
