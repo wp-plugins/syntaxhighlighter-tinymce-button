@@ -1,7 +1,7 @@
 <?php
 /*
 SyntaxHighlighter TinyMCE Button Insert
-Version: 0.5 2011/6/10 by Redcocker
+Version: 0.5.6 2011/6/22 by Redcocker
 License: GPL v2
 http://www.near-mint.com/blog/
 */
@@ -40,7 +40,8 @@ class shtb_adv_add_insert_button {
 
 	// Load the TinyMCE plugin : editor_plugin.js (wp2.5)
 	function add_shtb_adv_insert_tinymce_plugin($plugin_array) {
-		$plugin_array['shtb_adv_insert'] = get_option('siteurl').'/wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/editor_plugin.js';	
+	global $shtb_plugin_url;
+		$plugin_array['shtb_adv_insert'] = $shtb_plugin_url.'sh-tinymce-button-ins/editor_plugin.js';	
 		return $plugin_array;
 	}
 
