@@ -3,14 +3,14 @@
 Plugin Name: SyntaxHighlighter TinyMCE Button
 Plugin URI: http://www.near-mint.com/blog/software
 Description: 'SyntaxHighlighter TinyMCE Button' provides additional buttons for Visual Editor and these buttons will help to type or edit <code>&lt;pre&gt;</code> tag for Alex Gorbatchev's <a href='http://alexgorbatchev.com/SyntaxHighlighter/'>SyntaxHighlighter</a>. This plugin is based on '<a href='http://wordpress.org/extend/plugins/codecolorer-tinymce-button/'>CodeColorer TinyMCE Button</a>'.
-Version: 0.5.6
+Version: 0.5.7
 Author: redcocker
 Author URI: http://www.near-mint.com/blog/
 Text Domain: shtb_adv_lang
 Domain Path: /locale/
 */
 /*
-Date of release: Ver. 0.5.6 2011/6/22
+Date of release: Ver. 0.5.7 2011/6/23
 License: GPL v2
 */
 load_plugin_textdomain('shtb_adv_lang', false, 'syntaxhighlighter-tinymce-button/locale');
@@ -158,7 +158,7 @@ function shtb_adv_options_panel(){
 	<?php _e('WordPress language:', 'shtb_adv_lang') ?> <?php bloginfo("language"); ?><br />
 	<?php _e('WordPress character set:', 'shtb_adv_lang') ?> <?php bloginfo("charset"); ?><br />
 	<?php _e('WordPress theme:', 'shtb_adv_lang') ?> <?php $shtb_theme = get_theme(get_current_theme()); echo $shtb_theme['Name'].' '.$shtb_theme['Version']; ?><br />
-	<?php _e('SyntaxHighlighter TinyMCE Button version:', 'shtb_adv_lang') ?> <?php $plugin_data = get_plugin_data(__FILE__); echo $plugin_data['Version']; ?><br />
+	<?php _e('SyntaxHighlighter TinyMCE Button version:', 'shtb_adv_lang') ?> <?php $shtb_plugin_data = get_plugin_data(__FILE__); echo $shtb_plugin_data['Version']; ?><br />
 	<?php _e('SyntaxHighlighter TinyMCE Button URL:', 'shtb_adv_lang') ?> <?php echo $shtb_plugin_url; ?><br />
 	<?php _e('Your browser:', 'shtb_adv_lang') ?> <?php echo $_SERVER['HTTP_USER_AGENT']; ?>
 	</p>

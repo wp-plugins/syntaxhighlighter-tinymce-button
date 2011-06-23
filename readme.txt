@@ -4,7 +4,7 @@ Donate link: http://www.near-mint.com/blog/donate/
 Tags: syntaxhighlighter, code, tinymce, button, syntax, highlight
 Requires at least: 3.0
 Tested up to: 3.1.3
-Stable tag: 0.5.6
+Stable tag: 0.5.7
 
 "SyntaxHighlighter TinyMCE Button" provides buttons for Visual Editor and will help to type &lt;pre&gt; tag for SyntaxHighlighter.
 
@@ -114,6 +114,9 @@ A. In fullscreen mode, You can use "pre" button only for updating language and o
 
 == Changelog ==
 
+= 0.5.7 =
+* Changed the method to get plugin directory url.
+
 = 0.5.6 =
 * Removed "sh-tinymce-button-ins-2nd.php" and "sh-tinymce-button-box-2nd.php".
 * "Secondary mode" integrated into "Normal mode".
@@ -158,6 +161,9 @@ A. In fullscreen mode, You can use "pre" button only for updating language and o
 * This is the first version.
 
 == Upgrade Notice ==
+
+= 0.5.7 =
+This version has some changes.
 
 = 0.5.6 =
 This version has some changes.

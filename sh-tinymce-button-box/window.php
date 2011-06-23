@@ -7,15 +7,21 @@ global $wpdb;
 //Check for rights
 if ( !is_user_logged_in() || !current_user_can('edit_posts') ) 
 	wp_die(__("You are not allowed to access this file."));
+
+if (get_option('shtb_adv_safe_mode') == 0) {
+	$shtb_box_url = get_option('siteurl').'/wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/';
+} elseif (get_option('shtb_adv_safe_mode') == 1) {
+	$shtb_box_url = plugin_dir_url( __FILE__ );
+}
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>SHTB CodeBox</title>
 <!-- 	<meta http-equiv="Content-Type" content="<?php// bloginfo('html_type'); ?>; charset=<?php //echo get_option('blog_charset'); ?>" /> -->
-<script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-includes/js/tinymce/tiny_mce_popup.js"></script>
-<script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-includes/js/tinymce/utils/form_utils.js"></script>
-<script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/tinymce.js?ver=0.5.6"></script>
+<script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl'); ?>/wp-includes/js/tinymce/tiny_mce_popup.js"></script>
+<script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl'); ?>/wp-includes/js/tinymce/utils/form_utils.js"></script>
+<script language="javascript" type="text/javascript" src="<?php echo $shtb_box_url; ?>tinymce.js?ver=0.5.7"></script>
 <base target="_self" />
 </head>
 <body id="link" onload="tinyMCEPopup.executeOnLoad('init();');document.body.style.display='';document.getElementById('shtb_adv_codebox_code').focus();" style="display: none">
