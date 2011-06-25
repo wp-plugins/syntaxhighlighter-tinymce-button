@@ -1,7 +1,7 @@
 <?php
 /*
 SyntaxHighlighter TinyMCE Button Codebox
-Version: 0.5.7 2011/6/23 by Redcocker
+Version: 0.6 2011/6/25 by Redcocker
 License: GPL v2
 http://www.near-mint.com/blog/
 */
@@ -41,7 +41,13 @@ class shtb_adv_add_codebox_button {
 	// Load the TinyMCE plugin : editor_plugin.js (wp2.5)
 	function add_shtb_adv_codebox_tinymce_plugin($plugin_array) {
 		global $shtb_plugin_url;
-		$plugin_array['shtb_adv_codebox'] = $shtb_plugin_url.'sh-tinymce-button-box/editor_plugin.js';	
+		if (get_option('shtb_adv_button_window_size') == "105") {
+			$plugin_array['shtb_adv_codebox'] = $shtb_plugin_url.'sh-tinymce-button-box/editor_plugin_105.js';
+		} elseif (get_option('shtb_adv_button_window_size') == "110") {
+			$plugin_array['shtb_adv_codebox'] = $shtb_plugin_url.'sh-tinymce-button-box/editor_plugin_110.js';
+		} else {
+			$plugin_array['shtb_adv_codebox'] = $shtb_plugin_url.'sh-tinymce-button-box/editor_plugin.js';
+		}
 		return $plugin_array;
 	}
 

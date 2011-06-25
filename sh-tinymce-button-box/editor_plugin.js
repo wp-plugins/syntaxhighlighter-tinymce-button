@@ -12,8 +12,8 @@
 			ed.addCommand('shtb_adv_codebox_cmd', function() {
 				ed.windowManager.open({
 					file : url + '/window.php',
-					width : 360,
-					height : 430,
+					width : 364 + ed.getLang('shtb_adv_codebox.delta_width', 0),
+					height : 430 + ed.getLang('shtb_adv_codebox.delta_height', 0),
 					inline : 1
 				}, {
 					plugin_url : url // Plugin absolute URL
@@ -43,7 +43,7 @@
 					author 	  : 'redcocker',
 					authorurl : 'http://www.near-mint.com/blog',
 					infourl   : 'http://www.near-mint.com/blog',
-					version   : "0.5.7"
+					version   : "0.6"
 			};
 		}
 	});

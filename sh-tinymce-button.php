@@ -3,23 +3,18 @@
 Plugin Name: SyntaxHighlighter TinyMCE Button
 Plugin URI: http://www.near-mint.com/blog/software
 Description: 'SyntaxHighlighter TinyMCE Button' provides additional buttons for Visual Editor and these buttons will help to type or edit <code>&lt;pre&gt;</code> tag for Alex Gorbatchev's <a href='http://alexgorbatchev.com/SyntaxHighlighter/'>SyntaxHighlighter</a>. This plugin is based on '<a href='http://wordpress.org/extend/plugins/codecolorer-tinymce-button/'>CodeColorer TinyMCE Button</a>'.
-Version: 0.5.7
+Version: 0.6
 Author: redcocker
 Author URI: http://www.near-mint.com/blog/
 Text Domain: shtb_adv_lang
 Domain Path: /locale/
 */
 /*
-Date of release: Ver. 0.5.7 2011/6/23
+Date of release: Ver. 0.6 2011/6/25
 License: GPL v2
 */
 load_plugin_textdomain('shtb_adv_lang', false, 'syntaxhighlighter-tinymce-button/locale');
-
-if (get_option('shtb_adv_safe_mode') == 0) {
-	$shtb_plugin_url = get_option('siteurl').'/wp-content/plugins/syntaxhighlighter-tinymce-button/';
-} elseif (get_option('shtb_adv_safe_mode') == 1) {
-	$shtb_plugin_url = plugin_dir_url( __FILE__ );
-}
+$shtb_plugin_url = plugin_dir_url( __FILE__ );
 
 add_action('admin_menu', 'shtb_adv_register_menu_item');
 add_filter( 'plugin_action_links', 'shtb_adv_setting_link', 10, 2 );
@@ -33,13 +28,13 @@ function shtb_adv_register_menu_item() {
 	register_setting( 'shtb_adv-settings-group', 'shtb_adv_using_syntaxhighlighter'); 
 	register_setting( 'shtb_adv-settings-group', 'shtb_adv_insert'); 
 	register_setting( 'shtb_adv-settings-group', 'shtb_adv_codebox'); 
+	register_setting( 'shtb_adv-settings-group', 'shtb_adv_button_window_size'); 
 	register_setting( 'shtb_adv-settings-group', 'shtb_adv_button_row'); 
-	register_setting( 'shtb_adv-settings-group', 'shtb_adv_safe_mode'); 
 	add_option('shtb_adv_using_syntaxhighlighter', 'other');
 	add_option('shtb_adv_insert', 1);
 	add_option('shtb_adv_codebox', 1);
+	add_option('shtb_adv_button_window_size', '100');
 	add_option('shtb_adv_button_row', '1');
-	add_option('shtb_adv_safe_mode', 0);
 	add_options_page('SyntaxHighlighter TinyMCE Button Options', 'SH TinyMCE Button', 'manage_options', 'syntaxhighlighter-tinymce-button-options', 'shtb_adv_options_panel');
 }
 
@@ -122,6 +117,17 @@ function shtb_adv_options_panel(){
 				</td>
 			</tr>
 			<tr valign="top">
+				<th scope="row" align="right"><?php _e('Window size', 'shtb_adv_lang') ?></th> 
+				<td style="padding-left:10px">
+					<select name="shtb_adv_button_window_size">
+						<option value="100" <?php if (get_option('shtb_adv_button_window_size') == "100") {echo 'selected="selected"';} ?>>100%</option>
+						<option value="105" <?php if (get_option('shtb_adv_button_window_size') == "105") {echo 'selected="selected"';} ?>>105%</option>
+						<option value="110" <?php if (get_option('shtb_adv_button_window_size') == "110") {echo 'selected="selected"';} ?>>110%</option>
+					</select>
+					<p><small><?php _e("Choose size of pop-up window at the click of buttons.", "shtb_adv_lang") ?></small></p>
+				</td>
+			</tr>
+			<tr valign="top">
 				<th scope="row" align="right"><?php _e('Place the buttons in', 'shtb_adv_lang') ?></th> 
 				<td style="padding-left:10px">
 					<select name="shtb_adv_button_row">
@@ -131,14 +137,6 @@ function shtb_adv_options_panel(){
 						<option value="4" <?php if (get_option('shtb_adv_button_row') == "4") {echo 'selected="selected"';} ?>><?php _e("4th row", "shtb_adv_lang") ?></option>
 					</select> <?php _e("of TinyMCE toolbar.", "shtb_adv_lang") ?>
 					<p><small><?php _e("Choose TinyMCE toolbar row which buttons will be placed in.", "shtb_adv_lang") ?></small></p>
-				</td>
-			</tr>
-			<tr valign="top">
-				<th scope="row" align="right"><?php _e('Secondary mode', 'shtb_adv_lang') ?></th> 
-				<td style="padding-left:10px">
-					<?php $safe_mode_check = get_option('shtb_adv_safe_mode') ? ' checked="checked" ' : ''; ?>
-					<input type="checkbox" name="shtb_adv_safe_mode" value="1" <?php echo $safe_mode_check; ?>/>
-					<p><small><?php _e("When the buttons are unshown, try to activate this option.", "shtb_adv_lang") ?></small></p>
 				</td>
 			</tr>
 		 </table>

@@ -4,7 +4,7 @@ Donate link: http://www.near-mint.com/blog/donate/
 Tags: syntaxhighlighter, code, tinymce, button, syntax, highlight
 Requires at least: 3.0
 Tested up to: 3.1.3
-Stable tag: 0.5.7
+Stable tag: 0.6
 
 "SyntaxHighlighter TinyMCE Button" provides buttons for Visual Editor and will help to type &lt;pre&gt; tag for SyntaxHighlighter.
 
@@ -14,7 +14,7 @@ Stable tag: 0.5.7
 
 This plugin is based on "[CodeColorer TinyMCE Button](http://wordpress.org/extend/plugins/codecolorer-tinymce-button/ "homolibere developed")" and becomes more feature-rich.
 
-= Feature =
+= Features =
 
 * You can operate in Visual Editor, No need to use HTML Editor.
 * Easy wrap your code in `<pre>` tag by two ways.
@@ -37,7 +37,7 @@ You can use this plugin with following code syntax highlighter.
 
 When using with "SyntaxHighlighter Evolved", "Load All Brushes" option must be enabled on the "SyntaxHighlighter" setting panel.
 
-This plugin has operating modes optimized for "WP SyntaxHighlighter" and "Syntax Highlighter Compress".
+This plugin has operating modes optimized for "WP SyntaxHighlighter", "Syntax Highlighter Compress" or "SyntaxHighlighter Evolved".
 
 = Notes =
 
@@ -114,6 +114,11 @@ A. In fullscreen mode, You can use "pre" button only for updating language and o
 
 == Changelog ==
 
+= 0.6 =
+* Added the option to choose pop-up windows size.
+* Changed the method to get plugin directory url.
+* "Secondary mode" is fully integrated into "Normal mode" and removed.
+
 = 0.5.7 =
 * Changed the method to get plugin directory url.
 
@@ -161,6 +166,9 @@ A. In fullscreen mode, You can use "pre" button only for updating language and o
 * This is the first version.
 
 == Upgrade Notice ==
+
+= 0.6 =
+This version has a new feature and changes.
 
 = 0.5.7 =
 This version has some changes.
