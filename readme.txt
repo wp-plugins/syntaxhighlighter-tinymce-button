@@ -2,9 +2,9 @@
 Contributors: redcocker, homolibere
 Donate link: http://www.near-mint.com/blog/donate/
 Tags: syntaxhighlighter, code, tinymce, button, syntax, highlight
-Requires at least: 3.0
-Tested up to: 3.1.3
-Stable tag: 0.6
+Requires at least: 2.8
+Tested up to: 3.2
+Stable tag: 0.7
 
 "SyntaxHighlighter TinyMCE Button" provides buttons for Visual Editor and will help to type &lt;pre&gt; tag for SyntaxHighlighter.
 
@@ -101,9 +101,13 @@ A. Old javascript files may be cached. Please clear your browser's cache or dele
 
 A. "html-scripts" option requires "XML" brush. However, some 'SyntaxHighlighter'-based plugins do not load "XML" brush by default. If you want this optiin, you should consider the use of "[WP SyntaxHighlighter](http://wordpress.org/extend/plugins/wp-syntaxhighlighter/ "WP SyntaxHighlighter")".
 
-= Q. "pre" button does not work in fullscreen mode. =
+= Q. The buttons disappear in the fullscreen mode. =
 
-A. In fullscreen mode, You can use "pre" button only for updating language and options.
+A. When using WordPress 3.2 or higher, The buttons don't appear in the fullscreen mode.
+
+= Q. "pre" button does not work in the fullscreen mode. =
+
+A. You can use "pre" button only for updating language and options in the fullscreen mode. That is only when using with WordPress 3.1.4 or older.
 
 == Screenshots ==
 
@@ -113,6 +117,13 @@ A. In fullscreen mode, You can use "pre" button only for updating language and o
 4. This is setting panel.
 
 == Changelog ==
+
+= 0.7 =
+* Added the "Dafault languages settings for your buttons" options.
+* Added "Reset All Settings" button into the setting panel.
+* All setting value are stored in the associative arrays.
+* Changed processing code for creating buttons.
+* Changed the method to add javascript into setting panel.
 
 = 0.6 =
 * Added the option to choose pop-up windows size.
@@ -166,6 +177,9 @@ A. In fullscreen mode, You can use "pre" button only for updating language and o
 * This is the first version.
 
 == Upgrade Notice ==
+
+= 0.7 =
+This version has a new feature and changes.
 
 = 0.6 =
 This version has a new feature and changes.
