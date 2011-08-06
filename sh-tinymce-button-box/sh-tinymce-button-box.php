@@ -1,7 +1,7 @@
 <?php
 /*
 SyntaxHighlighter TinyMCE Button Codebox
-Version: 0.7 2011/7/10 by Redcocker
+Version: 0.7.1 2011/8/6 by Redcocker
 License: GPL v2
 http://www.near-mint.com/blog/
 */
@@ -20,6 +20,9 @@ function shtb_adv_codebox_addbuttons() {
 			add_filter('mce_buttons_'.$button_row, 'register_shtb_adv_codebox_button');
 		} else {
 			add_filter('mce_buttons', 'register_shtb_adv_codebox_button');
+		}
+		if (version_compare(get_bloginfo('version'), "3.2", ">=")) {
+			add_filter('wp_fullscreen_buttons', 'shtb_adv_codebox_fullscreen');
 		}
 	}
 }
@@ -46,6 +49,15 @@ function add_shtb_adv_codebox_tinymce_plugin($plugin_array) {
 
 function shtb_adv_codebox_change_tinymce_version($version) {
 	return ++$version;
+}
+
+// For fullscreen mode
+function shtb_adv_codebox_fullscreen($buttons) {
+	$buttons['shtb_adv_codebox'] = array(
+	'title' => __('SyntaxHighlighter TinyMCE Button CodeBox'),
+	'onclick' => "tinyMCE.execCommand('shtb_adv_codebox_cmd');",
+	'both' => false);
+	return $buttons;
 }
 
 // Modify the version when tinyMCE plugins are changed.

@@ -3,14 +3,14 @@
 Plugin Name: SyntaxHighlighter TinyMCE Button
 Plugin URI: http://www.near-mint.com/blog/software/syntaxhighlighter-tinymce-button
 Description: 'SyntaxHighlighter TinyMCE Button' provides additional buttons for Visual Editor and these buttons will help to type or edit <code>&lt;pre&gt;</code> tag for Alex Gorbatchev's <a href='http://alexgorbatchev.com/SyntaxHighlighter/'>SyntaxHighlighter</a>. This plugin is based on '<a href='http://wordpress.org/extend/plugins/codecolorer-tinymce-button/'>CodeColorer TinyMCE Button</a>'.
-Version: 0.7
+Version: 0.7.1
 Author: redcocker
 Author URI: http://www.near-mint.com/blog/
 Text Domain: shtb_adv_lang
 Domain Path: /locale/
 */
 /*
-Date of release: Ver. 0.7 2011/7/10
+Last modified: 2011/8/6
 License: GPL v2
 */
 load_plugin_textdomain('shtb_adv_lang', false, 'syntaxhighlighter-tinymce-button/locale');
@@ -103,6 +103,19 @@ function shtb_adv_register_menu_item() {
 		$shtb_adv_page_hook = '-'.$shtb_adv_page_hook;
 	}
 	add_action('admin_print_scripts'.$shtb_adv_page_hook, 'shtb_adv_load_jscript_for_admin');
+}
+
+// Load stylesheet for fullscreen mode
+if (version_compare(get_bloginfo('version'), "3.2", ">=")) {
+	add_action('admin_print_styles-post.php', 'shtb_editor_css');
+	add_action('admin_print_styles-post-new.php', 'shtb_editor_css');
+	add_action('admin_print_styles-page.php', 'shtb_editor_css');
+	add_action('admin_print_styles-page-new.php', 'shtb_editor_css');
+}
+
+function shtb_editor_css() {
+	global $shtb_adv_plugin_url;
+	wp_enqueue_style('shtb-editor', $shtb_adv_plugin_url.'shtb_fullscreen.css', false, '1.0');
 }
 
 // Load javascript in setting panel

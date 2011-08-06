@@ -1,17 +1,17 @@
 <?php
 /*
 SyntaxHighlighter TinyMCE Button Insert
-Version: 0.7 2011/7/10 by Redcocker
+Version: 0.7.1 2011/8/6 by Redcocker
 License: GPL v2
 http://www.near-mint.com/blog/
 */
 
 function shtb_adv_insert_addbuttons() {
 	// Don't bother doing this stuff if the current user lacks permissions
-	if ( !current_user_can('edit_posts') && !current_user_can('edit_pages') )
+	if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
 		return;
 	// Add only in Rich Editor mode
-	if ( get_user_option('rich_editing') == 'true') {
+	if (get_user_option('rich_editing') == 'true') {
 	// add the button for wp25 in a new way
 		add_filter("mce_external_plugins", 'add_shtb_adv_insert_tinymce_plugin');
 		$shtb_adv_setting_opt = get_option('shtb_adv_setting_opt');
@@ -20,6 +20,9 @@ function shtb_adv_insert_addbuttons() {
 			add_filter('mce_buttons_'.$button_row, 'register_shtb_adv_insert_button');
 		} else {
 			add_filter('mce_buttons', 'register_shtb_adv_insert_button');
+		}
+		if (version_compare(get_bloginfo('version'), "3.2", ">=")) {
+			add_filter('wp_fullscreen_buttons', 'shtb_adv_insert_fullscreen');
 		}
 	}
 }
@@ -46,6 +49,16 @@ function add_shtb_adv_insert_tinymce_plugin($plugin_array) {
 
 function shtb_adv_insert_change_tinymce_version($version) {
 	return ++$version;
+}
+
+// For fullscreen mode
+function shtb_adv_insert_fullscreen($buttons) {
+	$buttons[] = 'separator';
+	$buttons['shtb_adv_insert'] = array(
+	'title' => __('SyntaxHighlighter TinyMCE Button Select & Insert'),
+	'onclick' => "tinyMCE.execCommand('shtb_adv_insert_cmd');",
+	'both' => false);
+	return $buttons;
 }
 
 // Modify the version when tinyMCE plugins are changed.
