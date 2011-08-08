@@ -47,7 +47,6 @@ SyntaxHighlighter: http://alexgorbatchev.com/SyntaxHighlighter/
 ・ダウンロードしたファイルを解凍し、「sh-tinymce-button」フォルダごと、WordPressのプラグインディレクトリ（wp-content/plugins/）にアップロードします。
 ・WordPressの管理画面の「プラグイン」で、このプラグインを有効化します。
 ・WordPressの管理画面の「設定」にある「SH TinyMCE Button」という項目で設定を行います。
-※ボタンが表示されない場合は、設定画面で「セーフモード」を有効にして下さい。
 ※「WP SyntaxHighlighter」または「Syntax Highlighter Compress」、「SyntaxHighlighter Evolved」を使用している場合は、設定画面で設定を行ってください。
 
 ３．アップデート
