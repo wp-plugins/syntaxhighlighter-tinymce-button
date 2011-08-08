@@ -10,7 +10,7 @@ Text Domain: shtb_adv_lang
 Domain Path: /locale/
 */
 /*
-Last modified: 2011/8/6
+Last modified: 2011/8/8
 License: GPL v2
 */
 load_plugin_textdomain('shtb_adv_lang', false, 'syntaxhighlighter-tinymce-button/locale');

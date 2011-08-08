@@ -1,7 +1,7 @@
 <?php
 /*
 SyntaxHighlighter TinyMCE Button Insert
-Version: 0.7.1 2011/8/6 by Redcocker
+Version: 0.7.1 2011/8/8 by Redcocker
 License: GPL v2
 http://www.near-mint.com/blog/
 */

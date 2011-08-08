@@ -3,8 +3,8 @@ Contributors: redcocker, homolibere
 Donate link: http://www.near-mint.com/blog/donate/
 Tags: syntaxhighlighter, code, tinymce, button, syntax, highlight
 Requires at least: 2.8
-Tested up to: 3.2
-Stable tag: 0.7
+Tested up to: 3.2.1
+Stable tag: 0.7.1
 
 "SyntaxHighlighter TinyMCE Button" provides buttons for Visual Editor and will help to type &lt;pre&gt; tag for SyntaxHighlighter.
 
@@ -17,10 +17,9 @@ This plugin is based on "[CodeColorer TinyMCE Button](http://wordpress.org/exten
 = Features =
 
 * You can operate in Visual Editor, No need to use HTML Editor.
-* Easy wrap your code in `<pre>` tag by two ways.
-* Enable to change language and options of previously-markuped code.
+* Using two buttons, easy to wrap your code in `<pre>` tag and change options of previously-wrapped code.
 * Once your code is wrapped in `<pre>` tag, You can type 'tabs' for indent.
-* Translated into English(Default) and Japanese(UTF-8).
+* Localization: English(Default), 日本語(Japanese, UTF-8).
 
 = Compliant plugins =
 
@@ -41,6 +40,8 @@ This plugin has operating modes optimized for "WP SyntaxHighlighter", "Syntax Hi
 
 = Notes =
 
+This plugin can work only with the default visual editor(TinyMCE). Other visual editors are not supported.
+
 This plugin is designed to work with a plugin based on Alex Gorbatchev's SyntaxHighlighter Ver, 2.0 or higher.
 
 You can not use this plugin with some 'SyntaxHighlighter'-based plugins which do not support `<pre>` tag.
@@ -59,7 +60,15 @@ If you use "[WP SyntaxHighlighter](http://wordpress.org/extend/plugins/wp-syntax
 
 = Usage =
 
-Usage: To wrap your code in `<pre>` tag.
+**Usage: To paste your code into the post or page.**
+
+If you want to paste the code from the other document into your post or page, this way is best. Your pasted code will be warpped in `<pre>` tag automatically.
+
+1. Click "CODE" button.
+1. Select language and options and paste your code into textbox.
+1. Click "Insert" button.
+
+**Usage: To wrap previously-written code in `<pre>` tag.**
 
 If you have previously-written code on your post or page, by this way, you can wrap your code in `<pre>` tag for 'SyntaxHighlighter'.
 
@@ -68,22 +77,14 @@ If you have previously-written code on your post or page, by this way, you can w
 1. Select language and options.
 1. Click "Insert" button.
 
-Usage: To paste your code into the post or page.
-
-If you want to copy the code from the other document and paste into your post or page, this way is best. Your pasted code will be warpped in `<pre>` tag automatically.
-
-1. Click "CODE" button.
-1. Select language and options and paste your code into textbox.
-1. Click "Insert" button.
-
-Usage: To change language and options of previously-markuped code.
+**Usage: To change language and options of previously-markuped code.**
 
 1. With the mouse, select and highlight your code.
 1. Click "pre" button.
 1. Change language and options.
 1. Click "Update" button.
 
-Usage: To indent by tabs
+**Usage: To indent by tabs.**
 
 1. Just type tab in your code. But till your code is wrapped in `<pre>` tag, you can not type any tabs.
 
@@ -101,13 +102,9 @@ A. Old javascript files may be cached. Please clear your browser's cache or dele
 
 A. "html-scripts" option requires "XML" brush. However, some 'SyntaxHighlighter'-based plugins do not load "XML" brush by default. If you want this optiin, you should consider the use of "[WP SyntaxHighlighter](http://wordpress.org/extend/plugins/wp-syntaxhighlighter/ "WP SyntaxHighlighter")".
 
-= Q. The buttons disappear in the fullscreen mode. =
-
-A. When using WordPress 3.2 or higher, The buttons don't appear in the fullscreen mode.
-
 = Q. "pre" button does not work in the fullscreen mode. =
 
-A. You can use "pre" button only for updating language and options in the fullscreen mode. That is only when using with WordPress 3.1.4 or older.
+A. You can use "pre" button only for updating language and options in the fullscreen mode.
 
 == Screenshots ==
 
@@ -117,6 +114,9 @@ A. You can use "pre" button only for updating language and options in the fullsc
 4. This is setting panel.
 
 == Changelog ==
+
+= 0.7.1 =
+* New fullscreen mode in WordPress 3.2 or higher was also supported.
 
 = 0.7 =
 * Added the "Dafault languages settings for your buttons" options.
@@ -177,6 +177,9 @@ A. You can use "pre" button only for updating language and options in the fullsc
 * This is the first version.
 
 == Upgrade Notice ==
+
+= 0.7.1 =
+This version has a new feature.
 
 = 0.7 =
 This version has a new feature and changes.
