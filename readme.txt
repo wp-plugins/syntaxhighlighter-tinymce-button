@@ -54,8 +54,6 @@ You can not use this plugin with some 'SyntaxHighlighter'-based plugins which do
 1. Activate the plugin through the "Plugins" menu in WordPress.
 1. If you need, go to "Settings" -> "SH TinyMCE Button" to configure.
 
-When the buttons are unshown, try to activate "Secondary mode" on the setting panel.
-
 If you use "[WP SyntaxHighlighter](http://wordpress.org/extend/plugins/wp-syntaxhighlighter/ "WP SyntaxHighlighter")", "[Syntax Highlighter Compress](http://wordpress.org/extend/plugins/syntax-highlighter-compress/ "Syntax Highlighter Compress")" or "[SyntaxHighlighter Evolved](http://wordpress.org/extend/plugins/syntaxhighlighter/ "SyntaxHighlighter Evolved")", you should configure "Using with" option on the setting panel.
 
 = Usage =
