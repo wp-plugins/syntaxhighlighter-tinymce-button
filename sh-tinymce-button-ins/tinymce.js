@@ -28,8 +28,7 @@ function insertSHTBADVINSERTcode() {
 	var starting_linenumber = document.getElementById('shtb_adv_insert_starting_linenumber').value;
 	var highlight_lines = document.getElementById('shtb_adv_insert_highlighted_lines').value;
 	var html_script = document.getElementById('shtb_adv_insert_html_script').checked;
-	var inst = tinyMCE.getInstanceById('content');
-	var html = inst.selection.getContent();
+	var html = tinyMCE.activeEditor.selection.getContent();
 	html = html.replace(/<p>/g,"").replace(/<\/p>/g,"<br \/>");
 
 	var tagtext = '<pre class="brush: ';
@@ -64,9 +63,7 @@ function insertSHTBADVINSERTcode() {
 	} else if(e = ed.dom.getParent(ed.selection.getNode(), 'pre')){
 		ed.dom.setAttribs(e, {class : 'brush: '+classAttribs});
 	} else {
-	window.tinyMCE.execInstanceCommand('content', 'mceInsertContent', false, tagtext+classAttribs+'">'+html+'</pre>');
-	tinyMCEPopup.editor.execCommand('mceRepaint');
-//	tinyMCEPopup.editor.execCommand('mceInsertContent', false, tagtext+classAttribs+'">'+html+'</pre>');
+	tinyMCEPopup.editor.execCommand('mceInsertContent', false, tagtext+classAttribs+'">'+html+'</pre>');
 	}
 	tinyMCEPopup.close();
 	return;

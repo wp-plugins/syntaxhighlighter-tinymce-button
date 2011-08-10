@@ -18,8 +18,8 @@ $shtb_adv_setting_opt = get_option('shtb_adv_setting_opt');
 <!-- 	<meta http-equiv="Content-Type" content="<?php// bloginfo('html_type'); ?>; charset=<?php //echo get_option('blog_charset'); ?>" /> -->
 <script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl'); ?>/wp-includes/js/tinymce/tiny_mce_popup.js"></script>
 <script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl'); ?>/wp-includes/js/tinymce/utils/form_utils.js"></script>
-<script language="javascript" type="text/javascript" src="<?php echo $shtb_ins_url; ?>tinymce.js?ver=0.7.1"></script>
-<script language="javascript" type="text/javascript" src="<?php echo $shtb_ins_url; ?>re_write.js?ver=0.7.1"></script>
+<script language="javascript" type="text/javascript" src="<?php echo $shtb_ins_url; ?>tinymce.js?ver=0.7.2"></script>
+<script language="javascript" type="text/javascript" src="<?php echo $shtb_ins_url; ?>re_write.js?ver=0.7.2"></script>
 <base target="_self" />
 </head>
 <body id="link" onload="tinyMCEPopup.executeOnLoad('init();');document.body.style.display='';" style="display: none">
