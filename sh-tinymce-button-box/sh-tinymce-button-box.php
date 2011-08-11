@@ -1,7 +1,7 @@
 <?php
 /*
 SyntaxHighlighter TinyMCE Button Codebox
-Version: 0.7.2 2011/8/10 by Redcocker
+Version: 0.7.2 2011/8/11 by Redcocker
 License: GPL v2
 http://www.near-mint.com/blog/
 */

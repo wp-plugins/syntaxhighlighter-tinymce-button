@@ -4,7 +4,7 @@ Donate link: http://www.near-mint.com/blog/donate/
 Tags: syntaxhighlighter, code, tinymce, button, syntax, highlight
 Requires at least: 2.8
 Tested up to: 3.2.1
-Stable tag: 0.7.1
+Stable tag: 0.7.2
 
 "SyntaxHighlighter TinyMCE Button" provides buttons for Visual Editor and will help to type &lt;pre&gt; tag for SyntaxHighlighter.
 
@@ -100,10 +100,6 @@ A. Old javascript files may be cached. Please clear your browser's cache or dele
 
 A. "html-scripts" option requires "XML" brush. However, some 'SyntaxHighlighter'-based plugins do not load "XML" brush by default. If you want this optiin, you should consider the use of "[WP SyntaxHighlighter](http://wordpress.org/extend/plugins/wp-syntaxhighlighter/ "WP SyntaxHighlighter")".
 
-= Q. "pre" button does not work in the fullscreen mode. =
-
-A. You can use "pre" button only for updating language and options in the fullscreen mode.
-
 == Screenshots ==
 
 1. This is added buttons on TinyMCE.
@@ -112,6 +108,9 @@ A. You can use "pre" button only for updating language and options in the fullsc
 4. This is setting panel.
 
 == Changelog ==
+
+= 0.7.2 =
+* Fix a bug: "Insert" function of "pre" button does not work in the fullscreen mode.
 
 = 0.7.1 =
 * New fullscreen mode in WordPress 3.2 or higher was also supported.
@@ -175,6 +174,9 @@ A. You can use "pre" button only for updating language and options in the fullsc
 * This is the first version.
 
 == Upgrade Notice ==
+
+= 0.7.2 =
+This version has a bug fix.
 
 = 0.7.1 =
 This version has a new feature.
