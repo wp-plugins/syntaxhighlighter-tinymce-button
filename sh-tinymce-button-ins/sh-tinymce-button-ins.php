@@ -1,7 +1,7 @@
 <?php
 /*
 SyntaxHighlighter TinyMCE Button Insert
-Version: 0.7.2 2011/9/13 by Redcocker
+Version: 0.7.3 2011/9/13 by Redcocker
 License: GPL v2
 http://www.near-mint.com/blog/
 */
@@ -55,7 +55,7 @@ function shtb_adv_insert_change_tinymce_version($version) {
 function shtb_adv_insert_fullscreen($buttons) {
 	$buttons[] = 'separator';
 	$buttons['shtb_adv_insert'] = array(
-	'title' => __('SyntaxHighlighter TinyMCE Button Select & Insert'),
+	'title' => __('SyntaxHighlighter TinyMCE Button Select & Insert', 'shtb_adv_lang'),
 	'onclick' => "tinyMCE.execCommand('shtb_adv_insert_cmd');",
 	'both' => false);
 	return $buttons;

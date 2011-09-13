@@ -1,7 +1,7 @@
 <?php
 /*
 SyntaxHighlighter TinyMCE Button Codebox
-Version: 0.7.2 2011/9/13 by Redcocker
+Version: 0.7.3 2011/9/13 by Redcocker
 License: GPL v2
 http://www.near-mint.com/blog/
 */
@@ -54,7 +54,7 @@ function shtb_adv_codebox_change_tinymce_version($version) {
 // For fullscreen mode
 function shtb_adv_codebox_fullscreen($buttons) {
 	$buttons['shtb_adv_codebox'] = array(
-	'title' => __('SyntaxHighlighter TinyMCE Button CodeBox'),
+	'title' => __('SyntaxHighlighter TinyMCE Button CodeBox', 'shtb_adv_lang'),
 	'onclick' => "tinyMCE.execCommand('shtb_adv_codebox_cmd');",
 	'both' => false);
 	return $buttons;

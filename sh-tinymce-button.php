@@ -3,17 +3,17 @@
 Plugin Name: SyntaxHighlighter TinyMCE Button
 Plugin URI: http://www.near-mint.com/blog/software/syntaxhighlighter-tinymce-button
 Description: 'SyntaxHighlighter TinyMCE Button' provides additional buttons for Visual Editor and these buttons will help to type or edit <code>&lt;pre&gt;</code> tag for Alex Gorbatchev's <a href='http://alexgorbatchev.com/SyntaxHighlighter/'>SyntaxHighlighter</a>. This plugin is based on '<a href='http://wordpress.org/extend/plugins/codecolorer-tinymce-button/'>CodeColorer TinyMCE Button</a>'.
-Version: 0.7.2
+Version: 0.7.3
 Author: redcocker
 Author URI: http://www.near-mint.com/blog/
 Text Domain: shtb_adv_lang
-Domain Path: /locale/
+Domain Path: /languages
 */
 /*
-Last modified: 2011/9/13
+Last modified: 2011/9/14
 License: GPL v2
 */
-load_plugin_textdomain('shtb_adv_lang', false, 'syntaxhighlighter-tinymce-button/locale');
+load_plugin_textdomain('shtb_adv_lang', false, dirname(plugin_basename(__FILE__)).'/languages');
 $shtb_adv_plugin_url = plugin_dir_url( __FILE__ );
 $shtb_adv_db_ver = "0.7";
 $shtb_adv_setting_opt = get_option('shtb_adv_setting_opt');
@@ -79,13 +79,8 @@ function shtb_adv_check_db_ver(){
 	global $shtb_adv_db_ver;
 	if ($shtb_adv_db_ver != get_option('shtb_adv_checkver_stamp')) {
 		shtb_adv_setting_array();
-		add_action('admin_notices', 'shtb_adv_admin_updated_notice');
+		update_option('shtb_adv_updated', 'true');
 	}
-}
-
-// Message for admin when DB table updated
-function shtb_adv_admin_updated_notice(){
-    echo '<div id="message" class="updated"><p>'.__("SyntaxHighlighter TinyMCE Button has successfully created new DB table.(If you updated, Plugin settings were reset to default.)<br />Go to the setting panel and <strong>configure SyntaxHighlighter TinyMCE Button</strong> now.","shtb_adv_lang").'</p></div>';
 }
 
 // show plugin info in the footer
@@ -98,11 +93,21 @@ function shtb_adv_add_admin_footer(){
 add_action('admin_menu', 'shtb_adv_register_menu_item');
 
 function shtb_adv_register_menu_item() {
+	add_option('shtb_adv_updated', 'false');
 	$shtb_adv_page_hook = add_options_page('SyntaxHighlighter TinyMCE Button Options', 'SH TinyMCE Button', 'manage_options', 'syntaxhighlighter-tinymce-button-options', 'shtb_adv_options_panel');
 	if ($shtb_adv_page_hook != null) {
 		$shtb_adv_page_hook = '-'.$shtb_adv_page_hook;
 	}
 	add_action('admin_print_scripts'.$shtb_adv_page_hook, 'shtb_adv_load_jscript_for_admin');
+
+	if (get_option('shtb_adv_updated') == "true" && !(isset($_POST['SHTB_ADV_Setting_Submit']) && $_POST['shtb_adv_hidden_value'] == "true") && !(isset($_POST['SHTB_ADV_Reset']) && $_POST['shtb_adv_reset'] == "true")) {
+		add_action('admin_notices', 'shtb_adv_admin_updated_notice');
+	}
+}
+
+// Message for admin when DB table updated
+function shtb_adv_admin_updated_notice(){
+    echo '<div id="message" class="updated"><p>'.__("SyntaxHighlighter TinyMCE Button has successfully created new DB table.(If you updated, a part of plugin settings were reset to default.)<br />Go to the setting panel and configure SyntaxHighlighter TinyMCE Button now. Once you save your settings, this message will be cleared.","shtb_adv_lang").'</p></div>';
 }
 
 // Load stylesheet for fullscreen mode
@@ -212,11 +217,12 @@ function shtb_adv_options_panel(){
 		// Store in DB
 		update_option('shtb_adv_setting_opt', $shtb_adv_setting_opt);
 		update_option('shtb_adv_languages', $shtb_adv_new_languages);
+		update_option('shtb_adv_updated', 'false');
 		// Show message for admin
 		echo "<div id='setting-error-settings_updated' class='updated fade'><p><strong>".__("Settings saved.","shtb_adv_lang")."</strong></p></div>";
 	}
 	// Reset all settings
-	if (isset($_POST['SHTB_ADV_Reset']) && $_POST['shtb_adv_reset']='true' && check_admin_referer("shtb_adv_reset_options", "_wpnonce_reset_options")) {
+	if (isset($_POST['SHTB_ADV_Reset']) && $_POST['shtb_adv_reset'] == "true" && check_admin_referer("shtb_adv_reset_options", "_wpnonce_reset_options")) {
 		include_once('uninstall.php');
 		shtb_adv_setting_array();
 		// Show message for admin
