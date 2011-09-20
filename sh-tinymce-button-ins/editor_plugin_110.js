@@ -43,7 +43,7 @@
 					author 	  : 'redcocker',
 					authorurl : 'http://www.near-mint.com/blog',
 					infourl   : 'http://www.near-mint.com/blog',
-					version   : "0.7.3"
+					version   : "0.7.5"
 			};
 		}
 	});

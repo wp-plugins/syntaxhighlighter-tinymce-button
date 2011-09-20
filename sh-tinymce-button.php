@@ -3,34 +3,23 @@
 Plugin Name: SyntaxHighlighter TinyMCE Button
 Plugin URI: http://www.near-mint.com/blog/software/syntaxhighlighter-tinymce-button
 Description: 'SyntaxHighlighter TinyMCE Button' provides additional buttons for Visual Editor and these buttons will help to type or edit <code>&lt;pre&gt;</code> tag for Alex Gorbatchev's <a href='http://alexgorbatchev.com/SyntaxHighlighter/'>SyntaxHighlighter</a>. This plugin is based on '<a href='http://wordpress.org/extend/plugins/codecolorer-tinymce-button/'>CodeColorer TinyMCE Button</a>'.
-Version: 0.7.3
+Version: 0.7.5
 Author: redcocker
 Author URI: http://www.near-mint.com/blog/
 Text Domain: shtb_adv_lang
 Domain Path: /languages
 */
 /*
-Last modified: 2011/9/14
+Last modified: 2011/9/20
 License: GPL v2
 */
 load_plugin_textdomain('shtb_adv_lang', false, dirname(plugin_basename(__FILE__)).'/languages');
-$shtb_adv_plugin_url = plugin_dir_url( __FILE__ );
-$shtb_adv_db_ver = "0.7";
+$shtb_adv_plugin_url = plugin_dir_url(__FILE__);
+$shtb_adv_db_ver = "0.7.5";
 $shtb_adv_setting_opt = get_option('shtb_adv_setting_opt');
 
-// Setting values assign to the associative array
-function shtb_adv_setting_array(){
-	global $shtb_adv_db_ver;
-
-	$shtb_adv_setting_opt['shtb_adv_using_syntaxhighlighter'] = "other";
-	$shtb_adv_setting_opt['shtb_adv_insert'] = "1";
-	$shtb_adv_setting_opt['shtb_adv_codebox'] = "1";
-	$shtb_adv_setting_opt['shtb_adv_button_window_size'] = "100";
-	$shtb_adv_setting_opt['shtb_adv_button_row'] = "1";
-	$shtb_adv_setting_opt['shtb_adv_gutter'] = "1";
-	$shtb_adv_setting_opt['shtb_adv_first_line'] = "1";
-	$shtb_adv_setting_opt['shtb_adv_html_script'] = "0";
-
+// Create language list array
+function shtb_adv_language_array() {
 	$shtb_adv_language['applescript'] = array('AppleScript', 'true');
 	$shtb_adv_language['actionscript3'] = array('Actionscript3', 'true');
 	$shtb_adv_language['bash'] = array('Bash shell', 'true');
@@ -66,34 +55,51 @@ function shtb_adv_setting_array(){
 	$shtb_adv_language['xhtml'] = array('XHTML', 'true');
 	$shtb_adv_language['xml'] = array('XML', 'true');
 	$shtb_adv_language['xslt'] = array('XSLT', 'true');
-
-	update_option('shtb_adv_setting_opt', $shtb_adv_setting_opt);
+	// Store in DB
 	update_option('shtb_adv_languages', $shtb_adv_language);
-	update_option('shtb_adv_checkver_stamp', $shtb_adv_db_ver);
+}
+
+// Create settings array
+function shtb_adv_setting_array() {
+	$shtb_adv_setting_opt['shtb_adv_using_syntaxhighlighter'] = "other";
+	$shtb_adv_setting_opt['shtb_adv_insert'] = "1";
+	$shtb_adv_setting_opt['shtb_adv_codebox'] = "1";
+	$shtb_adv_setting_opt['shtb_adv_button_window_size'] = "100";
+	$shtb_adv_setting_opt['shtb_adv_button_row'] = "1";
+	$shtb_adv_setting_opt['shtb_adv_gutter'] = "1";
+	$shtb_adv_setting_opt['shtb_adv_first_line'] = "1";
+	$shtb_adv_setting_opt['shtb_adv_html_script'] = "0";
+	// Store in DB
+	add_option('shtb_adv_setting_opt', $shtb_adv_setting_opt);
+	add_option('shtb_adv_updated', 'false');
 }
 
 // Check DB table version and create table
-add_action('plugins_loaded', 'shtb_adv_check_db_ver');
+add_action('admin_menu', 'shtb_adv_check_db_ver', 1);
 
 function shtb_adv_check_db_ver(){
 	global $shtb_adv_db_ver;
-	if ($shtb_adv_db_ver != get_option('shtb_adv_checkver_stamp')) {
-		shtb_adv_setting_array();
-		update_option('shtb_adv_updated', 'true');
+	$current_checkver_stamp = get_option('shtb_adv_checkver_stamp');
+	if (!$current_checkver_stamp || version_compare($current_checkver_stamp, $shtb_adv_db_ver, "!=")) {
+		// For new installation, update from ver. 0.6 or older
+		if (!$current_checkver_stamp) {
+			// Register array
+			shtb_adv_language_array();
+			shtb_adv_setting_array();
+			// Data migration when updated from ver.0.6 or older
+			include_once('data-migration.php');
+			update_option('shtb_adv_updated', 'true');
+		}
+		update_option('shtb_adv_checkver_stamp', $shtb_adv_db_ver);
+		// Delete options since ver.0.6 or older
+		include_once('del-old-options.php');
 	}
 }
 
-// show plugin info in the footer
-function shtb_adv_add_admin_footer(){
-	$shtb_adv_plugin_data = get_plugin_data(__FILE__);
-	printf('%1$s by %2$s<br />', $shtb_adv_plugin_data['Title'].' '.$shtb_adv_plugin_data['Version'], $shtb_adv_plugin_data['Author']);
-}
-
-// show plugin info in the footer
+// Register the setting panel and hooks
 add_action('admin_menu', 'shtb_adv_register_menu_item');
 
 function shtb_adv_register_menu_item() {
-	add_option('shtb_adv_updated', 'false');
 	$shtb_adv_page_hook = add_options_page('SyntaxHighlighter TinyMCE Button Options', 'SH TinyMCE Button', 'manage_options', 'syntaxhighlighter-tinymce-button-options', 'shtb_adv_options_panel');
 	if ($shtb_adv_page_hook != null) {
 		$shtb_adv_page_hook = '-'.$shtb_adv_page_hook;
@@ -107,7 +113,13 @@ function shtb_adv_register_menu_item() {
 
 // Message for admin when DB table updated
 function shtb_adv_admin_updated_notice(){
-    echo '<div id="message" class="updated"><p>'.__("SyntaxHighlighter TinyMCE Button has successfully created new DB table.(If you updated, a part of plugin settings were reset to default.)<br />Go to the setting panel and configure SyntaxHighlighter TinyMCE Button now. Once you save your settings, this message will be cleared.","shtb_adv_lang").'</p></div>';
+    echo '<div id="message" class="updated"><p>'.__('SyntaxHighlighter TinyMCE Button has successfully created new DB table.<br />If you upgraded to this version, some setting options may be added or reset to the default values.<br />Go to the <a href="options-general.php?page=syntaxhighlighter-tinymce-button-options">setting panel</a> and configure SyntaxHighlighter TinyMCE Button now. Once you save your settings, this message will be cleared.', 'shtb_adv_lang').'</p></div>';
+}
+
+// Show plugin info in the footer
+function shtb_adv_add_admin_footer() {
+	$shtb_adv_plugin_data = get_plugin_data(__FILE__);
+	printf('%1$s by %2$s<br />', $shtb_adv_plugin_data['Title'].' '.$shtb_adv_plugin_data['Version'], $shtb_adv_plugin_data['Author']);
 }
 
 // Load stylesheet for fullscreen mode
@@ -123,13 +135,13 @@ function shtb_editor_css() {
 	wp_enqueue_style('shtb-editor', $shtb_adv_plugin_url.'shtb_fullscreen.css', false, '1.0');
 }
 
-// Load javascript in setting panel
+// Load script in setting panel
 function shtb_adv_load_jscript_for_admin(){
 	global $shtb_adv_plugin_url;
 	wp_enqueue_script('rc_admin_js', $shtb_adv_plugin_url.'rc-admin-js.js', false, '1.1');
 }
 
-// Add the setting panel
+// Register the setting panel
 add_filter( 'plugin_action_links', 'shtb_adv_setting_link', 10, 2);
 
 function shtb_adv_setting_link($links, $file){
@@ -160,7 +172,7 @@ function shtb_adv_insert_allow_tab($initArray) {
     return $initArray;
 }
 
-// Add 'pre' tag and 'class' attribte as TinyMCE valid_elements.
+// Register 'pre' tag and 'class' attribte as TinyMCE valid_elements.
 add_filter('tiny_mce_before_init', 'shtb_adv_mce_valid_elements');
 
 function shtb_adv_mce_valid_elements($init) {
@@ -186,8 +198,17 @@ function shtb_adv_options_panel(){
 	// Update setting options
 	if (isset($_POST['SHTB_ADV_Setting_Submit']) && $_POST['shtb_adv_hidden_value'] == "true" && check_admin_referer("shtb_adv_update_options", "_wpnonce_update_options")) {
 		$shtb_adv_setting_opt['shtb_adv_using_syntaxhighlighter'] = $_POST['shtb_adv_using_syntaxhighlighter'];
-		$shtb_adv_setting_opt['shtb_adv_insert'] = $_POST['shtb_adv_insert'];
-		$shtb_adv_setting_opt['shtb_adv_codebox'] = $_POST['shtb_adv_codebox'];
+
+		if ($_POST['shtb_adv_insert'] == "1") {
+			$shtb_adv_setting_opt['shtb_adv_insert'] = "1";
+		} else {
+			$shtb_adv_setting_opt['shtb_adv_insert'] = "0";
+		}
+		if ($_POST['shtb_adv_codebox'] == "1") {
+			$shtb_adv_setting_opt['shtb_adv_codebox'] = "1";
+		} else {
+			$shtb_adv_setting_opt['shtb_adv_codebox'] = "0";
+		}
 		$shtb_adv_setting_opt['shtb_adv_button_window_size'] = $_POST['shtb_adv_button_window_size'];
 		$shtb_adv_setting_opt['shtb_adv_button_row'] = $_POST['shtb_adv_button_row'];
 		$shtb_adv_setting_opt['shtb_adv_gutter'] = $_POST['shtb_adv_gutter'];
@@ -209,7 +230,7 @@ function shtb_adv_options_panel(){
 		}
 		// Rebuild language list
 		$shtb_adv_languages = get_option('shtb_adv_languages');
-		foreach($shtb_adv_languages as  $alias => $val){
+		foreach ($shtb_adv_languages as  $alias => $val) {
 			$brush_lang = $val[0];
 			$key = 'lang_'.$alias;
 			$shtb_adv_new_languages[$alias]= array($brush_lang, $_POST[$key]);
@@ -224,7 +245,9 @@ function shtb_adv_options_panel(){
 	// Reset all settings
 	if (isset($_POST['SHTB_ADV_Reset']) && $_POST['shtb_adv_reset'] == "true" && check_admin_referer("shtb_adv_reset_options", "_wpnonce_reset_options")) {
 		include_once('uninstall.php');
+		shtb_adv_language_array();
 		shtb_adv_setting_array();
+		update_option('shtb_adv_checkver_stamp', $shtb_adv_db_ver);
 		// Show message for admin
 		echo "<div id='setting-error-settings_updated' class='updated fade'><p><strong>".__("All settings were reset. Please <a href=\"options-general.php?page=syntaxhighlighter-tinymce-button-options\">reload the page</a>.","shtb_adv_lang")."</strong></p></div>";
 	}
@@ -232,7 +255,7 @@ function shtb_adv_options_panel(){
 	$shtb_adv_languages = get_option('shtb_adv_languages');
 
 	// Prompt reset all settings
-	if ((!is_array($shtb_adv_languages) || !is_array($shtb_adv_setting_opt) || $shtb_adv_db_ver != get_option('shtb_adv_checkver_stamp')) && !isset($_POST['SHTB_ADV_Reset'])) {
+	if ((!is_array($shtb_adv_languages) || !is_array($shtb_adv_setting_opt) || version_compare(get_option('shtb_adv_checkver_stamp'), $shtb_adv_db_ver, "!=")) && !isset($_POST['SHTB_ADV_Reset'])) {
 		echo "<div id='setting-error-settings_updated' class='updated settings-error'><p><strong>".__("Error: Missing Database Table. The plugin may fail to create the databese table when install or update. Please re-create database table by clicking on 'Reset All Settings'.","shtb_adv_lang")."</strong></p></div>";
 	}
 
@@ -314,7 +337,7 @@ function shtb_adv_options_panel(){
 			</tr>
 		<?php 
 		if (is_array($shtb_adv_languages)) {
-			foreach($shtb_adv_languages as $alias => $val){
+			foreach ($shtb_adv_languages as $alias => $val) {
 				$brush_lang = $val[0];
 				$brush_enable = $val[1];
 			?>
@@ -354,6 +377,7 @@ function shtb_adv_options_panel(){
 	<?php _e('WordPress character set:', 'shtb_adv_lang') ?> <?php bloginfo("charset"); ?><br />
 	<?php _e('WordPress theme:', 'shtb_adv_lang') ?> <?php $shtb_theme = get_theme(get_current_theme()); echo $shtb_theme['Name'].' '.$shtb_theme['Version']; ?><br />
 	<?php _e('SyntaxHighlighter TinyMCE Button version:', 'shtb_adv_lang') ?> <?php $shtb_plugin_data = get_plugin_data(__FILE__); echo $shtb_plugin_data['Version']; ?><br />
+	<?php _e('SyntaxHighlighter TinyMCE Button DB version:', 'shtb_adv_lang') ?> <?php echo get_option('shtb_adv_checkver_stamp'); ?><br />
 	<?php _e('SyntaxHighlighter TinyMCE Button URL:', 'shtb_adv_lang') ?> <?php echo $shtb_adv_plugin_url; ?><br />
 	<?php _e('Your browser:', 'shtb_adv_lang') ?> <?php echo $_SERVER['HTTP_USER_AGENT']; ?>
 	</p>
