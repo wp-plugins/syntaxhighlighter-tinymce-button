@@ -1,10 +1,10 @@
 === SyntaxHighlighter TinyMCE Button ===
 Contributors: redcocker, homolibere
-Donate link: http://www.near-mint.com/blog/donate/
+Donate link: http://www.near-mint.com/blog/donate
 Tags: syntaxhighlighter, code, tinymce, button, syntax, highlight
 Requires at least: 2.8
 Tested up to: 3.2.1
-Stable tag: 0.7.2
+Stable tag: 0.7.5
 
 "SyntaxHighlighter TinyMCE Button" provides buttons for Visual Editor and will help to type &lt;pre&gt; tag for SyntaxHighlighter.
 
@@ -109,6 +109,16 @@ A. "html-scripts" option requires "XML" brush. However, some 'SyntaxHighlighter'
 
 == Changelog ==
 
+= 0.7.5 =
+* Support WP SyntaxHighlighter ver. 1.5.5 or higher.
+* Checking if the current request carries a valid nonce when settings are saved or reset.
+* Validating the setting value before saved.
+* Changed line feed codes to LF.(except text files) The line feed codes were CR/LF in the many of files.
+* Changed the method of displaying the notice message for admin.
+* Changed the processing method when plugin is updated.
+* Using dirname() and plugin_basename() instead of hardcoded directory name.
+* Changed directory name stored translation files.
+
 = 0.7.2 =
 * Fix a bug: "Insert" function of "pre" button does not work in the fullscreen mode.
 
@@ -174,6 +184,9 @@ A. "html-scripts" option requires "XML" brush. However, some 'SyntaxHighlighter'
 * This is the first version.
 
 == Upgrade Notice ==
+
+= 0.7.5 =
+This version has some changes.
 
 = 0.7.2 =
 This version has a bug fix.

@@ -10,7 +10,7 @@ Text Domain: shtb_adv_lang
 Domain Path: /languages
 */
 /*
-Last modified: 2011/9/20
+Last modified: 2011/9/22
 License: GPL v2
 */
 load_plugin_textdomain('shtb_adv_lang', false, dirname(plugin_basename(__FILE__)).'/languages');
@@ -252,13 +252,6 @@ function shtb_adv_options_panel(){
 		echo "<div id='setting-error-settings_updated' class='updated fade'><p><strong>".__("All settings were reset. Please <a href=\"options-general.php?page=syntaxhighlighter-tinymce-button-options\">reload the page</a>.","shtb_adv_lang")."</strong></p></div>";
 	}
 
-	$shtb_adv_languages = get_option('shtb_adv_languages');
-
-	// Prompt reset all settings
-	if ((!is_array($shtb_adv_languages) || !is_array($shtb_adv_setting_opt) || version_compare(get_option('shtb_adv_checkver_stamp'), $shtb_adv_db_ver, "!=")) && !isset($_POST['SHTB_ADV_Reset'])) {
-		echo "<div id='setting-error-settings_updated' class='updated settings-error'><p><strong>".__("Error: Missing Database Table. The plugin may fail to create the databese table when install or update. Please re-create database table by clicking on 'Reset All Settings'.","shtb_adv_lang")."</strong></p></div>";
-	}
-
 	?> 
 	<div class="wrap">
 	<h2>SyntaxHighlighter TinyMCE Button</h2>
@@ -336,6 +329,7 @@ function shtb_adv_options_panel(){
 				</td>
 			</tr>
 		<?php 
+		$shtb_adv_languages = get_option('shtb_adv_languages');
 		if (is_array($shtb_adv_languages)) {
 			foreach ($shtb_adv_languages as $alias => $val) {
 				$brush_lang = $val[0];
