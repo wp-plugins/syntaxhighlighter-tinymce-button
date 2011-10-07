@@ -6,7 +6,7 @@ global $wpdb;
 
 //Check for rights
 if ( !is_user_logged_in() || !current_user_can('edit_posts') ) 
-	wp_die(__("You are not allowed to access this file."));
+	wp_die(__("You are not allowed to access this file.", "shtb_adv_lang"));
 
 $shtb_ins_url = plugin_dir_url( __FILE__ );
 $shtb_adv_setting_opt = get_option('shtb_adv_setting_opt');
@@ -27,7 +27,7 @@ $shtb_adv_setting_opt = get_option('shtb_adv_setting_opt');
 <?php
 $syntaxhighlighter_settings = get_option('syntaxhighlighter_settings');
 if ($shtb_adv_setting_opt['shtb_adv_using_syntaxhighlighter'] == 'syntaxhighlighter_evolved' && function_exists('SyntaxHighlighter') && $syntaxhighlighter_settings['loadallbrushes'] == 0) {
-	_e('<div style="margin-bottom:5px">WARNING!: "Load All Brushes" option must be enabled on the "SyntaxHighlighter" setting panel.</div>', 'shtb_adv_lang');
+	_e("<div style=\"margin-bottom:5px\">WARNING!: \"Load All Brushes\" option must be enabled on the \"SyntaxHighlighter\" setting panel.</div>", "shtb_adv_lang");
 }
 ?>
 
@@ -35,7 +35,7 @@ if ($shtb_adv_setting_opt['shtb_adv_using_syntaxhighlighter'] == 'syntaxhighligh
 	<form name="shtb_adv_insert" action="#">
 		<table border="0" cellpadding="4" cellspacing="0">
 			<tr>
-				<td nowrap="nowrap"><label for="shtb_adv_insert_language"><?php _e("Select Language", 'shtb_adv_lang'); ?></label></td>
+				<td nowrap="nowrap"><label for="shtb_adv_insert_language"><?php _e("Select Language", "shtb_adv_lang"); ?></label></td>
 				<td>
 					<select id="shtb_adv_insert_language" name="shtb_adv_insert_language" style="width: 200px">
 					<?php 
@@ -78,7 +78,7 @@ if ($shtb_adv_setting_opt['shtb_adv_using_syntaxhighlighter'] == 'syntaxhighligh
 				</td>
 			</tr>
 			<tr>
-				<td nowrap="nowrap" valign="top"><label for="shtb_adv_insert_linenumbers"><?php _e("Show Line Number", 'shtb_adv_lang'); ?></label></td>
+				<td nowrap="nowrap" valign="top"><label for="shtb_adv_insert_linenumbers"><?php _e("Show Line Number", "shtb_adv_lang"); ?></label></td>
 <?php
 if ($shtb_adv_setting_opt['shtb_adv_using_syntaxhighlighter'] == 'wp_syntaxhighlighter' && function_exists('wp_sh_register_menu_item')) {
 	$wp_sh_setting_opt = get_option('wp_sh_setting_opt');
@@ -118,7 +118,7 @@ if ($shtb_adv_setting_opt['shtb_adv_using_syntaxhighlighter'] == 'wp_syntaxhighl
 				<td><label><input name="shtb_adv_insert_linenumbers" id='shtb_adv_insert_linenumbers' type="checkbox" <?php echo $shtb_adv_insert_linenumbers_check; ?>/></label></td>
 			</tr>
 			<tr>
-				<td nowrap="nowrap" valign="top"><label for="shtb_adv_insert_starting_linenumber"><?php _e("Starting Line Number", 'shtb_adv_lang'); ?></label></td>
+				<td nowrap="nowrap" valign="top"><label for="shtb_adv_insert_starting_linenumber"><?php _e("Starting Line Number", "shtb_adv_lang"); ?></label></td>
 <?php 
 if ($shtb_adv_setting_opt['shtb_adv_using_syntaxhighlighter'] == 'wp_syntaxhighlighter' && function_exists('wp_sh_register_menu_item')) {
 	$wp_sh_setting_opt = get_option('wp_sh_setting_opt');
@@ -130,6 +130,9 @@ if ($shtb_adv_setting_opt['shtb_adv_using_syntaxhighlighter'] == 'wp_syntaxhighl
 		}
 	} else {
 		$shtb_adv_insert_starting_linenumber_value = $shtb_adv_setting_opt['shtb_adv_first_line'];
+		if (!preg_match("/^[0-9]+$/", $shtb_adv_codebox_starting_linenumber_value)) {
+			$shtb_adv_codebox_starting_linenumber_value  = "1";
+		}
 	}
 } elseif ($shtb_adv_setting_opt['shtb_adv_using_syntaxhighlighter'] == 'syntaxhighlighter_evolved' && function_exists('SyntaxHighlighter')) {
 	$syntaxhighlighter_settings = get_option('syntaxhighlighter_settings');
@@ -145,11 +148,11 @@ if ($shtb_adv_setting_opt['shtb_adv_using_syntaxhighlighter'] == 'wp_syntaxhighl
 				<td><label><input name="shtb_adv_insert_starting_linenumber" id='shtb_adv_insert_starting_linenumber' type="text" value="<?php echo $shtb_adv_insert_starting_linenumber_value; ?>" /></label></td>
 			</tr>
 			<tr>
-				<td nowrap="nowrap" valign="top"><label for="shtb_adv_insert_highlighted_lines"><?php _e("Highlighted Lines", 'shtb_adv_lang'); ?></label></td>
-				<td style="width: 220px"><label><input name="shtb_adv_insert_highlighted_lines" id='shtb_adv_insert_highlighted_lines' type="text" /></label><br /><?php _e("Enter comma-separated linenumbers", 'shtb_adv_lang'); ?></td>
+				<td nowrap="nowrap" valign="top"><label for="shtb_adv_insert_highlighted_lines"><?php _e("Highlighted Lines", "shtb_adv_lang"); ?></label></td>
+				<td style="width: 220px"><label><input name="shtb_adv_insert_highlighted_lines" id='shtb_adv_insert_highlighted_lines' type="text" /></label><br /><?php _e("Enter comma-separated linenumbers", "shtb_adv_lang"); ?></td>
 			</tr>
 			<tr>
-				<td nowrap="nowrap" valign="top"><label for="shtb_adv_insert_html_script"><?php _e("html-script", 'shtb_adv_lang'); ?></label></td>
+				<td nowrap="nowrap" valign="top"><label for="shtb_adv_insert_html_script"><?php _e("html-script", "shtb_adv_lang"); ?></label></td>
 <?php
 if ($shtb_adv_setting_opt['shtb_adv_html_script'] == "0") {
 	$shtb_adv_insert_html_script_check = ' ';
@@ -162,10 +165,10 @@ if ($shtb_adv_setting_opt['shtb_adv_html_script'] == "0") {
 		</table>
 		<div class="mceActionPanel">
 			<div style="float: left">
-				<input type="submit" id="insert" name="insert" value="<?php _e("Insert", 'shtb_adv_lang'); ?>" onclick="insertSHTBADVINSERTcode();" />
+				<input type="submit" id="insert" name="insert" value="<?php _e("Insert", "shtb_adv_lang"); ?>" onclick="insertSHTBADVINSERTcode();" />
 			</div>
 			<div style="float: right">
-				<input type="button" id="cancel" name="cancel" value="<?php _e("Cancel", 'shtb_adv_lang'); ?>" onclick="tinyMCEPopup.close();" />
+				<input type="button" id="cancel" name="cancel" value="<?php _e("Cancel", "shtb_adv_lang"); ?>" onclick="tinyMCEPopup.close();" />
 			</div>
 		</div>
 	</form>

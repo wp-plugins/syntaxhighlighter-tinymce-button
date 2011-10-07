@@ -1,10 +1,10 @@
 === SyntaxHighlighter TinyMCE Button ===
 Contributors: redcocker, homolibere
 Donate link: http://www.near-mint.com/blog/donate
-Tags: syntaxhighlighter, code, tinymce, button, syntax, highlight
+Tags: syntaxhighlighter, code, sourcecode, tinymce, button, syntax, highlight
 Requires at least: 2.8
 Tested up to: 3.2.1
-Stable tag: 0.7.5
+Stable tag: 0.7.7
 
 "SyntaxHighlighter TinyMCE Button" provides buttons for Visual Editor and will help to type &lt;pre&gt; tag for SyntaxHighlighter.
 
@@ -109,6 +109,12 @@ A. "html-scripts" option requires "XML" brush. However, some 'SyntaxHighlighter'
 
 == Changelog ==
 
+= 0.7.7 =
+* Validating the setting values more closely.
+* Added the icon before title block on the setting panel.
+* Fix a bug: The setting data migration processing can't work concurrently with auto-update.
+* Fix a bug: A error message don't be translated.
+
 = 0.7.5 =
 * Support WP SyntaxHighlighter ver. 1.5.5 or higher.
 * Checking if the current request carries a valid nonce when settings are saved or reset.
@@ -184,6 +190,9 @@ A. "html-scripts" option requires "XML" brush. However, some 'SyntaxHighlighter'
 * This is the first version.
 
 == Upgrade Notice ==
+
+= 0.7.7 =
+This version has some changes and bug fixes.
 
 = 0.7.5 =
 This version has some changes.

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SyntaxHighlighter TinyMCE Button\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-20 19:27+0900\n"
-"PO-Revision-Date: 2011-09-20 19:29+0900\n"
+"POT-Creation-Date: 2011-09-29 12:24+0900\n"
+"PO-Revision-Date: 2011-09-29 12:26+0900\n"
 "Last-Translator: redcocker <masa153@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -36,6 +36,10 @@ msgstr "設定"
 msgid "Cheatin&#8217; uh?"
 msgstr "間違いましたか？"
 
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:229
+msgid "Invalid value. Settings could not be saved.<br />Your \"Starting Line Number\" must be entered in numbers."
+msgstr "不正な値です。設定を保存できませんでした。<br />「行番号の開始番号」の設定値は、半角数字のみで入力して下さい。"
+
 #: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:243
 msgid "Settings saved."
 msgstr "設定を保存しました。"
@@ -44,205 +48,201 @@ msgstr "設定を保存しました。"
 msgid "All settings were reset. Please <a href=\"options-general.php?page=syntaxhighlighter-tinymce-button-options\">reload the page</a>."
 msgstr "設定はリセットされました。 <a href=\"options-general.php?page=syntaxhighlighter-tinymce-button-options\">ページの再読込み</a>を実行して下さい。"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:259
-msgid "Error: Missing Database Table. The plugin may fail to create the databese table when install or update. Please re-create database table by clicking on 'Reset All Settings'."
-msgstr "エラー：データベーステーブルが見つかりません。インストールまたはアップデートの際に、テーブルの作成に失敗した可能性があります。「設定をリセット」ボタンをクリックして再構築して下さい。"
-
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:268
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:262
 msgid "1. Basic settings"
 msgstr "１．基本設定"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:271
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:265
 msgid "Using with"
 msgstr "使用中のプラグイン"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:273
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:267
 msgid "<a href=\"http://wordpress.org/extend/plugins/wp-syntaxhighlighter/\" style=\"text-decoration: none\">WP SyntaxHighlighter</a>"
 msgstr "<a href=\"http://wordpress.org/extend/plugins/wp-syntaxhighlighter/\" style=\"text-decoration: none\">WP SyntaxHighlighter</a>"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:273
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:267
 msgid "<a href=\"http://wordpress.org/extend/plugins/syntax-highlighter-compress/\" style=\"text-decoration: none\">Syntax Highlighter Compress</a>"
 msgstr "<a href=\"http://wordpress.org/extend/plugins/syntax-highlighter-compress/\" style=\"text-decoration: none\">Syntax Highlighter Compress</a>"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:273
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:267
 msgid "<a href=\"http://wordpress.org/extend/plugins/syntaxhighlighter/\" style=\"text-decoration: none\">SyntaxHighlighter Evolved</a>"
 msgstr "<a href=\"http://wordpress.org/extend/plugins/syntaxhighlighter/\" style=\"text-decoration: none\">SyntaxHighlighter Evolved</a>"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:273
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:267
 msgid "Other"
 msgstr "その他"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:274
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:268
 msgid "Select your using plugin based on Alex Gorbatchev's <a href='http://alexgorbatchev.com/SyntaxHighlighter/' style='text-decoration: none'>SyntaxHighlighter</a>.<br />If your plugin is not in the options, Select 'Other'.<br />It is the same if you use <a href='http://wordpress.org/extend/plugins/auto-syntaxhighlighter/' style='text-decoration: none'>Auto SyntaxHighlighter</a>, <a href='http://wordpress.org/extend/plugins/syntax-highlighter-and-code-prettifier/' style='text-decoration: none'>Syntax Highlighter and Code Colorizer for WordPress</a> or <a href='http://wordpress.org/extend/plugins/syntax-highlighter-mt/' style='text-decoration: none'>Syntax Highlighter MT</a>.<br />If you don't know about your using plugin, Select 'Other'. When you select 'Other', this plugin will act innocuously.<br />When using with 'SyntaxHighlighter Evolved', 'Load All Brushes' option must be enabled on the 'SyntaxHighlighter' setting panel.<br />If you want to use full options of 'Dafault settings for your buttons', you should select 'Other'."
 msgstr "使用しているハイライト表示用プラグインを選択して下さい。（Alex Gorbatchev氏の<a href='http://alexgorbatchev.com/SyntaxHighlighter/' style='text-decoration: none'>SyntaxHighlighter</a>ベースのプラグイン。）<br />使用中のプラグインが、リストにない場合は、「その他」を選択して下さい。<br /><a href='http://wordpress.org/extend/plugins/auto-syntaxhighlighter/' style='text-decoration: none'>Auto SyntaxHighlighter</a>、<a href='http://wordpress.org/extend/plugins/syntax-highlighter-and-code-prettifier/' style='text-decoration: none'>Syntax Highlighter and Code Colorizer for WordPress</a> または <a href='http://wordpress.org/extend/plugins/syntax-highlighter-mt/' style='text-decoration: none'>Syntax Highlighter MT</a>を使用している場合も同様です。<br />使用しているプラグインの種類が分からない場合は、「その他」を選択します。<br />「その他」を選択した場合、このプラグインは、特定のプラグインに特化せず、無難な振る舞いをします。<br />SyntaxHighlighter Evolvedを使用する場合は、設定画面で「すべてのブラシを読み込む」を有効にする必要があります。<br />「ボタンのデフォルト設定」の全てのオプションを使用したい場合は、「その他」を選択して下さい。"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:278
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:272
 msgid "Buttons"
 msgstr "ボタン"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:281
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:275
 msgid "Enable/Disable buttons.<br />'Select &amp; Insert' will help you to wrap your code on the post or page in <code>&lt;pre&gt;</code> tag or to update values of previously-markuped code.<br />'CodeBox' will allow you to paste your code into the post or page and wrap in <code>&lt;pre&gt;</code> tag automatically, keeping indent by tabs.<br />In 'Visual Editor', 'Select &amp; Insert' will appear as 'pre' icon and 'CodeBox' will appear as 'CODE' icon."
 msgstr "ボタンの有効化と無効化。<br />「Select &amp; Insert」ボタンを使えば、既に投稿やページ上に記述されたソースコードを「<code>&lt;pre&gt;</code>」タグでマークアップ出来ます。<br />また、「pre」ボタンを使って、マークアップ済みのソースコードの言語やオプションの変更する事も可能です。<br />「CodeBox」ボタンを使えば、タブによるインデントを維持したまま、ソースコードを投稿やページにペーストし、同時に「<code>&lt;pre&gt;</code>」タグでマークアップする事が出来ます。<br />ビジュアルエディターでは、「Select &amp; Insert」ボタンは、「pre」アイコン、「CodeBox」ボタンは、「CODE」アイコンとして表示されます。"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:285
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:279
 msgid "Window size"
 msgstr "ウィンドウサイズ"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:292
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:286
 msgid "Choose size of pop-up window at the click of buttons."
 msgstr "ボタンをクリックした時に表示されるポップアップウィンドウのサイズを選択します。"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:296
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:290
 msgid "Place the buttons in"
 msgstr "ボタンをツールバーの"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:299
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:293
 msgid "1st row"
 msgstr "1行目"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:300
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:294
 msgid "2nd row"
 msgstr "2行目"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:301
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:295
 msgid "3rd row"
 msgstr "3行目"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:302
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:296
 msgid "4th row"
 msgstr "4行目"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:303
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:297
 msgid "of TinyMCE toolbar."
 msgstr "に表示。"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:304
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:298
 msgid "Choose TinyMCE toolbar row which buttons will be placed in."
 msgstr "ボタンをTinyMCEのツールバーの何行目に表示するか選択します。"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:308
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:302
 msgid "2. Dafault settings for your buttons"
 msgstr "２．ボタンのデフォルト設定"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:312
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:306
 #: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:81
 #: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:81
 msgid "Show Line Number"
 msgstr "行番号を表示"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:315
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:309
 msgid "Enable/Disable 'Show Line number' option by default.<br />Only when 'Other' is selected in 'Using with' option, this option can work."
 msgstr "「行番号を表示」の有効化／無効化。<br />「使用中のプラグイン」オプションで「その他」を選択している時のみ、このオプションは有効になります。"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:319
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:313
 #: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:121
 #: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:121
 msgid "Starting Line Number"
 msgstr "行番号の開始番号"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:322
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:316
 msgid "Enter default starting line number.<br />When 'WP SyntaxHighlighter' or 'SyntaxHighlighter Evolved' is selected in 'Using with' option, this option can't work."
 msgstr "「行番号の開始番号」を入力します。<br />「使用中のプラグイン」オプションで「WP SyntaxHighlighter」または「SyntaxHighlighter Evolved」を選択している場合は、このオプションは無効になります。"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:326
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:152
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:152
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:320
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:155
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:155
 msgid "html-script"
 msgstr "html-script"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:329
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:323
 msgid "Enable/Disable 'html-script' option by default."
 msgstr "「html-script」の有効化／無効化。"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:333
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:327
 msgid "Default languages"
 msgstr "デフォルトの言語"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:335
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:329
 msgid "Choose languages listed in the drop-down list by default.<br />When 'WP SyntaxHighlighter' is selected in 'Using with' option, this option can't work."
 msgstr "ボタンのドロップダウンリストに表示する言語を選択して下さい。<br />「使用中のプラグイン」オプションで「WP SyntaxHighlighter」を選択している場合は、このオプションは無効になります。"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:347
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:342
 msgid "Yes"
 msgstr "使用する"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:348
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:343
 msgid "No"
 msgstr "使用しない"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:356
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:351
 msgid "Save Changes"
 msgstr "設定を保存"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:359
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:354
 msgid "3. Restore all settings to default"
 msgstr "３．設定のリセット"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:364
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:359
 msgid "Reset All Settings"
 msgstr "設定をリセット"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:367
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:362
 msgid "4. Your System Info"
 msgstr "４．システム情報"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:370
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:365
 msgid "Server OS:"
 msgstr "サーバーのOS:"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:371
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:366
 msgid "PHP version:"
 msgstr "PHPのバージョン:"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:372
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:367
 msgid "MySQL version:"
 msgstr "MySQLのバージョン:"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:373
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:368
 msgid "WordPress version:"
 msgstr "WordPressのバージョン:"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:374
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:369
 msgid "Site URL:"
 msgstr "サイトのURL:"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:375
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:370
 msgid "WordPress URL:"
 msgstr "WordPressのURL:"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:376
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:371
 msgid "WordPress language:"
 msgstr "WordPressのロケール:"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:377
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:372
 msgid "WordPress character set:"
 msgstr "WordPressの文字コード:"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:378
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:373
 msgid "WordPress theme:"
 msgstr "WordPressのテーマ:"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:379
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:374
 msgid "SyntaxHighlighter TinyMCE Button version:"
 msgstr "SyntaxHighlighter TinyMCE Buttonのバージョン:"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:380
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:375
 msgid "SyntaxHighlighter TinyMCE Button DB version:"
 msgstr "SyntaxHighlighter TinyMCE ButtonのDBバージョン:"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:381
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:376
 msgid "SyntaxHighlighter TinyMCE Button URL:"
 msgstr "SyntaxHighlighter TinyMCE ButtonのURL:"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:382
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:377
 msgid "Your browser:"
 msgstr "ブラウザ:"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:386
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:381
 msgid "To report a bug ,submit requests and feedback, "
 msgstr "バグの報告、ご要望、ご感想は、"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:386
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button.php:381
 msgid "Use <a href=\"http://wordpress.org/tags/syntaxhighlighter-tinymce-button?forum_id=10\">Forum</a> or <a href=\"http://www.near-mint.com/blog/contact\">Mail From</a>"
 msgstr "<a href=\"http://wordpress.org/tags/syntaxhighlighter-tinymce-button?forum_id=10\">フォーラム</a> または、<a href=\"http://www.near-mint.com/blog/contact\">メールフォーム</a>まで"
 
@@ -265,27 +265,27 @@ msgstr "<div style=\"margin-bottom:5px\">注意：「SyntaxHighlighter」の設�
 msgid "Select Language"
 msgstr "言語の選択"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:148
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:148
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:151
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:151
 msgid "Highlighted Lines"
 msgstr "強調表示する行"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:149
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:149
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:152
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:152
 msgid "Enter comma-separated linenumbers"
 msgstr "行番号をカンマ区切りで入力"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:164
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:167
 msgid "Your Code:"
 msgstr "ソースコード:"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:171
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:165
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:174
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:168
 msgid "Insert"
 msgstr "挿入"
 
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:174
-#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:168
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-box/window.php:177
+#: wp-content/plugins/syntaxhighlighter-tinymce-button/sh-tinymce-button-ins/window.php:171
 msgid "Cancel"
 msgstr "キャンセル"
 

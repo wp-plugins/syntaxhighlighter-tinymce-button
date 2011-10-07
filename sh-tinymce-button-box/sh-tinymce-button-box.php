@@ -54,7 +54,7 @@ function shtb_adv_codebox_change_tinymce_version($version) {
 // For fullscreen mode
 function shtb_adv_codebox_fullscreen($buttons) {
 	$buttons['shtb_adv_codebox'] = array(
-	'title' => __('SyntaxHighlighter TinyMCE Button CodeBox', 'shtb_adv_lang'),
+	'title' => __("SyntaxHighlighter TinyMCE Button CodeBox", "shtb_adv_lang"),
 	'onclick' => "tinyMCE.execCommand('shtb_adv_codebox_cmd');",
 	'both' => false);
 	return $buttons;

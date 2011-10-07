@@ -55,7 +55,7 @@ function shtb_adv_insert_change_tinymce_version($version) {
 function shtb_adv_insert_fullscreen($buttons) {
 	$buttons[] = 'separator';
 	$buttons['shtb_adv_insert'] = array(
-	'title' => __('SyntaxHighlighter TinyMCE Button Select & Insert', 'shtb_adv_lang'),
+	'title' => __("SyntaxHighlighter TinyMCE Button Select & Insert", "shtb_adv_lang"),
 	'onclick' => "tinyMCE.execCommand('shtb_adv_insert_cmd');",
 	'both' => false);
 	return $buttons;
