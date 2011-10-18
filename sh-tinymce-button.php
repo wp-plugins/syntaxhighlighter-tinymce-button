@@ -3,72 +3,76 @@
 Plugin Name: SyntaxHighlighter TinyMCE Button
 Plugin URI: http://www.near-mint.com/blog/software/syntaxhighlighter-tinymce-button
 Description: 'SyntaxHighlighter TinyMCE Button' provides additional buttons for Visual Editor and these buttons will help to type or edit <code>&lt;pre&gt;</code> tag for Alex Gorbatchev's <a href='http://alexgorbatchev.com/SyntaxHighlighter/'>SyntaxHighlighter</a>. This plugin is based on '<a href='http://wordpress.org/extend/plugins/codecolorer-tinymce-button/'>CodeColorer TinyMCE Button</a>'.
-Version: 0.7.7
+Version: 0.7.8
 Author: redcocker
 Author URI: http://www.near-mint.com/blog/
 Text Domain: shtb_adv_lang
 Domain Path: /languages
 */
 /*
-Last modified: 2011/10/7
+Last modified: 2011/10/18
 License: GPL v2
 */
 load_plugin_textdomain('shtb_adv_lang', false, dirname(plugin_basename(__FILE__)).'/languages');
 $shtb_adv_plugin_url = plugin_dir_url(__FILE__);
-$shtb_adv_db_ver = "0.7.5";
+$shtb_adv_db_ver = "0.7.8";
 $shtb_adv_setting_opt = get_option('shtb_adv_setting_opt');
 
 // Create language list array
 function shtb_adv_language_array() {
-	$shtb_adv_language['applescript'] = array('AppleScript', 'true');
-	$shtb_adv_language['actionscript3'] = array('Actionscript3', 'true');
-	$shtb_adv_language['bash'] = array('Bash shell', 'true');
-	$shtb_adv_language['coldfusion'] = array('ColdFusion', 'true');
-	$shtb_adv_language['c'] = array('C', 'true');
-	$shtb_adv_language['cpp'] = array('C++', 'true');
-	$shtb_adv_language['csharp'] = array('C#', 'true');
-	$shtb_adv_language['css'] = array('CSS', 'true');
-	$shtb_adv_language['delphi'] = array('Delphi', 'true');
-	$shtb_adv_language['diff'] = array('Diff', 'true');
-	$shtb_adv_language['erlang'] = array('Erlang', 'true');
-	$shtb_adv_language['groovy'] = array('Groovy', 'true');
-	$shtb_adv_language['html'] = array('HTML', 'true');
-	$shtb_adv_language['java'] = array('Java', 'true');
-	$shtb_adv_language['javafx'] = array('JavaFX', 'true');
-	$shtb_adv_language['javascript'] = array('JavaScript', 'true');
-	$shtb_adv_language['pascal'] = array('Pascal', 'true');
-	$shtb_adv_language['patch'] = array('Patch', 'true');
-	$shtb_adv_language['perl'] = array('Perl', 'true');
-	$shtb_adv_language['php'] = array('PHP', 'true');
-	$shtb_adv_language['text'] = array('Plain Text', 'true');
-	$shtb_adv_language['powershell'] = array('PowerShell', 'true');
-	$shtb_adv_language['python'] = array('Python', 'true');
-	$shtb_adv_language['ruby'] = array('Ruby', 'true');
-	$shtb_adv_language['rails'] = array('Ruby on Rails', 'true');
-	$shtb_adv_language['sass'] = array('Sass', 'true');
-	$shtb_adv_language['scala'] = array('Scala', 'true');
-	$shtb_adv_language['scss'] = array('Scss', 'true');
-	$shtb_adv_language['shell'] = array('Shell', 'true');
-	$shtb_adv_language['sql'] = array('SQL', 'true');
-	$shtb_adv_language['vb'] = array('Visual Basic', 'true');
-	$shtb_adv_language['vbnet'] = array('Visual Basic .NET', 'true');
-	$shtb_adv_language['xhtml'] = array('XHTML', 'true');
-	$shtb_adv_language['xml'] = array('XML', 'true');
-	$shtb_adv_language['xslt'] = array('XSLT', 'true');
+	$shtb_adv_language = array(
+		"applescript" => array('AppleScript', 'true'),
+		"actionscript3" => array('Actionscript3', 'true'),
+		"bash" => array('Bash shell', 'true'),
+		"coldfusion" => array('ColdFusion', 'true'),
+		"c" => array('C', 'true'),
+		"cpp" => array('C++', 'true'),
+		"csharp" => array('C#', 'true'),
+		"css" => array('CSS', 'true'),
+		"delphi" => array('Delphi', 'true'),
+		"diff" => array('Diff', 'true'),
+		"erlang" => array('Erlang', 'true'),
+		"groovy" => array('Groovy', 'true'),
+		"html" => array('HTML', 'true'),
+		"java" => array('Java', 'true'),
+		"javafx" => array('JavaFX', 'true'),
+		"javascript" => array('JavaScript', 'true'),
+		"pascal" => array('Pascal', 'true'),
+		"patch" => array('Patch', 'true'),
+		"perl" => array('Perl', 'true'),
+		"php" => array('PHP', 'true'),
+		"text" => array('Plain Text', 'true'),
+		"powershell" => array('PowerShell', 'true'),
+		"python" => array('Python', 'true'),
+		"ruby" => array('Ruby', 'true'),
+		"rails" => array('Ruby on Rails', 'true'),
+		"sass" => array('Sass', 'true'),
+		"scala" => array('Scala', 'true'),
+		"scss" => array('Scss', 'true'),
+		"shell" => array('Shell', 'true'),
+		"sql" => array('SQL', 'true'),
+		"vb" => array('Visual Basic', 'true'),
+		"vbnet" => array('Visual Basic .NET', 'true'),
+		"xhtml" => array('XHTML', 'true'),
+		"xml" => array('XML', 'true'),
+		"xslt" => array('XSLT', 'true'),
+		);
 	// Store in DB
 	update_option('shtb_adv_languages', $shtb_adv_language);
 }
 
 // Create settings array
 function shtb_adv_setting_array() {
-	$shtb_adv_setting_opt['shtb_adv_using_syntaxhighlighter'] = "other";
-	$shtb_adv_setting_opt['shtb_adv_insert'] = "1";
-	$shtb_adv_setting_opt['shtb_adv_codebox'] = "1";
-	$shtb_adv_setting_opt['shtb_adv_button_window_size'] = "100";
-	$shtb_adv_setting_opt['shtb_adv_button_row'] = "1";
-	$shtb_adv_setting_opt['shtb_adv_gutter'] = "1";
-	$shtb_adv_setting_opt['shtb_adv_first_line'] = "1";
-	$shtb_adv_setting_opt['shtb_adv_html_script'] = "0";
+	$shtb_adv_setting_opt = array(
+		"using_syntaxhighlighter" => "other",
+		"insert" => "1",
+		"codebox" => "1",
+		"button_window_size" => "100",
+		"button_row" => "1",
+		"gutter" => "1",
+		"first_line" => "1",
+		"html_script" => "0",
+		);
 	// Store in DB
 	add_option('shtb_adv_setting_opt', $shtb_adv_setting_opt);
 	add_option('shtb_adv_updated', 'false');
@@ -81,18 +85,28 @@ function shtb_adv_check_db_ver(){
 	global $shtb_adv_db_ver;
 	$current_checkver_stamp = get_option('shtb_adv_checkver_stamp');
 	if (!$current_checkver_stamp || version_compare($current_checkver_stamp, $shtb_adv_db_ver, "!=")) {
+		$updated_count = 0;
 		// For new installation, update from ver. 0.6 or older
 		if (!$current_checkver_stamp) {
 			// Register array
 			shtb_adv_language_array();
+			$updated_count = $updated_count + 1;
+		}
+		// For new installation, update from ver. 0.7.7 or older
+		if (!$current_checkver_stamp || ($current_checkver_stamp && version_compare($current_checkver_stamp, "0.7.5", "<="))) {
+			// Register array
 			shtb_adv_setting_array();
 			// Data migration when updated from ver.0.6 or older
 			include_once('data-migration.php');
-			update_option('shtb_adv_updated', 'true');
+			$updated_count = $updated_count + 1;
+			// Delete options since ver.0.6 or older
+			include_once('del-old-options.php');
 		}
 		update_option('shtb_adv_checkver_stamp', $shtb_adv_db_ver);
-		// Delete options since ver.0.6 or older
-		include_once('del-old-options.php');
+		// Stamp for showing messages
+		if ($updated_count != 0) {
+			update_option('shtb_adv_updated', 'true');
+		}
 	}
 }
 
@@ -154,15 +168,15 @@ function shtb_adv_setting_link($links, $file){
 }
 
 // Load SyntaxHighlighter TinyMCE Buttons
-if ($shtb_adv_setting_opt['shtb_adv_insert'] == 1) {
+if ($shtb_adv_setting_opt['insert'] == 1) {
 	include_once('sh-tinymce-button-ins/sh-tinymce-button-ins.php');
 }
-if ($shtb_adv_setting_opt['shtb_adv_codebox'] == 1) {
+if ($shtb_adv_setting_opt['codebox'] == 1) {
 	include_once('sh-tinymce-button-box/sh-tinymce-button-box.php');
 }
 
 // Allow tabs to indent in TinyMCE.
-if ($shtb_adv_setting_opt['shtb_adv_insert'] == 1 || $shtb_adv_setting_opt['shtb_adv_codebox'] == 1) {
+if ($shtb_adv_setting_opt['insert'] == 1 || $shtb_adv_setting_opt['codebox'] == 1) {
 	add_filter('tiny_mce_before_init', 'shtb_adv_insert_allow_tab');
 }
 
@@ -196,35 +210,35 @@ function shtb_adv_options_panel(){
 
 	// Update setting options
 	if (isset($_POST['SHTB_ADV_Setting_Submit']) && $_POST['shtb_adv_hidden_value'] == "true" && check_admin_referer("shtb_adv_update_options", "_wpnonce_update_options")) {
-		$shtb_adv_setting_opt['shtb_adv_using_syntaxhighlighter'] = $_POST['shtb_adv_using_syntaxhighlighter'];
+		$shtb_adv_setting_opt['using_syntaxhighlighter'] = $_POST['using_syntaxhighlighter'];
 
-		if ($_POST['shtb_adv_insert'] == "1") {
-			$shtb_adv_setting_opt['shtb_adv_insert'] = "1";
+		if ($_POST['insert'] == "1") {
+			$shtb_adv_setting_opt['insert'] = "1";
 		} else {
-			$shtb_adv_setting_opt['shtb_adv_insert'] = "0";
+			$shtb_adv_setting_opt['insert'] = "0";
 		}
-		if ($_POST['shtb_adv_codebox'] == "1") {
-			$shtb_adv_setting_opt['shtb_adv_codebox'] = "1";
+		if ($_POST['codebox'] == "1") {
+			$shtb_adv_setting_opt['codebox'] = "1";
 		} else {
-			$shtb_adv_setting_opt['shtb_adv_codebox'] = "0";
+			$shtb_adv_setting_opt['codebox'] = "0";
 		}
-		$shtb_adv_setting_opt['shtb_adv_button_window_size'] = $_POST['shtb_adv_button_window_size'];
-		$shtb_adv_setting_opt['shtb_adv_button_row'] = $_POST['shtb_adv_button_row'];
-		$shtb_adv_setting_opt['shtb_adv_gutter'] = $_POST['shtb_adv_gutter'];
-		$shtb_adv_setting_opt['shtb_adv_button_row'] = $_POST['shtb_adv_button_row'];
-		if ($_POST['shtb_adv_gutter'] == "1") {
-			$shtb_adv_setting_opt['shtb_adv_gutter'] = "1";
+		$shtb_adv_setting_opt['button_window_size'] = $_POST['button_window_size'];
+		$shtb_adv_setting_opt['button_row'] = $_POST['button_row'];
+		$shtb_adv_setting_opt['gutter'] = $_POST['gutter'];
+		$shtb_adv_setting_opt['button_row'] = $_POST['button_row'];
+		if ($_POST['gutter'] == "1") {
+			$shtb_adv_setting_opt['gutter'] = "1";
 		} else {
-			$shtb_adv_setting_opt['shtb_adv_gutter'] = "0";
+			$shtb_adv_setting_opt['gutter'] = "0";
 		}
-		$shtb_adv_setting_opt['shtb_adv_first_line'] = $_POST['shtb_adv_first_line'];
-		if ($_POST['shtb_adv_html_script'] == "1") {
-			$shtb_adv_setting_opt['shtb_adv_html_script'] = "1";
+		$shtb_adv_setting_opt['first_line'] = $_POST['first_line'];
+		if ($_POST['html_script'] == "1") {
+			$shtb_adv_setting_opt['html_script'] = "1";
 		} else {
-			$shtb_adv_setting_opt['shtb_adv_html_script'] = "0";
+			$shtb_adv_setting_opt['html_script'] = "0";
 		}
 		// Validate values
-		if (!preg_match("/^[0-9]+$/", $shtb_adv_setting_opt['shtb_adv_first_line'])) {
+		if (!preg_match("/^[0-9]+$/", $shtb_adv_setting_opt['first_line'])) {
 			wp_die(__("Invalid value. Settings could not be saved.<br />Your \"Starting Line Number\" must be entered in numbers.", "shtb_adv_lang"));
 		}
 		// Rebuild language list
@@ -263,24 +277,24 @@ function shtb_adv_options_panel(){
 			<tr valign="top">
 				<th scope="row"><strong><?php _e("Using with", "shtb_adv_lang") ?></strong></th> 
 				<td>
-					<input type="radio" name="shtb_adv_using_syntaxhighlighter" value="wp_syntaxhighlighter" <?php if ($shtb_adv_setting_opt['shtb_adv_using_syntaxhighlighter'] == "wp_syntaxhighlighter") {echo 'checked=\"checked\"';} ?>/><?php _e("<a href=\"http://wordpress.org/extend/plugins/wp-syntaxhighlighter/\" style=\"text-decoration: none\">WP SyntaxHighlighter</a>", "shtb_adv_lang") ?> <input type="radio" name="shtb_adv_using_syntaxhighlighter" value="syntax_highlighter_compress" <?php if ($shtb_adv_setting_opt['shtb_adv_using_syntaxhighlighter'] == "syntax_highlighter_compress") {echo 'checked=\"checked\"';} ?>/><?php _e("<a href=\"http://wordpress.org/extend/plugins/syntax-highlighter-compress/\" style=\"text-decoration: none\">Syntax Highlighter Compress</a>", "shtb_adv_lang") ?> <input type="radio" name="shtb_adv_using_syntaxhighlighter" value="syntaxhighlighter_evolved" <?php if ($shtb_adv_setting_opt['shtb_adv_using_syntaxhighlighter'] == "syntaxhighlighter_evolved") {echo 'checked=\"checked\"';} ?>/><?php _e("<a href=\"http://wordpress.org/extend/plugins/syntaxhighlighter/\" style=\"text-decoration: none\">SyntaxHighlighter Evolved</a>", "shtb_adv_lang") ?> <input type="radio" name="shtb_adv_using_syntaxhighlighter" value="other" <?php if ($shtb_adv_setting_opt['shtb_adv_using_syntaxhighlighter'] == "other") {echo 'checked=\"checked\"';} ?>/><?php _e("Other", "shtb_adv_lang") ?>
+					<input type="radio" name="using_syntaxhighlighter" value="wp_syntaxhighlighter" <?php if ($shtb_adv_setting_opt['using_syntaxhighlighter'] == "wp_syntaxhighlighter") {echo 'checked=\"checked\"';} ?>/><?php _e("<a href=\"http://wordpress.org/extend/plugins/wp-syntaxhighlighter/\" style=\"text-decoration: none\">WP SyntaxHighlighter</a>", "shtb_adv_lang") ?> <input type="radio" name="shtb_adv_using_syntaxhighlighter" value="syntax_highlighter_compress" <?php if ($shtb_adv_setting_opt['using_syntaxhighlighter'] == "syntax_highlighter_compress") {echo 'checked=\"checked\"';} ?>/><?php _e("<a href=\"http://wordpress.org/extend/plugins/syntax-highlighter-compress/\" style=\"text-decoration: none\">Syntax Highlighter Compress</a>", "shtb_adv_lang") ?> <input type="radio" name="shtb_adv_using_syntaxhighlighter" value="syntaxhighlighter_evolved" <?php if ($shtb_adv_setting_opt['using_syntaxhighlighter'] == "syntaxhighlighter_evolved") {echo 'checked=\"checked\"';} ?>/><?php _e("<a href=\"http://wordpress.org/extend/plugins/syntaxhighlighter/\" style=\"text-decoration: none\">SyntaxHighlighter Evolved</a>", "shtb_adv_lang") ?> <input type="radio" name="shtb_adv_using_syntaxhighlighter" value="other" <?php if ($shtb_adv_setting_opt['using_syntaxhighlighter'] == "other") {echo 'checked=\"checked\"';} ?>/><?php _e("Other", "shtb_adv_lang") ?>
 					<p><small><?php _e("Select your using plugin based on Alex Gorbatchev's <a href='http://alexgorbatchev.com/SyntaxHighlighter/' style='text-decoration: none'>SyntaxHighlighter</a>.<br />If your plugin is not in the options, Select 'Other'.<br />It is the same if you use <a href='http://wordpress.org/extend/plugins/auto-syntaxhighlighter/' style='text-decoration: none'>Auto SyntaxHighlighter</a>, <a href='http://wordpress.org/extend/plugins/syntax-highlighter-and-code-prettifier/' style='text-decoration: none'>Syntax Highlighter and Code Colorizer for WordPress</a> or <a href='http://wordpress.org/extend/plugins/syntax-highlighter-mt/' style='text-decoration: none'>Syntax Highlighter MT</a>.<br />If you don't know about your using plugin, Select 'Other'. When you select 'Other', this plugin will act innocuously.<br />When using with 'SyntaxHighlighter Evolved', 'Load All Brushes' option must be enabled on the 'SyntaxHighlighter' setting panel.<br />If you want to use full options of 'Dafault settings for your buttons', you should select 'Other'.", "shtb_adv_lang") ?></small></p>
 				</td>
 			</tr>
 			<tr valign="top">
 				<th scope="row"><strong><?php _e("Buttons", "shtb_adv_lang") ?></strong></th>
 				<td>
-					<input type="checkbox" name="shtb_adv_insert" value="1" <?php if ($shtb_adv_setting_opt['shtb_adv_insert'] == '1') {echo 'checked=\"checked\"';} ?>/> Select &amp; Insert <input type="checkbox" name="shtb_adv_codebox" value="1" <?php if ($shtb_adv_setting_opt['shtb_adv_codebox'] == '1') {echo 'checked=\"checked\"';} ?>/> CodeBox
+					<input type="checkbox" name="insert" value="1" <?php if ($shtb_adv_setting_opt['insert'] == '1') {echo 'checked=\"checked\"';} ?>/> Select &amp; Insert <input type="checkbox" name="codebox" value="1" <?php if ($shtb_adv_setting_opt['codebox'] == '1') {echo 'checked=\"checked\"';} ?>/> CodeBox
 					<p><small><?php _e("Enable/Disable buttons.<br />'Select &amp; Insert' will help you to wrap your code on the post or page in <code>&lt;pre&gt;</code> tag or to update values of previously-markuped code.<br />'CodeBox' will allow you to paste your code into the post or page and wrap in <code>&lt;pre&gt;</code> tag automatically, keeping indent by tabs.<br />In 'Visual Editor', 'Select &amp; Insert' will appear as 'pre' icon and 'CodeBox' will appear as 'CODE' icon.", "shtb_adv_lang") ?></small></p>
 				</td>
 			</tr>
 			<tr valign="top">
 				<th scope="row"><strong><?php _e("Window size", "shtb_adv_lang") ?></strong></th> 
 				<td>
-					<select name="shtb_adv_button_window_size">
-						<option value="100" <?php if ($shtb_adv_setting_opt['shtb_adv_button_window_size'] == "100") {echo 'selected="selected"';} ?>>100%</option>
-						<option value="105" <?php if ($shtb_adv_setting_opt['shtb_adv_button_window_size'] == "105") {echo 'selected="selected"';} ?>>105%</option>
-						<option value="110" <?php if ($shtb_adv_setting_opt['shtb_adv_button_window_size'] == "110") {echo 'selected="selected"';} ?>>110%</option>
+					<select name="button_window_size">
+						<option value="100" <?php if ($shtb_adv_setting_opt['button_window_size'] == "100") {echo 'selected="selected"';} ?>>100%</option>
+						<option value="105" <?php if ($shtb_adv_setting_opt['button_window_size'] == "105") {echo 'selected="selected"';} ?>>105%</option>
+						<option value="110" <?php if ($shtb_adv_setting_opt['button_window_size'] == "110") {echo 'selected="selected"';} ?>>110%</option>
 					</select>
 					<p><small><?php _e("Choose size of pop-up window at the click of buttons.", "shtb_adv_lang") ?></small></p>
 				</td>
@@ -288,11 +302,11 @@ function shtb_adv_options_panel(){
 			<tr valign="top">
 				<th scope="row"><strong><?php _e("Place the buttons in", "shtb_adv_lang") ?></strong></th> 
 				<td>
-					<select name="shtb_adv_button_row">
-						<option value="1" <?php if ($shtb_adv_setting_opt['shtb_adv_button_row'] == "1") {echo 'selected="selected"';} ?>><?php _e("1st row", "shtb_adv_lang") ?></option>
-						<option value="2" <?php if ($shtb_adv_setting_opt['shtb_adv_button_row'] == "2") {echo 'selected="selected"';} ?>><?php _e("2nd row", "shtb_adv_lang") ?></option>
-						<option value="3" <?php if ($shtb_adv_setting_opt['shtb_adv_button_row'] == "3") {echo 'selected="selected"';} ?>><?php _e("3rd row", "shtb_adv_lang") ?></option>
-						<option value="4" <?php if ($shtb_adv_setting_opt['shtb_adv_button_row'] == "4") {echo 'selected="selected"';} ?>><?php _e("4th row", "shtb_adv_lang") ?></option>
+					<select name="button_row">
+						<option value="1" <?php if ($shtb_adv_setting_opt['button_row'] == "1") {echo 'selected="selected"';} ?>><?php _e("1st row", "shtb_adv_lang") ?></option>
+						<option value="2" <?php if ($shtb_adv_setting_opt['button_row'] == "2") {echo 'selected="selected"';} ?>><?php _e("2nd row", "shtb_adv_lang") ?></option>
+						<option value="3" <?php if ($shtb_adv_setting_opt['button_row'] == "3") {echo 'selected="selected"';} ?>><?php _e("3rd row", "shtb_adv_lang") ?></option>
+						<option value="4" <?php if ($shtb_adv_setting_opt['button_row'] == "4") {echo 'selected="selected"';} ?>><?php _e("4th row", "shtb_adv_lang") ?></option>
 					</select> <?php _e("of TinyMCE toolbar.", "shtb_adv_lang") ?>
 					<p><small><?php _e("Choose TinyMCE toolbar row which buttons will be placed in.", "shtb_adv_lang") ?></small></p>
 				</td>
@@ -304,21 +318,21 @@ function shtb_adv_options_panel(){
 			<tr valign="top">
 				<th scope="row"><strong><?php _e("Show Line Number", "shtb_adv_lang") ?></strong></th>
 				<td>
-					<input type="checkbox" name="shtb_adv_gutter" value="1" <?php if ($shtb_adv_setting_opt['shtb_adv_gutter'] == '1') {echo 'checked=\"checked\"';} ?>/>
+					<input type="checkbox" name="gutter" value="1" <?php if ($shtb_adv_setting_opt['gutter'] == '1') {echo 'checked=\"checked\"';} ?>/>
 					<p><small><?php _e("Enable/Disable 'Show Line number' option by default.<br />Only when 'Other' is selected in 'Using with' option, this option can work.", "shtb_adv_lang") ?></small></p>
 				</td>
 			</tr>
 			<tr valign="top">
 				<th scope="row"><strong><?php _e("Starting Line Number", "shtb_adv_lang") ?></strong></th>
 				<td>
-					<input type="text" name="shtb_adv_first_line" size="2" value="<?php echo $shtb_adv_setting_opt['shtb_adv_first_line']; ?>" />
+					<input type="text" name="first_line" size="2" value="<?php echo $shtb_adv_setting_opt['first_line']; ?>" />
 					<p><small><?php _e("Enter default starting line number.<br />When 'WP SyntaxHighlighter' or 'SyntaxHighlighter Evolved' is selected in 'Using with' option, this option can't work.", "shtb_adv_lang") ?></small></p>
 				</td>
 			</tr>
 			<tr valign="top">
 				<th scope="row"><strong><?php _e("html-script", "shtb_adv_lang") ?></strong></th>
 				<td>
-					<input type="checkbox" name="shtb_adv_html_script" value="1" <?php if ($shtb_adv_setting_opt['shtb_adv_html_script'] == '1') {echo 'checked=\"checked\"';} ?>/>
+					<input type="checkbox" name="html_script" value="1" <?php if ($shtb_adv_setting_opt['html_script'] == '1') {echo 'checked=\"checked\"';} ?>/>
 					<p><small><?php _e("Enable/Disable 'html-script' option by default.", "shtb_adv_lang") ?></small></p>
 				</td>
 			</tr>
@@ -373,7 +387,7 @@ function shtb_adv_options_panel(){
 	<?php _e("SyntaxHighlighter TinyMCE Button version:", "shtb_adv_lang") ?> <?php $shtb_plugin_data = get_plugin_data(__FILE__); echo $shtb_plugin_data['Version']; ?><br />
 	<?php _e("SyntaxHighlighter TinyMCE Button DB version:", "shtb_adv_lang") ?> <?php echo get_option('shtb_adv_checkver_stamp'); ?><br />
 	<?php _e("SyntaxHighlighter TinyMCE Button URL:", "shtb_adv_lang") ?> <?php echo $shtb_adv_plugin_url; ?><br />
-	<?php _e("Your browser:", "shtb_adv_lang") ?> <?php echo $_SERVER['HTTP_USER_AGENT']; ?>
+	<?php _e("Your browser:", "shtb_adv_lang") ?> <?php echo esc_html($_SERVER['HTTP_USER_AGENT']); ?>
 	</p>
 	</div>
 	<p>
