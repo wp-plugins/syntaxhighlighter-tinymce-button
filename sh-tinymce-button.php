@@ -10,7 +10,7 @@ Text Domain: shtb_adv_lang
 Domain Path: /languages
 */
 /*
-Last modified: 2011/10/18
+Last modified: 2011/10/20
 License: GPL v2
 */
 load_plugin_textdomain('shtb_adv_lang', false, dirname(plugin_basename(__FILE__)).'/languages');

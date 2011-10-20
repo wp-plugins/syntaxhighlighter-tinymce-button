@@ -4,7 +4,7 @@ Donate link: http://www.near-mint.com/blog/donate
 Tags: syntaxhighlighter, code, sourcecode, tinymce, button, syntax, highlight
 Requires at least: 2.8
 Tested up to: 3.2.1
-Stable tag: 0.7.7
+Stable tag: 0.7.8
 
 "SyntaxHighlighter TinyMCE Button" provides buttons for Visual Editor and will help to type &lt;pre&gt; tag for SyntaxHighlighter.
 
@@ -109,6 +109,11 @@ A. "html-scripts" option requires "XML" brush. However, some 'SyntaxHighlighter'
 
 == Changelog ==
 
+= 0.7.8 =
+* Rewritten the codes for array definition.
+* Changed setting data migration process.
+* Fix a bug: When using code button, some browsers give extra line break.
+
 = 0.7.7 =
 * Validating the setting values more closely.
 * Added the icon before title block on the setting panel.
@@ -190,6 +195,9 @@ A. "html-scripts" option requires "XML" brush. However, some 'SyntaxHighlighter'
 * This is the first version.
 
 == Upgrade Notice ==
+
+= 0.7.8 =
+This version has some changes and bug fix.
 
 = 0.7.7 =
 This version has some changes and bug fixes.
