@@ -2,7 +2,7 @@
 /*
 SyntaxHighlighter TinyMCE Button Codebox
 by redcocker
-Last modified: 2011/10/20
+Last modified: 2011/11/11
 License: GPL v2
 http://www.near-mint.com/blog/
 */

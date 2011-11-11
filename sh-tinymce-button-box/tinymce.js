@@ -27,8 +27,9 @@ function insertSHTBADVCODEBOXcode() {
 	var starting_linenumber = document.getElementById('shtb_adv_codebox_starting_linenumber').value;
 	var highlight_lines = document.getElementById('shtb_adv_codebox_highlighted_lines').value;
 	var html_script = document.getElementById('shtb_adv_codebox_html_script').checked;
-	var code = document.getElementById('shtb_adv_codebox_code').value.replace(/</g,'&lt;').replace(/\r\n/g,'<br>');
-	var code = code.replace(/\n|\r/g,'<br>');
+	var code = document.getElementById('shtb_adv_codebox_code').value.replace(/&amp;/g,'&amp;amp;').replace(/&lt;/g,'&amp;lt;').replace(/</g,'&lt;').replace(/\r\n/g,'<br />');
+	code = code.replace(/\n|\r/g,'<br />');
+	code = code.replace(/&gt;/g,'&amp;gt;').replace(/&quot;/g,'&amp;quot;').replace(/&#039;/g,'&amp;#039;');
 
 	var tagtext = '<pre class="brush: ';
 	classAttribs = langname;
