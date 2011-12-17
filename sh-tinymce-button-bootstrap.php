@@ -20,7 +20,7 @@ if (!defined('WP_LOAD_PATH')) {
 		if (file_exists($path.'wp-load.php')) {
 			define('WP_LOAD_PATH', $path);
 		} else {
-			exit(__("Could not find wp-load.php"));
+			exit(__("Could not find wp-load.php", "shtb_adv_lang"));
 		}
 	}
 }

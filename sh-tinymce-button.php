@@ -3,14 +3,14 @@
 Plugin Name: SyntaxHighlighter TinyMCE Button
 Plugin URI: http://www.near-mint.com/blog/software/syntaxhighlighter-tinymce-button
 Description: 'SyntaxHighlighter TinyMCE Button' provides additional buttons for Visual Editor and these buttons will help to type or edit <code>&lt;pre&gt;</code> tag for Alex Gorbatchev's <a href='http://alexgorbatchev.com/SyntaxHighlighter/'>SyntaxHighlighter</a>. This plugin is based on '<a href='http://wordpress.org/extend/plugins/codecolorer-tinymce-button/'>CodeColorer TinyMCE Button</a>'.
-Version: 0.7.8.1
+Version: 0.7.8.3
 Author: redcocker
 Author URI: http://www.near-mint.com/blog/
 Text Domain: shtb_adv_lang
 Domain Path: /languages
 */
 /*
-Last modified: 2011/11/11
+Last modified: 2011/12/17
 License: GPL v2
 */
 load_plugin_textdomain('shtb_adv_lang', false, dirname(plugin_basename(__FILE__)).'/languages');
@@ -379,8 +379,8 @@ function shtb_adv_options_panel(){
 	<?php _e("PHP version:", "shtb_adv_lang") ?> <?php echo phpversion(); ?><br />
 	<?php _e("MySQL version:", "shtb_adv_lang") ?> <?php echo mysql_get_server_info(); ?><br />
 	<?php _e("WordPress version:", "shtb_adv_lang") ?> <?php bloginfo("version"); ?><br />
-	<?php _e("Site URL:", "shtb_adv_lang") ?> <?php bloginfo("url"); ?><br />
-	<?php _e("WordPress URL:", "shtb_adv_lang") ?> <?php bloginfo("wpurl"); ?><br />
+	<?php _e("Site URL:", "shtb_adv_lang") ?> <?php if(function_exists("home_url")) { echo home_url(); } else { echo get_option('home'); } ?><br />
+	<?php _e("WordPress URL:", "shtb_adv_lang") ?> <?php echo site_url(); ?><br />
 	<?php _e("WordPress language:", "shtb_adv_lang") ?> <?php bloginfo("language"); ?><br />
 	<?php _e("WordPress character set:", "shtb_adv_lang") ?> <?php bloginfo("charset"); ?><br />
 	<?php _e("WordPress theme:", "shtb_adv_lang") ?> <?php $shtb_theme = get_theme(get_current_theme()); echo $shtb_theme['Name'].' '.$shtb_theme['Version']; ?><br />
