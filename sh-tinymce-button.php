@@ -3,14 +3,14 @@
 Plugin Name: SyntaxHighlighter TinyMCE Button
 Plugin URI: http://www.near-mint.com/blog/software/syntaxhighlighter-tinymce-button
 Description: 'SyntaxHighlighter TinyMCE Button' provides additional buttons for Visual Editor and these buttons will help to type or edit <code>&lt;pre&gt;</code> tag for Alex Gorbatchev's <a href='http://alexgorbatchev.com/SyntaxHighlighter/'>SyntaxHighlighter</a>. This plugin is based on '<a href='http://wordpress.org/extend/plugins/codecolorer-tinymce-button/'>CodeColorer TinyMCE Button</a>'.
-Version: 0.7.8.3
+Version: 0.7.8.4
 Author: redcocker
 Author URI: http://www.near-mint.com/blog/
 Text Domain: shtb_adv_lang
 Domain Path: /languages
 */
 /*
-Last modified: 2011/12/17
+Last modified: 2011/12/24
 License: GPL v2
 */
 load_plugin_textdomain('shtb_adv_lang', false, dirname(plugin_basename(__FILE__)).'/languages');
@@ -277,7 +277,7 @@ function shtb_adv_options_panel(){
 			<tr valign="top">
 				<th scope="row"><strong><?php _e("Using with", "shtb_adv_lang") ?></strong></th> 
 				<td>
-					<input type="radio" name="using_syntaxhighlighter" value="wp_syntaxhighlighter" <?php if ($shtb_adv_setting_opt['using_syntaxhighlighter'] == "wp_syntaxhighlighter") {echo 'checked=\"checked\"';} ?>/><?php _e("<a href=\"http://wordpress.org/extend/plugins/wp-syntaxhighlighter/\" style=\"text-decoration: none\">WP SyntaxHighlighter</a>", "shtb_adv_lang") ?> <input type="radio" name="shtb_adv_using_syntaxhighlighter" value="syntax_highlighter_compress" <?php if ($shtb_adv_setting_opt['using_syntaxhighlighter'] == "syntax_highlighter_compress") {echo 'checked=\"checked\"';} ?>/><?php _e("<a href=\"http://wordpress.org/extend/plugins/syntax-highlighter-compress/\" style=\"text-decoration: none\">Syntax Highlighter Compress</a>", "shtb_adv_lang") ?> <input type="radio" name="shtb_adv_using_syntaxhighlighter" value="syntaxhighlighter_evolved" <?php if ($shtb_adv_setting_opt['using_syntaxhighlighter'] == "syntaxhighlighter_evolved") {echo 'checked=\"checked\"';} ?>/><?php _e("<a href=\"http://wordpress.org/extend/plugins/syntaxhighlighter/\" style=\"text-decoration: none\">SyntaxHighlighter Evolved</a>", "shtb_adv_lang") ?> <input type="radio" name="shtb_adv_using_syntaxhighlighter" value="other" <?php if ($shtb_adv_setting_opt['using_syntaxhighlighter'] == "other") {echo 'checked=\"checked\"';} ?>/><?php _e("Other", "shtb_adv_lang") ?>
+					<input type="radio" name="using_syntaxhighlighter" value="wp_syntaxhighlighter" <?php if ($shtb_adv_setting_opt['using_syntaxhighlighter'] == "wp_syntaxhighlighter") {echo 'checked=\"checked\"';} ?>/><?php _e("<a href=\"http://wordpress.org/extend/plugins/wp-syntaxhighlighter/\" style=\"text-decoration: none\">WP SyntaxHighlighter</a>", "shtb_adv_lang") ?> <input type="radio" name="using_syntaxhighlighter" value="syntax_highlighter_compress" <?php if ($shtb_adv_setting_opt['using_syntaxhighlighter'] == "syntax_highlighter_compress") {echo 'checked=\"checked\"';} ?>/><?php _e("<a href=\"http://wordpress.org/extend/plugins/syntax-highlighter-compress/\" style=\"text-decoration: none\">Syntax Highlighter Compress</a>", "shtb_adv_lang") ?> <input type="radio" name="using_syntaxhighlighter" value="syntaxhighlighter_evolved" <?php if ($shtb_adv_setting_opt['using_syntaxhighlighter'] == "syntaxhighlighter_evolved") {echo 'checked=\"checked\"';} ?>/><?php _e("<a href=\"http://wordpress.org/extend/plugins/syntaxhighlighter/\" style=\"text-decoration: none\">SyntaxHighlighter Evolved</a>", "shtb_adv_lang") ?> <input type="radio" name="using_syntaxhighlighter" value="other" <?php if ($shtb_adv_setting_opt['using_syntaxhighlighter'] == "other") {echo 'checked=\"checked\"';} ?>/><?php _e("Other", "shtb_adv_lang") ?>
 					<p><small><?php _e("Select your using plugin based on Alex Gorbatchev's <a href='http://alexgorbatchev.com/SyntaxHighlighter/' style='text-decoration: none'>SyntaxHighlighter</a>.<br />If your plugin is not in the options, Select 'Other'.<br />It is the same if you use <a href='http://wordpress.org/extend/plugins/auto-syntaxhighlighter/' style='text-decoration: none'>Auto SyntaxHighlighter</a>, <a href='http://wordpress.org/extend/plugins/syntax-highlighter-and-code-prettifier/' style='text-decoration: none'>Syntax Highlighter and Code Colorizer for WordPress</a> or <a href='http://wordpress.org/extend/plugins/syntax-highlighter-mt/' style='text-decoration: none'>Syntax Highlighter MT</a>.<br />If you don't know about your using plugin, Select 'Other'. When you select 'Other', this plugin will act innocuously.<br />When using with 'SyntaxHighlighter Evolved', 'Load All Brushes' option must be enabled on the 'SyntaxHighlighter' setting panel.<br />If you want to use full options of 'Dafault settings for your buttons', you should select 'Other'.", "shtb_adv_lang") ?></small></p>
 				</td>
 			</tr>
